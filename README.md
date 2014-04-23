@@ -2,5 +2,5 @@ Code snippets
 =============
 
 Some code snippets for:
-* QGIS
+* [QGIS](blob/master/qgis.md)
 * ...
