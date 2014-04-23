@@ -1,6 +1,8 @@
-# QGIS
+QGIS
+====
 
-## PyQGIS
+PyQGIS
+------
 
 ### Settings
 
