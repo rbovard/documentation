@@ -1,4 +1,6 @@
-code-snippets
+Code snippets
 =============
 
-Some code snippets
+Some code snippets for:
+* QGIS
+* ...
