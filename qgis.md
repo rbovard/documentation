@@ -4,7 +4,7 @@
 
 ### Settings
 
-```
+```python
 from PyQt4.QtCore import QSettings
 s = QSettings()
 
