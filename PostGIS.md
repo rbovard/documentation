@@ -30,4 +30,8 @@ SELECT
     END
     AS is_integer
 FROM table;
+
+-- Concatenate strings with possible null values
+SELECT street || ' ' || num || COALESCE(suffix, '') AS address
+FROM addresses;
 ```
