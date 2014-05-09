@@ -35,3 +35,11 @@ FROM table;
 SELECT street || ' ' || num || COALESCE(suffix, '') AS address
 FROM addresses;
 ```
+
+Sequences
+---------
+
+```sql
+-- Set current value
+SELECT setval('schema.table_field_seq', 1000);
+```
