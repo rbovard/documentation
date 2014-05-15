@@ -34,6 +34,12 @@ To run QGIS with default settings, add the command line option `--optionspath` a
 qgis-bin.exe --optionspath c:/temp/qgis
 ```
 
+> For Linux, simply use:
+>
+>```bash
+>qgis --optionspath /tmp/qgis
+>```
+
 A new settings file will be created (`QGIS/QGIS2.ini`) and used instead of the stored `QSettings`.
 
 > With the command line option `--configpath`, QGIS will use the given path for all user configuration (`QSettings` and `.qgis2` folder).
