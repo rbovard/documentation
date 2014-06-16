@@ -36,6 +36,34 @@ SELECT street || ' ' || num || COALESCE(suffix, '') AS address
 FROM addresses;
 ```
 
+Triggers
+--------
+
+```sql
+-- Get parcel number
+BEGIN
+
+    SELECT INTO new.no_parcelle numero
+    FROM mo.mo_par
+    WHERE ST_Within(new.geom, geom);
+
+    RETURN new;
+
+END;
+
+-- Get parcels numbers
+BEGIN
+
+    SELECT INTO new.no_parcelle String_Agg(numero, ';' ORDER BY numero)
+    FROM mo.mo_par
+    WHERE ST_Intersects(ST_Buffer(new.geom, -0.1), geom)
+    GROUP BY new.fid;
+
+    RETURN new;
+
+END;
+```
+
 Sequences
 ---------
 
