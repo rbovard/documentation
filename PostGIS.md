@@ -34,6 +34,10 @@ FROM table;
 -- Concatenate strings with possible null values
 SELECT street || ' ' || num || COALESCE(suffix, '') AS address
 FROM addresses;
+
+-- Split values into rows
+SELECT id, regexp_split_to_table(no_parcelle, ';') AS no_parcelle
+FROM table;
 ```
 
 Triggers
