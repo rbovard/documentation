@@ -9,11 +9,6 @@ Queries
 SELECT ROW_NUMBER() OVER (ORDER BY name) AS id
 FROM table;
 
--- Create a line between two points
-SELECT ST_MakeLine(a.geom, b.geom) :: Geometry(LineString, 21781) AS geom
-FROM table1 a
-JOIN table2 b ON a.id = b.fk;
-
 -- Set first character to uppercase
 SELECT ((UPPER(SUBSTR(street, 1, 1)) || SUBSTR(street, 2))) :: varchar AS street
 FROM table;
@@ -38,6 +33,16 @@ FROM addresses;
 -- Split values into rows
 SELECT id, regexp_split_to_table(no_parcelle, ';') AS no_parcelle
 FROM table;
+```
+
+Spatial queries
+---------------
+
+```sql
+-- Create a line between two points
+SELECT ST_MakeLine(a.geom, b.geom) :: Geometry(LineString, 21781) AS geom
+FROM table1 a
+JOIN table2 b ON a.id = b.fk;
 ```
 
 Triggers
