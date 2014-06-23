@@ -43,6 +43,16 @@ Spatial queries
 SELECT ST_MakeLine(a.geom, b.geom) :: Geometry(LineString, 21781) AS geom
 FROM table1 a
 JOIN table2 b ON a.id = b.fk;
+
+-- Return intersected features
+SELECT ST_Intersection(a.geom, b.geom) AS geom
+FROM table1 a, table2 b
+WHERE ST_Intersects(a.geom, b.geom);
+
+-- Merge polygons with an attribute
+SELECT attribute, ST_Union(ST_SnapToGrid(geom, 0.0001)) :: Geometry(MultiPolygon, 21781) AS geom
+FROM table
+GROUP BY attribute;
 ```
 
 Triggers
