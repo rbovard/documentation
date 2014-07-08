@@ -17,6 +17,15 @@ FROM table;
 SELECT REGEXP_REPLACE(place, '^[^, ]*, ', '') AS place
 FROM table;
 
+-- Erase a string if found
+SELECT
+    CASE
+        WHEN value ~ '.* PN .*' THEN REGEXP_REPLACE(value, ' (PN...)', '')
+        ELSE value
+    END
+    AS value
+FROM table;
+
 -- Test if a value is an integer
 SELECT
     CASE
