@@ -40,7 +40,7 @@ SELECT street || ' ' || num || COALESCE(suffix, '') AS address
 FROM addresses;
 
 -- Split values into rows
-SELECT id, regexp_split_to_table(no_parcelle, ';') AS no_parcelle
+SELECT id, REGEXP_SPLIT_TO_TABLE(no_parcelle, ';') AS no_parcelle
 FROM table;
 
 -- Add an unit to a value
