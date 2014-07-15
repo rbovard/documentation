@@ -42,6 +42,10 @@ FROM addresses;
 -- Split values into rows
 SELECT id, regexp_split_to_table(no_parcelle, ';') AS no_parcelle
 FROM table;
+
+-- Add an unit to a value
+SELECT (ROUND(length :: numeric, 2) || ' m') :: varchar AS length
+FROM table;
 ```
 
 Spatial queries
