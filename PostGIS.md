@@ -46,6 +46,14 @@ FROM table;
 -- Add an unit to a value
 SELECT (ROUND(length :: numeric, 2) || ' m') :: varchar AS length
 FROM table;
+
+-- Convert numeric to string
+SELECT
+    TRIM(TO_CHAR(p.numero :: numeric, '9999 999 9')) :: varchar(20) AS numero,
+    TRIM(TO_CHAR(ST_X(p.geom), '999G999.99 m')) :: varchar(20) AS coord_y,
+    TRIM(TO_CHAR(ST_Y(p.geom), '999G999.99 m')) :: varchar(20) AS coord_x,
+    TRIM(TO_CHAR(p.geomalt, '9G999.99 m')) :: varchar(20) AS altitude
+FROM mo.mo_pfp1 p;
 ```
 
 Spatial queries
