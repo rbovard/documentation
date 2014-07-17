@@ -74,6 +74,11 @@ WHERE ST_Intersects(a.geom, b.geom);
 SELECT attribute, ST_Union(ST_SnapToGrid(geom, 0.0001)) :: Geometry(MultiPolygon, 21781) AS geom
 FROM table
 GROUP BY attribute;
+
+-- Check validity of geometries
+SELECT *
+FROM table
+WHERE ST_IsValid(geom) = true;
 ```
 
 Triggers
