@@ -15,3 +15,12 @@ Remove all local changes (not committed)
 ```bash
 git reset --hard
 ```
+
+commit
+------
+
+Edit last commit message (not pushed)
+
+```bash
+git commit --amend -m 'New commit message'
+```
