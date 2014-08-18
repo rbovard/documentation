@@ -119,7 +119,7 @@ Geometries
 SELECT AddGeometryColumn(
     'schema', 'table',
     'geom', 21781,
-    'POINT|MULTILINESTRING|MULTIPOLYGON', 2
+    'Point|MultiLineString|MultiPolygon', 2
 );
 
 -- Create index
