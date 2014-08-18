@@ -110,3 +110,20 @@ Sequences
 -- Set current value
 SELECT setval('schema.table_field_seq', 1000);
 ```
+
+Geometries
+----------
+
+```sql
+-- Create column
+SELECT AddGeometryColumn(
+    'schema', 'table',
+    'geom', 21781,
+    'POINT|MULTILINESTRING|MULTIPOLYGON', 2
+);
+
+-- Create index
+CREATE INDEX table_geom_idx
+ON schema.table
+USING gist (geom);
+```
