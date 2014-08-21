@@ -127,3 +127,17 @@ CREATE INDEX table_geom_idx
 ON schema.table
 USING gist (geom);
 ```
+
+Information schema
+------------------
+
+```sql
+-- Get all tables
+SELECT table_schema, table_name
+FROM information_schema.tables
+WHERE table_type = 'BASE TABLE'
+AND table_schema <> 'information_schema'
+AND table_schema <> 'public'
+AND table_schema <> 'pg_catalog'
+ORDER BY table_schema, table_name;
+```
