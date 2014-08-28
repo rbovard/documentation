@@ -141,3 +141,11 @@ AND table_schema <> 'public'
 AND table_schema <> 'pg_catalog'
 ORDER BY table_schema, table_name;
 ```
+
+Miscellaneous
+-------------
+
+```sql
+-- Get PostGIS version
+SELECT PostGIS_full_version();
+```
