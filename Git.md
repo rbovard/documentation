@@ -1,6 +1,18 @@
 Git
 ===
 
+Configuration
+-------------
+
+```bash
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[core]
+    pager = less -r
+```
+
 reset
 -----
 
