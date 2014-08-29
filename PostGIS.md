@@ -60,6 +60,11 @@ Spatial queries
 ---------------
 
 ```sql
+-- Spatial join (point in polygon)
+SELECT *
+FROM table1 a, table2 b
+WHERE ST_Within(a.geom, b.geom);
+
 -- Create a line between two points
 SELECT ST_MakeLine(a.geom, b.geom) :: Geometry(LineString, 21781) AS geom
 FROM table1 a
