@@ -32,26 +32,21 @@ git branch -d branch
 git push origin :branch
 ```
 
-reset
+Reset
 -----
 
-Undo the last commit (not pushed)
-
 ```bash
+# Undo the last commit (not pushed)
 git reset HEAD^
-```
 
-Remove all local changes (not committed)
-
-```bash
+# Remove all local changes (not committed)
 git reset --hard
 ```
 
-commit
+Commit
 ------
 
-Edit last commit message (not pushed)
-
 ```bash
+# Edit last commit message (not pushed)
 git commit --amend -m 'New commit message'
 ```
