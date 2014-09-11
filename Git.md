@@ -13,8 +13,8 @@ Configuration
     pager = less -r
 ```
 
-Branches
---------
+Branch
+------
 
 ```bash
 # Create new branch
@@ -49,4 +49,14 @@ Commit
 ```bash
 # Edit last commit message (not pushed)
 git commit --amend -m 'New commit message'
+```
+
+Fork
+----
+
+```bash
+# Syncing a fork
+git fetch upstream
+git checkout master
+git merge upstream/master
 ```
