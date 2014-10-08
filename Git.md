@@ -4,6 +4,8 @@ Git
 Configuration
 -------------
 
+File `~/.gitconfig`
+
 ```bash
 [color]
     diff = auto
