@@ -14,6 +14,7 @@ Settings
 
 ```python
 from PyQt4.QtCore import QSettings
+
 s = QSettings()
 
 # Display all settings
@@ -43,3 +44,16 @@ qgis-bin.exe --optionspath c:/temp/qgis
 A new settings file will be created (`QGIS/QGIS2.ini`) and used instead of the stored `QSettings`.
 
 > With the command line option `--configpath`, QGIS will use the given path for all user configuration (`QSettings` and `.qgis2` folder).
+
+Message bar
+-----------
+
+```python
+from qgis.gui import *
+
+message = u"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+iface.messageBar().pushMessage("Information", message, level=QgsMessageBar.INFO, duration=3)
+iface.messageBar().pushMessage("Warning", message, level=QgsMessageBar.WARNING)
+iface.messageBar().pushMessage("Error", message, level=QgsMessageBar.CRITICAL)
+```
