@@ -106,6 +106,16 @@ BEGIN
     GROUP BY new.fid;
     RETURN new;
 END;
+
+-- Get absolute path
+BEGIN
+    SELECT INTO new.file
+    CASE
+        WHEN new.file IS NOT NULL THEN replace(new.file, 'X:\', '\\path\to\folder\')
+        ELSE NULL
+    END;
+    RETURN new;
+END;
 ```
 
 Sequences
