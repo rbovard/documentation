@@ -84,6 +84,11 @@ GROUP BY attribute;
 SELECT *
 FROM table
 WHERE ST_IsValid(geom) = true;
+
+-- Return features inside buffer around points
+SELECT a.*
+FROM table1 a
+JOIN table2 b ON ST_Contains(ST_Buffer(b.geom, 100), a.geom)
 ```
 
 Triggers
