@@ -89,6 +89,18 @@ WHERE ST_IsValid(geom) = true;
 SELECT a.*
 FROM table1 a
 JOIN table2 b ON ST_Contains(ST_Buffer(b.geom, 100), a.geom);
+
+-- Order results by list
+SELECT *
+FROM osm.osm_roads r
+ORDER BY
+    CASE
+        WHEN r.highway IN ('motorway', 'motorway_link') THEN 1
+        WHEN r.highway = 'primary' THEN 2
+        WHEN r.highway = 'secondary' THEN 3
+        WHEN r.highway = 'tertiary' THEN 4
+        ELSE 5
+    END DESC;
 ```
 
 Triggers
