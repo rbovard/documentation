@@ -20,3 +20,10 @@ dpkg
 dpkg -l package-name
 ```
 
+find
+----
+
+```bash
+# Find empty subfolders
+find /path/to/folder -type d -empty
+```
