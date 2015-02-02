@@ -178,9 +178,13 @@ Information schema
 SELECT table_schema, table_name
 FROM information_schema.tables
 WHERE table_type = 'BASE TABLE'
-AND table_schema <> 'information_schema'
-AND table_schema <> 'public'
-AND table_schema <> 'pg_catalog'
+AND table_schema NOT IN ('information_schema', 'public', 'pg_catalog')
+ORDER BY table_schema, table_name;
+
+-- Get all views
+SELECT table_schema, table_name, view_definition
+FROM information_schema.views
+WHERE table_schema NOT IN ('information_schema', 'public', 'pg_catalog')
 ORDER BY table_schema, table_name;
 ```
 
