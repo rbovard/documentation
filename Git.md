@@ -23,15 +23,15 @@ Branch
 git checkout master
 git fetch origin
 git pull origin master
-git push origin origin:refs/heads/branch
-git checkout -b branch origin/branch
+git push origin origin:refs/heads/<branch>
+git checkout -b <branch> origin/<branch>
 
 # Merge branch
 git checkout master
-git merge branch
+git merge <branch>
 git push origin master
-git branch -d branch
-git push origin :branch
+git branch -d <branch>
+git push origin :<branch>
 ```
 
 Reset
