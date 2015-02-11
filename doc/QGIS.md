@@ -1,6 +1,11 @@
 QGIS
 ====
 
+* [Actions](#actions)
+* [Settings](#settings)
+    * [Default settings](#default-settings)
+* [Message bar](#message-bar)
+
 Actions
 -------
 

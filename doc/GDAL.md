@@ -1,6 +1,8 @@
 GDAL
 ====
 
+* [gdaltindex](#gdaltindex)
+
 gdaltindex
 ----------
 
