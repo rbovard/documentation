@@ -1,6 +1,15 @@
 PostGIS
 =======
 
+* [Data types](#data-types)
+* [Queries](#queries)
+* [Spatial queries](#spatial-queries)
+* [Triggers](#triggers)
+* [Sequences](#sequences)
+* [Geometries](#geometries)
+* [Information schema](#information-schema)
+* [Miscellaneous](#miscellaneous)
+
 Data types
 ----------
 

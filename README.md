@@ -2,9 +2,9 @@ Code snippets
 =============
 
 Some code snippets for:
-* [Bash](Bash.md)
-* [FME](FME.md)
-* [GDAL](GDAL.md)
-* [Git](Git.md)
-* [PostGIS](PostGIS.md)
-* [QGIS](QGIS.md)
+* [Bash](doc/Bash.md)
+* [FME](doc/FME.md)
+* [GDAL](doc/GDAL.md)
+* [Git](doc/Git.md)
+* [PostGIS](doc/PostGIS.md)
+* [QGIS](doc/QGIS.md)

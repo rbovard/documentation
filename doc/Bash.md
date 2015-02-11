@@ -1,6 +1,10 @@
 Bash
 ====
 
+* [grep](#grep)
+* [dpkg](#dpkg)
+* [find](#find)
+
 grep
 ----
 

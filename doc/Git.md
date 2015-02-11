@@ -1,6 +1,12 @@
 Git
 ===
 
+* [Configuration](#configuration)
+* [Branch](#branch)
+* [Reset](#reset)
+* [Commit](#commit)
+* [Fork](#fork)
+
 Configuration
 -------------
 
