@@ -73,6 +73,10 @@ SELECT
     TRIM(TO_CHAR(ST_Y(p.geom), '999G999.99 m')) :: varchar(20) AS coord_x,
     TRIM(TO_CHAR(p.geomalt, '9G999.99 m')) :: varchar(20) AS altitude
 FROM mo.mo_pfp1 p;
+
+-- Convert date to string
+SELECT to_char(date, 'DD.MM.YYYY') AS date
+FROM table;
 ```
 
 Spatial queries
