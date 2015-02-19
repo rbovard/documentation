@@ -1,13 +1,23 @@
 Code snippets
 =============
 
-Some code snippets for:
-* [Bash](doc/Bash.md)
+GIS
+---
+
 * [FME](doc/FME.md)
 * [GDAL](doc/GDAL.md)
+* [PostGIS](doc/PostGIS.md)
+* [QGIS](doc/QGIS.md)
+
+SSH
+---
+
+* [PuTTY](doc/PuTTY.md)
+* [WinSCP](doc/WinSCP.md)
+
+Tools
+-----
+
+* [Bash](doc/Bash.md)
 * [Git](doc/Git.md)
 * [NConvert](doc/NConvert.md)
-* [PostGIS](doc/PostGIS.md)
-* [PuTTY](doc/PuTTY.md)
-* [QGIS](doc/QGIS.md)
-* [WinSCP](doc/WinSCP.md)
