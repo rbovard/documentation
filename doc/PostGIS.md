@@ -35,6 +35,9 @@ PostGIS
     * [Get all views](#get-all-views)
 * [Miscellaneous](#miscellaneous)
     * [Get PostGIS version](#get-postgis-version)
+* [psql](#psql)
+    * [Create schema and allow rights](#create-schema-and-allow-rights)
+    * [Dump and restore database](#dump-and-restore-database)
 
 Data types
 ----------
@@ -244,7 +247,7 @@ Sequences
 ### Set current value
 
 ```sql
-SELECT setval('schema.table_field_seq', <new-value>);
+SELECT setval('<schema>.<table>_<field>_seq', (SELECT MAX(<field>) FROM <schema>.<table>));
 ```
 
 Geometries
@@ -297,4 +300,23 @@ Miscellaneous
 
 ```sql
 SELECT PostGIS_full_version();
+```
+
+psql
+----
+
+### Create schema and allow rights
+
+```bash
+sudo -u postgres psql -c 'CREATE SCHEMA <schema>' <database>
+sudo -u postgres psql -c 'GRANT ALL ON SCHEMA <schema> TO "<user>"' <database>
+```
+
+### Dump and restore database
+
+```bash
+sudo -u postgres pg_dump <source_database> > <source_database>.out
+sudo -u postgres dropdb <target_database>
+sudo -u postgres createdb <target_database>
+sudo -u postgres psql -d <target_database> -f <source_database>.out
 ```

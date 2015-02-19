@@ -6,6 +6,7 @@ Git
 * [Reset](#reset)
 * [Commit](#commit)
 * [Fork](#fork)
+* [Submodule](#submodule)
 
 Configuration
 -------------
@@ -31,6 +32,14 @@ git fetch origin
 git pull origin master
 git push origin origin:refs/heads/<branch>
 git checkout -b <branch> origin/<branch>
+
+# Resolve conflicts (if any)
+git checkout <branch>
+git fetch origin
+git merge master
+vim <conflict_file>
+git add <conflict_file>
+git commit -m 'Resolve conflicts'
 
 # Merge branch
 git checkout master
@@ -68,4 +77,15 @@ git checkout master
 git fetch upstream
 git merge upstream/master
 git push origin master
+```
+
+Submodule
+---------
+
+```bash
+# Update submodules
+git submodule sync
+git submodule update --init
+git submodule foreach git submodule sync
+git submodule foreach git submodule update --init
 ```
