@@ -57,7 +57,7 @@ Message bar
 ```python
 from qgis.gui import *
 
-message = u"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+message = u"<message>"
 
 iface.messageBar().pushMessage("Information", message, level=QgsMessageBar.INFO, duration=3)
 iface.messageBar().pushMessage("Warning", message, level=QgsMessageBar.WARNING)

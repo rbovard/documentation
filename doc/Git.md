@@ -56,7 +56,7 @@ Commit
 
 ```bash
 # Edit last commit message (not pushed)
-git commit --amend -m 'New commit message'
+git commit --amend -m '<new-message>'
 ```
 
 Fork
