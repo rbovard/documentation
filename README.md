@@ -8,3 +8,4 @@ Some code snippets for:
 * [Git](doc/Git.md)
 * [PostGIS](doc/PostGIS.md)
 * [QGIS](doc/QGIS.md)
+* [WinSCP](doc/WinSCP.md.md)
