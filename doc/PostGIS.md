@@ -25,34 +25,34 @@ Queries
 
 ```sql
 -- Create an unique id
-SELECT ROW_NUMBER() OVER (ORDER BY name) AS id
-FROM table;
+SELECT ROW_NUMBER() OVER (ORDER BY <column>) AS id
+FROM <table>;
 
 -- Set first character to uppercase
-SELECT ((UPPER(SUBSTR(street, 1, 1)) || SUBSTR(street, 2))) :: varchar AS street
-FROM table;
+SELECT ((UPPER(SUBSTR(<column>, 1, 1)) || SUBSTR(<column>, 2))) :: varchar AS <column>
+FROM <table>;
 
 -- Replace all the text before a specific character
-SELECT REGEXP_REPLACE(place, '^[^, ]*, ', '') AS place
-FROM table;
+SELECT REGEXP_REPLACE(<column>, '^[^<char> ]*<char> ', '') AS <column>
+FROM <table>;
 
 -- Erase a string if found
 SELECT
     CASE
-        WHEN value ~ '.* PN .*' THEN REGEXP_REPLACE(value, ' (PN...)', '')
-        ELSE value
+        WHEN <column> ~ '.* <string> .*' THEN REGEXP_REPLACE(<column>, ' <new-string> ', '')
+        ELSE <column>
     END
-    AS value
-FROM table;
+    AS <column>
+FROM <table>;
 
 -- Test if a value is an integer
 SELECT
     CASE
-        WHEN value ~ '^[0-9]+$' THEN TRUE
+        WHEN <column> ~ '^[0-9]+$' THEN TRUE
         ELSE FALSE
     END
     AS is_integer
-FROM table;
+FROM <table>;
 
 -- Concatenate strings with possible null values
 SELECT street || ' ' || num || COALESCE(suffix, '') AS address
@@ -60,11 +60,11 @@ FROM addresses;
 
 -- Split values into rows
 SELECT id, REGEXP_SPLIT_TO_TABLE(no_parcelle, ';') AS no_parcelle
-FROM table;
+FROM <table>;
 
 -- Add an unit to a value
 SELECT (ROUND(length :: numeric, 2) || ' m') :: varchar AS length
-FROM table;
+FROM <table>;
 
 -- Convert numeric to string
 SELECT
@@ -75,8 +75,8 @@ SELECT
 FROM mo.mo_pfp1 p;
 
 -- Convert date to string
-SELECT to_char(date, 'DD.MM.YYYY') AS date
-FROM table;
+SELECT to_char(<column>, 'DD.MM.YYYY') AS <column>
+FROM <table>;
 ```
 
 Spatial queries
@@ -85,33 +85,33 @@ Spatial queries
 ```sql
 -- Spatial join (point in polygon)
 SELECT *
-FROM table1 a, table2 b
+FROM <table1> a, <table2> b
 WHERE ST_Within(a.geom, b.geom);
 
 -- Create a line between two points
 SELECT ST_MakeLine(a.geom, b.geom) :: Geometry(LineString, 21781) AS geom
-FROM table1 a
-JOIN table2 b ON a.id = b.fk;
+FROM <table1> a
+JOIN <table2> b ON a.id = b.fk;
 
 -- Return intersected features
 SELECT ST_Intersection(a.geom, b.geom) AS geom
-FROM table1 a, table2 b
+FROM <table1> a, <table2> b
 WHERE ST_Intersects(a.geom, b.geom);
 
 -- Merge polygons with an attribute
 SELECT attribute, ST_Union(ST_SnapToGrid(geom, 0.0001)) :: Geometry(MultiPolygon, 21781) AS geom
-FROM table
+FROM <table>
 GROUP BY attribute;
 
 -- Check validity of geometries
 SELECT *
-FROM table
+FROM <table>
 WHERE ST_IsValid(geom) = true;
 
 -- Return features inside buffer around points
 SELECT a.*
-FROM table1 a
-JOIN table2 b ON ST_Contains(ST_Buffer(b.geom, 100), a.geom);
+FROM <table1> a
+JOIN <table2> b ON ST_Contains(ST_Buffer(b.geom, 100), a.geom);
 
 -- Order results by list
 SELECT *
@@ -151,7 +151,7 @@ END;
 BEGIN
     SELECT INTO new.file
     CASE
-        WHEN new.file IS NOT NULL THEN replace(new.file, 'X:\', '\\path\to\folder\')
+        WHEN new.file IS NOT NULL THEN replace(new.file, '<drive>', '<absolute-path>') --'X:\', '\\path\to\folder\'
         ELSE NULL
     END;
     RETURN new;
@@ -163,7 +163,7 @@ Sequences
 
 ```sql
 -- Set current value
-SELECT setval('schema.table_field_seq', 1000);
+SELECT setval('schema.table_field_seq', <new-value>);
 ```
 
 Geometries
@@ -172,14 +172,14 @@ Geometries
 ```sql
 -- Create column
 SELECT AddGeometryColumn(
-    'schema', 'table',
+    'schema', '<table>',
     'geom', 21781,
-    'Point|MultiLineString|MultiPolygon', 2
+    '<Point|MultiLineString|MultiPolygon>', 2
 );
 
 -- Create index
 CREATE INDEX table_geom_idx
-ON schema.table
+ON schema.<table>
 USING gist (geom);
 ```
 

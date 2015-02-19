@@ -10,10 +10,10 @@ grep
 
 ```bash
 # Return filenames with searched text in subfolders
-grep -lr 'word1' .
+grep -lr '<word>' .
 
 # Search specific words in given files
-grep -n '\(word1\|word2\|word3\)' folder/*.ext
+grep -n '\(<word1>\|<word2>\|<word3>\)' <path>/*.ext
 ```
 
 dpkg
@@ -21,7 +21,7 @@ dpkg
 
 ```bash
 # Check if a package is present
-dpkg -l package-name
+dpkg -l <package-name>
 ```
 
 find
@@ -29,5 +29,5 @@ find
 
 ```bash
 # Find empty subfolders
-find /path/to/folder -type d -empty
+find <path> -type d -empty
 ```
