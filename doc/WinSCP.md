@@ -1,20 +1,20 @@
 WinSCP
 ======
 
+* [Execute script](#execute-script)
 * [Download specific files](#download-specific-files)
 * [Upload files](#upload-files)
 
-Download specific files
------------------------
-
-### download.bat
+Execute script
+--------------
 
 ```batchfile
 @ECHO OFF
-winscp.com /script=download.txt
+winscp.com /script=<script>.txt
 ```
 
-### download.txt
+Download specific files
+-----------------------
 
 ```batchfile
 option batch abort
@@ -26,15 +26,6 @@ exit
 
 Upload files
 ------------
-
-### upload.bat
-
-```batchfile
-@ECHO OFF
-winscp.com /script=upload.txt
-```
-
-### upload.txt
 
 ```batchfile
 option batch abort
