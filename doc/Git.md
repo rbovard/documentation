@@ -34,6 +34,7 @@ git push origin origin:refs/heads/<branch>
 git checkout -b <branch> origin/<branch>
 
 # Resolve conflicts (if any)
+git checkout <branch>
 git fetch origin
 git merge master
 vim <conflict_file>
