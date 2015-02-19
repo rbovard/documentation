@@ -6,6 +6,7 @@ Some code snippets for:
 * [FME](doc/FME.md)
 * [GDAL](doc/GDAL.md)
 * [Git](doc/Git.md)
+* [NConvert](doc/NConvert.md)
 * [PostGIS](doc/PostGIS.md)
 * [QGIS](doc/QGIS.md)
 * [WinSCP](doc/WinSCP.md)
