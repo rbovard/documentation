@@ -8,5 +8,6 @@ Some code snippets for:
 * [Git](doc/Git.md)
 * [NConvert](doc/NConvert.md)
 * [PostGIS](doc/PostGIS.md)
+* [PuTTY](doc/PuTTY.md)
 * [QGIS](doc/QGIS.md)
 * [WinSCP](doc/WinSCP.md)
