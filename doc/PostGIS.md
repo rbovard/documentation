@@ -44,12 +44,13 @@ PostGIS
 Data types
 ----------
 
-| Type          | Name                                  |
-| ------------- | ------------------------------------- |
-| **Character** | `varchar(255)`, `varchar(50)`, `text` |
-| **Numeric**   | `int4`, `float8`                      |
-| **Boolean**   | `bool`                                |
-| **Date/Time** | `date`, `timestamp`                   |
+| Type          | Name                                       |
+| ------------- | ------------------------------------------ |
+| **Character** | `varchar(255)`, `varchar(50)`, `text`      |
+| **Numeric**   | `int4`, `float8`                           |
+| **Boolean**   | `bool`                                     |
+| **Date/Time** | `date`, `timestamp`                        |
+| **Geometry**  | `Point`, `MultiLineString`, `MultiPolygon` |
 
 Queries
 -------
