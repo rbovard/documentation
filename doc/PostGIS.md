@@ -280,7 +280,7 @@ Information schema
 SELECT table_schema, table_name
 FROM information_schema.tables
 WHERE table_type = 'BASE TABLE'
-AND table_schema NOT IN ('information_schema', 'public', 'pg_catalog')
+AND table_schema NOT IN ('information_schema', 'public', 'pg_catalog', 'topology')
 ORDER BY table_schema, table_name;
 ```
 
@@ -289,7 +289,7 @@ ORDER BY table_schema, table_name;
 ```sql
 SELECT table_schema, table_name, view_definition
 FROM information_schema.views
-WHERE table_schema NOT IN ('information_schema', 'public', 'pg_catalog')
+WHERE table_schema NOT IN ('information_schema', 'public', 'pg_catalog', 'topology')
 ORDER BY table_schema, table_name;
 ```
 
