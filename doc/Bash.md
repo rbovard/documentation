@@ -1,27 +1,25 @@
 Bash
 ====
 
-* [grep](#grep)
+* [Search](#search)
     * [Return filenames with searched text in subfolders](#return-filenames-with-searched-text-in-subfolders)
     * [Search specific words in given files](#search-specific-words-in-given-files)
-* [dpkg](#dpkg)
-    * [Check if a package is present](#check-if-a-package-is-present)
-* [find](#find)
     * [Find empty subfolders](#find-empty-subfolders)
-* [tail](#tail)
+* [Packages](#packages)
+    * [Check if a package is present](#check-if-a-package-is-present)
+* [Logs](#logs)
     * [Display Apache logs in realtime](#display-apache-logs-in-realtime)
-* [df](#df)
+* [Disk](#disk)
     * [Display disk free](#display-disk-free)
     * [Display disk free inodes](#display-disk-free-inodes)
-* [du](#du)
     * [Display directory usage](#display-directory-usage)
 * [Restart services](#restart-services)
     * [Apache](#apache)
     * [PostgreSQL](#postgresql)
     * [Tomcat](#tomcat)
 
-grep
-----
+Search
+------
 
 ### Return filenames with searched text in subfolders
 
@@ -35,8 +33,14 @@ grep -lr '<word>' .
 grep -n '\(<word1>\|<word2>\|<word3>\)' <path>/*.ext
 ```
 
-dpkg
-----
+### Find empty subfolders
+
+```bash
+find <path> -type d -empty
+```
+
+Packages
+--------
 
 ### Check if a package is present
 
@@ -44,16 +48,7 @@ dpkg
 dpkg -l <package-name>
 ```
 
-find
-----
-
-### Find empty subfolders
-
-```bash
-find <path> -type d -empty
-```
-
-tail
+Logs
 ----
 
 ### Display Apache logs in realtime
@@ -63,8 +58,8 @@ tail -f /var/log/apache2/error.log
 tail -f /var/log/apache2/access.log
 ```
 
-df
---
+Disk
+----
 
 ### Display disk free
 
@@ -77,9 +72,6 @@ df -h
 ```bash
 df -i
 ```
-
-du
---
 
 ### Display directory usage
 
