@@ -9,11 +9,9 @@ Git
 * [Reset](#reset)
     * [Undo the last commit (not pushed)](#undo-the-last-commit-not-pushed)
     * [Remove all local changes (not committed)](#remove-all-local-changes-not-committed)
-* [Commit](#commit)
     * [Edit last commit message (not pushed)](#edit-last-commit-message-not-pushed)
-* [Fork](#fork)
+* [Update](#update)
     * [Syncing a fork](#syncing-a-fork)
-* [Submodule](#submodule)
     * [Update submodules](#update-submodules)
 
 Configuration
@@ -79,17 +77,14 @@ git reset HEAD^
 git reset --hard
 ```
 
-Commit
-------
-
 ### Edit last commit message (not pushed)
 
 ```bash
 git commit --amend -m '<new-message>'
 ```
 
-Fork
-----
+Update
+------
 
 ### Syncing a fork
 
@@ -99,9 +94,6 @@ git fetch upstream
 git merge upstream/master
 git push origin master
 ```
-
-Submodule
----------
 
 ### Update submodules
 
