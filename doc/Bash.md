@@ -1,80 +1,102 @@
 Bash
 ====
 
-* [grep](#grep)
-* [dpkg](#dpkg)
-* [find](#find)
-* [tail](#tail)
-* [df](#df)
-* [du](#du)
+* [Search](#search)
+    * [Return filenames with searched text in subfolders](#return-filenames-with-searched-text-in-subfolders)
+    * [Search specific words in given files](#search-specific-words-in-given-files)
+    * [Find empty subfolders](#find-empty-subfolders)
+* [Packages](#packages)
+    * [Check if a package is present](#check-if-a-package-is-present)
+* [Logs](#logs)
+    * [Display Apache logs in realtime](#display-apache-logs-in-realtime)
+* [Disk](#disk)
+    * [Display disk free](#display-disk-free)
+    * [Display disk free inodes](#display-disk-free-inodes)
+    * [Display directory usage](#display-directory-usage)
 * [Restart services](#restart-services)
+    * [Apache](#apache)
+    * [PostgreSQL](#postgresql)
+    * [Tomcat](#tomcat)
 
-grep
-----
+Search
+------
+
+### Return filenames with searched text in subfolders
 
 ```bash
-# Return filenames with searched text in subfolders
 grep -lr '<word>' .
+```
 
-# Search specific words in given files
+### Search specific words in given files
+
+```bash
 grep -n '\(<word1>\|<word2>\|<word3>\)' <path>/*.ext
 ```
 
-dpkg
-----
+### Find empty subfolders
 
 ```bash
-# Check if a package is present
-dpkg -l <package-name>
-```
-
-find
-----
-
-```bash
-# Find empty subfolders
 find <path> -type d -empty
 ```
 
-tail
-----
+Packages
+--------
+
+### Check if a package is present
 
 ```bash
-# Display Apache logs in realtime
+dpkg -l <package-name>
+```
+
+Logs
+----
+
+### Display Apache logs in realtime
+
+```bash
 tail -f /var/log/apache2/error.log
 tail -f /var/log/apache2/access.log
 ```
 
-df
---
+Disk
+----
+
+### Display disk free
 
 ```bash
-# Display disk free
 df -h
+```
 
-# Display disk free inodes
+### Display disk free inodes
+
+```bash
 df -i
 ```
 
-du
---
+### Display directory usage
 
 ```bash
-# Display directory usage
 du -hs <path>
 ```
 
 Restart services
 ----------------
 
+### Apache
+
 ```bash
-# Apache
 sudo /etc/init.d/apache2 graceful
 sudo /etc/init.d/apache2 restart
+```
 
-# PostgreSQL
+### PostgreSQL
+
+```bash
 sudo /etc/init.d/postgresql restart
+```
 
-# Tomcat
+### Tomcat
+
+```bash
 sudo /etc/init.d/tomcat-tomcat1 restart
 ```
