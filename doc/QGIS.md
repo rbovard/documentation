@@ -84,9 +84,22 @@ deb-src http://qgis.org/debian trusty main
 
 ### Installation
 
+Key
+
 ```bash
 gpg --keyserver keyserver.ubuntu.com --recv DD45F6C3
 gpg --export --armor DD45F6C3 | sudo apt-key add -
+```
+
+QGIS
+
+```bash
 sudo apt update
 sudo apt install qgis python-qgis
+```
+
+Dev tools
+
+```bash
+sudo apt install pyqt4-dev-tools qt4-designer
 ```
