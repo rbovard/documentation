@@ -21,3 +21,4 @@ Tools
 * [Bash](doc/Bash.md)
 * [Git](doc/Git.md)
 * [NConvert](doc/NConvert.md)
+* [Vim](doc/Vim.md)
