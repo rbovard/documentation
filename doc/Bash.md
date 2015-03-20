@@ -17,6 +17,9 @@ Bash
     * [Apache](#apache)
     * [PostgreSQL](#postgresql)
     * [Tomcat](#tomcat)
+* [Proxy](#proxy)
+    * [Most programs](#most-programs)
+    * [apt-get and Update Manager](#apt-get-and-update-manager)
 
 Search
 ------
@@ -99,4 +102,30 @@ sudo /etc/init.d/postgresql restart
 
 ```bash
 sudo /etc/init.d/tomcat-tomcat1 restart
+```
+
+Proxy
+-----
+
+### Most programs
+
+File `/etc/environment`
+
+```bash
+http_proxy=http://<server>:<port>/
+https_proxy=http://<server>:<port>/
+ftp_proxy=http://<server>:<port>/
+HTTP_PROXY=http://<server>:<port>/
+HTTPS_PROXY=http://<server>:<port>/
+FTP_PROXY=http://<server>:<port>/
+```
+
+### apt-get and Update Manager
+
+File `/etc/apt/apt.conf.d/95proxies`
+
+```bash
+Acquire::http::proxy "http://<server>:<port>/";
+Acquire::ftp::proxy "http://<server>:<port>/";
+Acquire::https::proxy "http://<server>:<port>/";
 ```
