@@ -82,14 +82,14 @@ deb-src http://qgis.org/debian trusty main
 #deb-src http://qgis.org/debian-nightly trusty main
 ```
 
-### Installation
-
 Key
 
 ```bash
 gpg --keyserver keyserver.ubuntu.com --recv DD45F6C3
 gpg --export --armor DD45F6C3 | sudo apt-key add -
 ```
+
+### Installation
 
 QGIS
 
