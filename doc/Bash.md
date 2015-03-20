@@ -6,6 +6,7 @@ Bash
     * [Search specific words in given files](#search-specific-words-in-given-files)
     * [Find empty subfolders](#find-empty-subfolders)
 * [Packages](#packages)
+    * [Update and upgrade](#update-and-upgrade)
     * [Check if a package is present](#check-if-a-package-is-present)
 * [Logs](#logs)
     * [Display Apache logs in realtime](#display-apache-logs-in-realtime)
@@ -44,6 +45,12 @@ find <path> -type d -empty
 
 Packages
 --------
+
+### Update and upgrade
+
+```bash
+sudo apt update && sudo apt full-upgrade
+```
 
 ### Check if a package is present
 
