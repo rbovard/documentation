@@ -17,6 +17,8 @@ Bash
     * [Apache](#apache)
     * [PostgreSQL](#postgresql)
     * [Tomcat](#tomcat)
+* [Monitoring](#monitoring)
+    * [Get HTTP status](#get-http-status)
 
 Search
 ------
@@ -99,4 +101,13 @@ sudo /etc/init.d/postgresql restart
 
 ```bash
 sudo /etc/init.d/tomcat-tomcat1 restart
+```
+
+Monitoring
+----------
+
+### Get HTTP status
+
+```bash
+curl -Is <url> | head -n 1
 ```
