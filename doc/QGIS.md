@@ -5,6 +5,7 @@ QGIS
 * [Settings](#settings)
     * [Default settings](#default-settings)
 * [Message bar](#message-bar)
+* [Installation](#installation)
 
 Actions
 -------
@@ -62,4 +63,43 @@ message = u"<message>"
 iface.messageBar().pushMessage("Information", message, level=QgsMessageBar.INFO, duration=3)
 iface.messageBar().pushMessage("Warning", message, level=QgsMessageBar.WARNING)
 iface.messageBar().pushMessage("Error", message, level=QgsMessageBar.CRITICAL)
+```
+
+Installation
+------------
+
+### Alternative repository
+
+File `/etc/apt/sources.list`
+
+```bash
+## QGIS stable
+deb http://qgis.org/debian trusty main
+deb-src http://qgis.org/debian trusty main
+
+## QGIS nightly
+#deb http://qgis.org/debian-nightly trusty main
+#deb-src http://qgis.org/debian-nightly trusty main
+```
+
+Key
+
+```bash
+gpg --keyserver keyserver.ubuntu.com --recv DD45F6C3
+gpg --export --armor DD45F6C3 | sudo apt-key add -
+```
+
+### Installation
+
+QGIS
+
+```bash
+sudo apt update
+sudo apt install qgis python-qgis
+```
+
+Dev tools
+
+```bash
+sudo apt install pyqt4-dev-tools qt4-designer
 ```

@@ -26,6 +26,9 @@ File `~/.gitconfig`
     branch = auto
 [core]
     pager = less -r
+
+[credential]
+    helper = cache --timeout=3600
 ```
 
 Branch
