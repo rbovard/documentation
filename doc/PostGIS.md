@@ -14,6 +14,7 @@ PostGIS
     * [Convert numeric to string](#convert-numeric-to-string)
     * [Convert date to string](#convert-date-to-string)
     * [Order results by list](#order-results-by-list)
+    * [Split string with a separator and get specific part](#split-string-with-a-separator-and-get-specific-part)
 * [Spatial queries](#spatial-queries)
     * [Spatial join (point in polygon)](#spatial-join-point-in-polygon)
     * [Create a line between two points](#create-a-line-between-two-points)
@@ -149,6 +150,13 @@ ORDER BY
         WHEN r.highway = 'tertiary' THEN 4
         ELSE 5
     END DESC;
+```
+
+### Split string with a separator and get specific part
+
+```sql
+SELECT (REGEXP_SPLIT_TO_ARRAY(<attribute>, '/'))[3] AS <column>
+FROM <table>;
 ```
 
 Spatial queries
