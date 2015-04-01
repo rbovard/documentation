@@ -98,6 +98,13 @@ git merge upstream/master
 git push origin master
 ```
 
+If error `fatal: 'upstream' does not appear to be a git repository`
+
+```bash
+git remote -v
+git remote add upstream <upstream-url>
+```
+
 ### Update submodules
 
 ```bash
