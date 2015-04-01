@@ -13,6 +13,10 @@ Git
 * [Update](#update)
     * [Syncing a fork](#syncing-a-fork)
     * [Update submodules](#update-submodules)
+* [Rebase](#rebase)
+    * [Rebase (after push)](#rebase-after-push)
+    * [Commands](#commands)
+    * [Push rebase](#push-rebase)
 
 Configuration
 -------------
@@ -98,6 +102,13 @@ git merge upstream/master
 git push origin master
 ```
 
+If error `fatal: 'upstream' does not appear to be a git repository`
+
+```bash
+git remote -v
+git remote add upstream <upstream-url>
+```
+
 ### Update submodules
 
 ```bash
@@ -105,4 +116,28 @@ git submodule sync
 git submodule update --init
 git submodule foreach git submodule sync
 git submodule foreach git submodule update --init
+```
+
+Rebase
+------
+
+### Rebase (after push)
+
+```bash
+git log
+git rebase -i HEAD~<n>
+```
+
+With `<n>` last commits
+
+### Commands
+
+* `p, pick = use commit`
+* `r, reword = use commit, but edit the commit message`
+* `s, squash = use commit, but meld into previous commit`
+
+### Push rebase
+
+```bash
+git push -f origin <branch>
 ```
