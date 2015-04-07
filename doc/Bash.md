@@ -137,6 +137,7 @@ File `/etc/apt/apt.conf.d/95proxies`
 Acquire::http::proxy "http://<server>:<port>/";
 Acquire::ftp::proxy "http://<server>:<port>/";
 Acquire::https::proxy "http://<server>:<port>/";
+```
 
 Monitoring
 ----------
