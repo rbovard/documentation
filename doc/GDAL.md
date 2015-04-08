@@ -1,13 +1,13 @@
 GDAL
 ====
 
-* [Use files in subfolders](#use-files-in-subfolders)
+* [Build raster tileindex](#build-raster-tileindex)
 * [Generate raster grid](#generate-raster-grid)
 * [Convert data](#convert-data)
     * [GeoTIFF to Binary Terrain](#geotiff-to-binary-terrain)
 
-Use files in subfolders
------------------------
+Build raster tileindex
+----------------------
 
 ```batchfile
 dir /s/b *.tif > list.txt
