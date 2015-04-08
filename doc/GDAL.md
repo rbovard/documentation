@@ -1,10 +1,21 @@
 GDAL
 ====
 
+* [Optimize GeoTIFF files](#optimize-geotiff-files)
 * [Build raster tileindex](#build-raster-tileindex)
 * [Generate raster grid](#generate-raster-grid)
 * [Convert data](#convert-data)
     * [GeoTIFF to Binary Terrain](#geotiff-to-binary-terrain)
+
+Optimize GeoTIFF files
+----------------------
+
+Create tiled file and build overview images
+
+```batchfile
+gdal_translate -of GTiff -co "TILED=YES" -co "TFW=YES" <source>.tif <file>.tif
+gdaladdo -r average <file>.tif 2 4 8 16
+```
 
 Build raster tileindex
 ----------------------
