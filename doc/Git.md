@@ -14,9 +14,8 @@ Git
     * [Syncing a fork](#syncing-a-fork)
     * [Update submodules](#update-submodules)
 * [Rebase](#rebase)
-    * [Rebase (after push)](#rebase-after-push)
-    * [Commands](#commands)
-    * [Push rebase](#push-rebase)
+    * [Squash commits](#squash-commits)
+    * [Rebase branch onto master](#rebase-branch-onto-master)
 
 Configuration
 -------------
@@ -121,7 +120,9 @@ git submodule foreach git submodule update --init
 Rebase
 ------
 
-### Rebase (after push)
+### Squash commits
+
+Rebase (after push)
 
 ```bash
 git log
@@ -130,14 +131,26 @@ git rebase -i HEAD~<n>
 
 With `<n>` last commits
 
-### Commands
+Commands
 
 * `p, pick = use commit`
 * `r, reword = use commit, but edit the commit message`
 * `s, squash = use commit, but meld into previous commit`
 
-### Push rebase
+Push rebase
 
 ```bash
+git push -f origin <branch>
+```
+
+### Rebase branch onto master
+
+```bash
+git fetch upstream
+git rebase upstream/master
+git status
+vim <conflict_file>
+git add <conflict_file>
+git rebase --continue
 git push -f origin <branch>
 ```
