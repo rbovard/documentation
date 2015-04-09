@@ -3,7 +3,7 @@
 import os
 import subprocess
 
-inputPath = "C://Temp"
+inputPath = os.path.normpath("C:\Temp")
 outputPath = os.path.join(inputPath, "output")
 
 if not os.path.exists(outputPath):
