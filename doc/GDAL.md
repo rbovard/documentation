@@ -3,7 +3,8 @@ GDAL
 
 * [Optimize GeoTIFF files](#optimize-geotiff-files)
 * [Build raster tileindex](#build-raster-tileindex)
-* [Generate raster grid](#generate-raster-grid)
+* [Rasterize vector data](#rasterize-vector-data)
+* [Polygonize raster grid](#polygonize-raster-grid)
 * [Convert data](#convert-data)
     * [GeoTIFF to Binary Terrain](#geotiff-to-binary-terrain)
 
@@ -28,11 +29,18 @@ gdaltindex tiles.shp --optfile list.txt
 del list.txt
 ```
 
-Generate raster grid
---------------------
+Rasterize vector data
+---------------------
 
 ```batchfile
 gdal_rasterize -l <file> -a <attribute> -tr <resolution>.0 <resolution>.0 -a_nodata 0 -ot Int32 <file>.shp <file>.tif
+```
+
+Polygonize raster grid
+----------------------
+
+```batchfile
+gdal_polygonize <file>.tif -f "ESRI Shapefile" <file> <file>
 ```
 
 Convert data
