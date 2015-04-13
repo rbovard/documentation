@@ -7,6 +7,7 @@ FME
     * [Check if file exists](#check-if-file-exists)
 * [Expressions](#expressions)
     * [Check if attribute is integer](#check-if-attribute-is-integer)
+* [Remove geometry dimension](#remove-geometry-dimension)
 
 Batch process
 -------------
@@ -39,3 +40,9 @@ Expressions
 ```python
 (@Value(attribute) == int(@Value(attribute))) ? 1 : 0
 ```
+
+Remove geometry dimension
+-------------------------
+
+* Elevation: `2DForcer`
+* Measure: `MeasureRemover`
