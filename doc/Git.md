@@ -135,7 +135,7 @@ Commands
 
 * `p, pick = use commit`
 * `r, reword = use commit, but edit the commit message`
-* `s, squash = use commit, but meld into previous commit`
+* `f, fixup = use commit, but meld into previous commit and discard this commit's log message`
 
 Push rebase
 
