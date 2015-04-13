@@ -122,7 +122,7 @@ Rebase
 
 ### Squash commits
 
-Rebase (after push)
+Rebase
 
 ```bash
 git log
