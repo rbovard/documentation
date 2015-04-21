@@ -12,7 +12,7 @@ if not os.path.exists(outputPath):
 for file in os.listdir(inputPath):
     inputFile = os.path.join(inputPath, file)
 
-    if not os.path.isdir(inputFile):
+    if os.path.isfile(inputFile):
         fileName = file.split(".")
 
         if fileName[1] == "tif":
