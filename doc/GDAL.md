@@ -18,7 +18,7 @@ gdal_translate -of GTiff -co "TILED=YES" -co "TFW=YES" <source>.tif <file>.tif
 gdaladdo -r average <file>.tif 2 4 8 16
 ```
 
-See [optimize_geotiff_files.py](../python/optimize_geotiff_files.py)
+See [optimize_raster.py](../python/optimize_raster.py)
 
 Build raster tileindex
 ----------------------
