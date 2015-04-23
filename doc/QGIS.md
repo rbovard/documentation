@@ -39,13 +39,13 @@ s.setValue("Qgis/stylesheet/fontFamily", u"Arial")
 To run QGIS with default settings, add the command line option `--optionspath` at the end of the target in `%ProgramFiles%\QGIS <version>\bin\qgis.bat`:
 
 ```batchfile
-qgis-bin.exe --optionspath c:/temp/qgis
+qgis-bin.exe --optionspath C:\Temp
 ```
 
 > For Linux, simply use:
 >
 >```bash
->qgis --optionspath /tmp/qgis
+>qgis --optionspath /tmp
 >```
 
 A new settings file will be created (`QGIS/QGIS2.ini`) and used instead of the stored `QSettings`.
