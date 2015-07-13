@@ -245,7 +245,7 @@ END;
 BEGIN
     SELECT INTO new.file
     CASE
-        WHEN new.file IS NOT NULL THEN replace(new.file, '<drive>', '<absolute-path>') --'X:\', '\\path\to\folder\'
+        WHEN new.file IS NOT NULL THEN replace(new.file, '<drive>', '<absolute-path>') --'X:', '\\path\to\folder'
         ELSE NULL
     END;
     RETURN new;
