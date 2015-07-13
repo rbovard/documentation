@@ -267,11 +267,7 @@ Geometries
 ### Create column
 
 ```sql
-SELECT AddGeometryColumn(
-    '<schema>', '<table>',
-    'geom', 21781,
-    '<Point|MultiLineString|MultiPolygon>', 2
-);
+ALTER TABLE <schema>.<table> ADD COLUMN geom geometry(<Point|MultiLineString|MultiPolygon>, 21781);
 ```
 
 ### Create index
