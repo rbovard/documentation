@@ -268,7 +268,7 @@ Geometries
 
 ```sql
 SELECT AddGeometryColumn(
-    'schema', '<table>',
+    '<schema>', '<table>',
     'geom', 21781,
     '<Point|MultiLineString|MultiPolygon>', 2
 );
@@ -278,7 +278,7 @@ SELECT AddGeometryColumn(
 
 ```sql
 CREATE INDEX table_geom_idx
-ON schema.<table>
+ON <schema>.<table>
 USING gist (geom);
 ```
 
