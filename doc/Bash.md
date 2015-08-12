@@ -5,6 +5,7 @@ Bash
     * [Return filenames with searched text in subfolders](#return-filenames-with-searched-text-in-subfolders)
     * [Search specific words in given files](#search-specific-words-in-given-files)
     * [Find empty subfolders](#find-empty-subfolders)
+    * [Find file by extension](#find-file-by-extension)
 * [Packages](#packages)
     * [Update and upgrade](#update-and-upgrade)
     * [Check if a package is present](#check-if-a-package-is-present)
@@ -43,6 +44,12 @@ grep -n '\(<word1>\|<word2>\|<word3>\)' <path>/*.ext
 
 ```bash
 find <path> -type d -empty
+```
+
+### Find file by extension
+
+```bash
+find <path> -type f -name "*.<extension>"
 ```
 
 Packages
