@@ -6,6 +6,7 @@ GIS
 
 * [FME](doc/FME.md)
 * [GDAL](doc/GDAL.md)
+* [MapServer](doc/MapServer.md)
 * [PostGIS](doc/PostGIS.md)
 * [QGIS](doc/QGIS.md)
 
