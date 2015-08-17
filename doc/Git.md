@@ -28,6 +28,7 @@ File `~/.gitconfig`
     status = auto
     branch = auto
 [core]
+    editor = vim
     pager = less -r
 
 [credential]
