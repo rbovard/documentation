@@ -15,6 +15,7 @@ Git
     * [Update submodules](#update-submodules)
 * [Rebase](#rebase)
     * [Squash commits](#squash-commits)
+    * [Edit commit](#edit-commit)
     * [Rebase branch onto master](#rebase-branch-onto-master)
 
 Configuration
@@ -141,6 +142,22 @@ Commands
 Push rebase
 
 ```bash
+git push -f origin <branch>
+```
+
+### Edit commit
+
+```bash
+git rebase --interactive <hash>^
+```
+
+Modify `pick` to `edit`
+
+Make changes
+
+```bash
+git commit --all --amend --no-edit
+git rebase --continue
 git push -f origin <branch>
 ```
 
