@@ -148,7 +148,7 @@ git push -f origin <branch>
 ### Edit commit
 
 ```bash
-git rebase --interactive <hash>^
+git rebase -i <hash>^
 ```
 
 Modify `pick` to `edit`
