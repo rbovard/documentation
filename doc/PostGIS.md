@@ -8,6 +8,7 @@ PostGIS
     * [Replace all the text before a specific character](#replace-all-the-text-before-a-specific-character)
     * [Erase a string if found](#erase-a-string-if-found)
     * [Test if a value is an integer](#test-if-a-value-is-an-integer)
+    * [Convert booleans to strings](#convert-booleans-to-strings)
     * [Concatenate strings with possible null values](#concatenate-strings-with-possible-null-values)
     * [Split values into rows](#split-values-into-rows)
     * [Add an unit to a value](#add-an-unit-to-a-value)
@@ -98,6 +99,19 @@ SELECT
         ELSE FALSE
     END
     AS is_integer
+FROM <table>;
+```
+
+### Convert booleans to strings
+
+```sql
+SELECT
+    CASE <column>
+        WHEN TRUE THEN 'Yes'
+        WHEN FALSE THEN 'No'
+        ELSE NULL
+    END
+    AS yes_no
 FROM <table>;
 ```
 
