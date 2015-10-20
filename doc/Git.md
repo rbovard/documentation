@@ -4,7 +4,7 @@ Git
 * [Configuration](#configuration)
 * [Branch](#branch)
     * [Create new branch](#create-new-branch)
-    * [Resolve conflicts (if any)](#resolve-conflicts-if-any)
+    * [Rebase branch onto master (if necessary)](#rebase-branch-onto-master-if-necessary)
     * [Merge branch](#merge-branch)
 * [Reset](#reset)
     * [Undo the last commit (not pushed)](#undo-the-last-commit-not-pushed)
@@ -49,15 +49,16 @@ git push origin origin:refs/heads/<branch>
 git checkout -b <branch> origin/<branch>
 ```
 
-### Resolve conflicts (if any)
+### Rebase branch onto master (if necessary)
 
 ```bash
-git checkout <branch>
-git fetch origin
-git merge master
+git fetch upstream
+git rebase upstream/master
+git status
 vim <conflict_file>
 git add <conflict_file>
-git commit -m 'Resolve conflicts'
+git rebase --continue
+git push -f origin <branch>
 ```
 
 ### Merge branch
@@ -157,18 +158,6 @@ Make changes
 
 ```bash
 git commit --all --amend --no-edit
-git rebase --continue
-git push -f origin <branch>
-```
-
-### Rebase branch onto master
-
-```bash
-git fetch upstream
-git rebase upstream/master
-git status
-vim <conflict_file>
-git add <conflict_file>
 git rebase --continue
 git push -f origin <branch>
 ```
