@@ -134,6 +134,7 @@ ftp_proxy=http://<server>:<port>/
 HTTP_PROXY=http://<server>:<port>/
 HTTPS_PROXY=http://<server>:<port>/
 FTP_PROXY=http://<server>:<port>/
+no_proxy="127.0.0.1, localhost"
 ```
 
 ### apt-get and Update Manager
