@@ -8,6 +8,9 @@ FME
 * [Expressions](#expressions)
     * [Check if attribute is integer](#check-if-attribute-is-integer)
 * [Remove geometry dimension](#remove-geometry-dimension)
+* [Coordinates systems](#coordinates-systems)
+    * [Projections](#projections)
+    * [Transformers](#transformers)
 
 Batch process
 -------------
@@ -46,3 +49,28 @@ Remove geometry dimension
 
 * Elevation: `2DForcer`
 * Measure: `MeasureRemover`
+
+Coordinates systems
+-------------------
+
+### Projections
+
+MN03
+- `EPSG:21781`
+- CH1903 / LV03
+
+MN95
+- `EPSG:2056`
+- CH1903+ / LV95 (Swiss CH1903+ / LV95)
+
+### Transformers
+
+ReframeReprojector
+- FINELTRA (`reframereproject.dll`)
+- Triangles
+- ~ cm
+
+Reprojector
+- NTv2 (`CHENYX06.gsb`)
+- Grids
+- ~ dm
