@@ -20,6 +20,7 @@ Tools
 -----
 
 * [Bash](doc/Bash.md)
+* [Cmd](doc/Cmd.md)
 * [Git](doc/Git.md)
 * [NConvert](doc/NConvert.md)
 * [Vim](doc/Vim.md)
