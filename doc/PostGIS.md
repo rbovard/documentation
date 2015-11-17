@@ -34,8 +34,6 @@ PostGIS
     * [Create index](#create-index)
 * [Information schema](#information-schema)
     * [Get all tables](#get-all-tables)
-    * [Get all tables with type](#get-all-tables-with-type)
-    * [Get all geometry tables](#get-all-geometry-tables)
     * [Get all views](#get-all-views)
 * [Miscellaneous](#miscellaneous)
     * [Get PostGIS version](#get-postgis-version)
@@ -298,14 +296,14 @@ Information schema
 ### Get all tables
 
 ```sql
-SELECT table_schema, table_name
-FROM information_schema.tables
-WHERE table_type = 'BASE TABLE'
-AND table_schema NOT IN ('information_schema', 'public', 'pg_catalog', 'topology')
-ORDER BY table_schema, table_name;
+SELECT t.table_schema, t.table_name
+FROM information_schema.tables t
+WHERE t.table_type = 'BASE TABLE'
+AND t.table_schema NOT IN ('information_schema', 'public', 'pg_catalog', 'topology')
+ORDER BY t.table_schema, t.table_name;
 ```
 
-### Get all tables with type
+#### With type (slow query)
 
 ```sql
 SELECT t.table_schema, t.table_name,
@@ -320,7 +318,7 @@ AND t.table_schema NOT IN ('information_schema', 'public', 'pg_catalog', 'topolo
 ORDER BY t.table_schema, t.table_name;
 ```
 
-### Get all geometry tables
+#### Only with geometry
 
 ```sql
 SELECT t.table_schema, t.table_name, g.type
@@ -334,10 +332,10 @@ ORDER BY t.table_schema, t.table_name;
 ### Get all views
 
 ```sql
-SELECT table_schema, table_name, view_definition
-FROM information_schema.views
-WHERE table_schema NOT IN ('information_schema', 'public', 'pg_catalog', 'topology')
-ORDER BY table_schema, table_name;
+SELECT v.table_schema, v.table_name, v.view_definition
+FROM information_schema.views v
+WHERE v.table_schema NOT IN ('information_schema', 'public', 'pg_catalog', 'topology')
+ORDER BY v.table_schema, v.table_name;
 ```
 
 Miscellaneous
