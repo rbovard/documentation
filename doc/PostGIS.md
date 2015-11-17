@@ -299,7 +299,7 @@ Information schema
 SELECT t.table_schema, t.table_name
 FROM information_schema.tables t
 WHERE t.table_type = 'BASE TABLE'
-AND t.table_schema NOT IN ('information_schema', 'public', 'pg_catalog', 'topology')
+AND t.table_schema NOT IN ('information_schema', 'pg_catalog', 'public', 'topology')
 ORDER BY t.table_schema, t.table_name;
 ```
 
@@ -314,7 +314,7 @@ SELECT t.table_schema, t.table_name,
 FROM information_schema.tables t
 LEFT JOIN geometry_columns g ON g.f_table_schema || '.' || g.f_table_name = t.table_schema || '.' || t.table_name
 WHERE t.table_type = 'BASE TABLE'
-AND t.table_schema NOT IN ('information_schema', 'public', 'pg_catalog', 'topology')
+AND t.table_schema NOT IN ('information_schema', 'pg_catalog', 'public', 'topology')
 ORDER BY t.table_schema, t.table_name;
 ```
 
@@ -325,7 +325,7 @@ SELECT t.table_schema, t.table_name, g.type
 FROM information_schema.tables t
 JOIN geometry_columns g ON g.f_table_schema || '.' || g.f_table_name = t.table_schema || '.' || t.table_name
 WHERE t.table_type = 'BASE TABLE'
-AND t.table_schema NOT IN ('information_schema', 'public', 'pg_catalog', 'topology')
+AND t.table_schema NOT IN ('information_schema', 'pg_catalog', 'public', 'topology')
 ORDER BY t.table_schema, t.table_name;
 ```
 
@@ -334,7 +334,7 @@ ORDER BY t.table_schema, t.table_name;
 ```sql
 SELECT v.table_schema, v.table_name, v.view_definition
 FROM information_schema.views v
-WHERE v.table_schema NOT IN ('information_schema', 'public', 'pg_catalog', 'topology')
+WHERE v.table_schema NOT IN ('information_schema', 'pg_catalog', 'public', 'topology')
 ORDER BY v.table_schema, v.table_name;
 ```
 
