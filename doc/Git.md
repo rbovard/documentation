@@ -49,6 +49,12 @@ git push origin origin:refs/heads/<branch>
 git checkout -b <branch> origin/<branch>
 ```
 
+#### From an existing branch
+
+```bash
+git checkout -b <branch> <existing-branch>
+```
+
 ### Rebase branch onto master (if necessary)
 
 ```bash
@@ -69,6 +75,15 @@ git merge <branch>
 git push origin master
 git branch -d <branch>
 git push origin :<branch>
+```
+
+#### Into an existing branch
+
+```bash
+git checkout <existing-branch>
+git merge --no-ff <branch>
+git push origin <existing-branch>
+git branch -d <branch>
 ```
 
 Reset
