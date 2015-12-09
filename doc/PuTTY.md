@@ -12,7 +12,7 @@ SSH tunnel
 ### Open SSH tunnel with port forwarding
 
 ```batchfile
-start "" "C:\Program Files\PuTTY\putty.exe" -ssh <user>@<server> -L 5555:localhost:5432
+start "" "C:\Program Files\PuTTY\putty.exe" -ssh <user>@<server> -i <key>.ppk -L <local-port>:localhost:<remote-port>
 ping 1.1.1.1 -n 1 -w 5000 >NUL
 ```
 
