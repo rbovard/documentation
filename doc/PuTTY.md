@@ -36,5 +36,5 @@ plink -ssh <user>@<server> -i <key>.ppk -m <commands>.sh
 ### Run commands with output
 
 ```batchfile
-plink <putty-session> -l <user> -m <commands>.sh > <output>.log
+plink -ssh <user>@<server> -i <key>.ppk -m <commands>.sh > <output>.log
 ```
