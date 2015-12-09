@@ -11,6 +11,7 @@ Cmd
 * [Batch scripts](#batch-scripts)
     * [Echo](#echo)
     * [Remark](#remark)
+    * [Wait](#wait)
 
 Directories and files
 ---------------------
