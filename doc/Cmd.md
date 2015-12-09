@@ -23,6 +23,16 @@ Directories and files
 IF EXIST %USERPROFILE%\.qgis2\python\plugins\SettingsManager RD %USERPROFILE%\.qgis2\python\plugins\SettingsManager /S /Q
 ```
 
+### Delete all directories
+
+```batchfile
+dir *. /b > todelete.txt
+for /f %%a in (todelete.txt) do (
+    RD %%a /S /Q
+)
+del todelete.txt
+```
+
 ### Copy directory
 
 ```batchfile
