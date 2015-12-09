@@ -361,10 +361,10 @@ sudo -u postgres psql -c 'GRANT ALL ON SCHEMA <schema> TO "<user>"' <database>
 ### Dump and restore database
 
 ```bash
-sudo -u postgres pg_dump <source_database> > <source_database>.out
+sudo -u postgres pg_dump <source_database> > <source_database>.sql
 sudo -u postgres dropdb <target_database>
 sudo -u postgres createdb <target_database>
-sudo -u postgres psql -d <target_database> -f <source_database>.out
+sudo -u postgres psql -d <target_database> -f <source_database>.sql
 ```
 
 ### Backup specific schemas in custom format
