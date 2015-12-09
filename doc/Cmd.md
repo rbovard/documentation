@@ -6,6 +6,7 @@ Cmd
     * [Copy directory](#copy-directory)
 * [Applications](#applications)
     * [Start installation](#start-installation)
+    * [Run batch](#run-batch)
 * [Fonts](#fonts)
     * [Install font](#install-font)
 * [Batch scripts](#batch-scripts)
@@ -35,6 +36,12 @@ Applications
 
 ```batchfile
 START /WAIT QGIS-OSGeo4W-2.8.1-1-Setup-x86.exe
+```
+
+### Run batch
+
+```batchfile
+call <batch>.bat
 ```
 
 Fonts
