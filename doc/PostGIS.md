@@ -377,13 +377,13 @@ Backup and restore
 ### Backup in custom format
 
 ```bash
-sudo -u postgres pg_dump --format custom --blobs <database> > <database>.backup
+sudo -u postgres pg_dump --format=custom --blobs <database> --file=<database>.backup
 ```
 
 ### Backup specific schemas
 
 ```bash
-sudo -u postgres pg_dump -n '<pattern>' --format custom --blobs <database> > <database>.backup
+sudo -u postgres pg_dump --format=custom --blobs <database> --schema='<pattern>' --file=<database>.backup
 ```
 
 ### Create database with template
