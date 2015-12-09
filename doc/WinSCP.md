@@ -2,8 +2,9 @@ WinSCP
 ======
 
 * [Execute script](#execute-script)
-* [Download specific files](#download-specific-files)
-* [Upload files](#upload-files)
+* [Scripts](#scripts)
+    * [Download specific files](#download-specific-files)
+    * [Upload files](#upload-files)
 
 Execute script
 --------------
@@ -13,8 +14,10 @@ Execute script
 winscp.com /script=<script>.txt
 ```
 
-Download specific files
------------------------
+Scripts
+-------
+
+### Download specific files
 
 ```batchfile
 option batch abort
@@ -24,8 +27,7 @@ synchronize local -filemask="<cne1>.*;<cne2>.*;<cne3>.*" <local_folder> <remote_
 exit
 ```
 
-Upload files
-------------
+### Upload files
 
 ```batchfile
 option batch abort
