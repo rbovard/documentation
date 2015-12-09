@@ -44,6 +44,7 @@ PostGIS
     * [Backup in custom format](#backup-in-custom-format)
     * [Backup specific schemas](#backup-specific-schemas)
     * [Create database with template](#create-database-with-template)
+    * [Restore backup](#restore-backup)
 
 Data types
 ----------
@@ -389,4 +390,10 @@ sudo -u postgres pg_dump -n '<pattern>' --format custom --blobs <database> > <da
 
 ```bash
 sudo -u postgres createdb -T template_postgis <database>
+```
+
+### Restore backup
+
+```bash
+sudo -u postgres pg_restore --dbname=<database> <database>.backup
 ```
