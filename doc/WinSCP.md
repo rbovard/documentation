@@ -3,8 +3,9 @@ WinSCP
 
 * [Execute script](#execute-script)
 * [Scripts](#scripts)
-    * [Download specific files](#download-specific-files)
-    * [Upload files](#upload-files)
+    * [Connection](#connection)
+    * [Synchronize folders](#synchronize-folders)
+    * [Download specific file](#download-specific-file)
 
 Execute script
 --------------
@@ -17,22 +18,38 @@ winscp.com /script=<script>.txt
 Scripts
 -------
 
-### Download specific files
+### Connection
+
+#### Open connection
 
 ```batchfile
 option batch abort
 option confirm off
 open sftp://<user>@<server>:22/ -privatekey=<key>.ppk -hostkey="<fingerprint>"
-synchronize local -filemask="<cne1>.*;<cne2>.*;<cne3>.*" <local_folder> <remote_folder>
+```
+
+#### Close connection
+
+```batchfile
 exit
 ```
 
-### Upload files
+### Synchronize folders
+
+#### Specific files
 
 ```batchfile
-option batch abort
-option confirm off
-open sftp://<user>@<server>:22/ -privatekey=<key>.ppk -hostkey="<fingerprint>"
+synchronize local -filemask="<cne1>.*;<cne2>.*;<cne3>.*" <local_folder> <remote_folder>
+```
+
+#### Without file types
+
+```batchfile
 synchronize remote -filemask="|Thumbs.db" <local_folder> <remote_folder>
-exit
+```
+
+### Download specific file
+
+```batchfile
+get <file> <local_folder>\*
 ```
