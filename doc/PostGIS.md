@@ -38,12 +38,12 @@ PostGIS
 * [Miscellaneous](#miscellaneous)
     * [Get PostGIS version](#get-postgis-version)
 * [psql](#psql)
+    * [Create database with template](#create-database-with-template)
     * [Create schema and allow rights](#create-schema-and-allow-rights)
     * [Dump and restore database](#dump-and-restore-database)
 * [Backup and restore](#backup-and-restore)
     * [Backup in custom format](#backup-in-custom-format)
     * [Backup specific schemas](#backup-specific-schemas)
-    * [Create database with template](#create-database-with-template)
     * [Restore backup](#restore-backup)
 
 Data types
@@ -355,6 +355,12 @@ SELECT PostGIS_full_version();
 psql
 ----
 
+### Create database with template
+
+```bash
+sudo -u postgres createdb --template=template_postgis <database>
+```
+
 ### Create schema and allow rights
 
 ```bash
@@ -384,12 +390,6 @@ sudo -u postgres pg_dump --format=custom --blobs <database> --file=<database>.ba
 
 ```bash
 sudo -u postgres pg_dump --format=custom --blobs <database> --schema='<pattern>' --file=<database>.backup
-```
-
-### Create database with template
-
-```bash
-sudo -u postgres createdb -T template_postgis <database>
 ```
 
 ### Restore backup
