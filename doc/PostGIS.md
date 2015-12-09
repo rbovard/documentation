@@ -40,6 +40,7 @@ PostGIS
 * [psql](#psql)
     * [Create schema and allow rights](#create-schema-and-allow-rights)
     * [Dump and restore database](#dump-and-restore-database)
+    * [Backup specific schemas in custom format](#backup-specific-schemas-in-custom-format)
 
 Data types
 ----------
@@ -364,4 +365,10 @@ sudo -u postgres pg_dump <source_database> > <source_database>.out
 sudo -u postgres dropdb <target_database>
 sudo -u postgres createdb <target_database>
 sudo -u postgres psql -d <target_database> -f <source_database>.out
+```
+
+### Backup specific schemas in custom format
+
+```bash
+sudo -u postgres pg_dump -n '<pattern>' --format custom --blobs <database> > <database>.backup
 ```
