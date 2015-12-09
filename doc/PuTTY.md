@@ -30,7 +30,7 @@ Commands
 ### Run commands
 
 ```batchfile
-plink <putty-session> -l <user> -m <commands>.sh
+plink -ssh <user>@<server> -i <key>.ppk -m <commands>.sh
 ```
 
 ### Run commands with output
