@@ -383,17 +383,17 @@ Backup and restore
 ### Backup in custom format
 
 ```bash
-sudo -u postgres pg_dump --format=custom --blobs <database> --file=<database>.backup
+pg_dump --format=custom --blobs <database> --file=<database>.backup
 ```
 
 ### Backup specific schemas
 
 ```bash
-sudo -u postgres pg_dump --format=custom --blobs <database> --schema='<pattern>' --file=<database>.backup
+pg_dump --format=custom --blobs <database> --schema='<pattern>' --file=<database>.backup
 ```
 
 ### Restore backup
 
 ```bash
-sudo -u postgres pg_restore --dbname=<database> <database>.backup
+pg_restore --dbname=<database> <database>.backup
 ```
