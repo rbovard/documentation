@@ -12,8 +12,6 @@ SSH tunnel
 ### Open SSH tunnel with port forwarding
 
 ```batchfile
-start "" "C:\Program Files\PuTTY\pageant.exe" <key>.ppk
-ping 1.1.1.1 -n 1 -w 5000 >NUL
 start "" "C:\Program Files\PuTTY\putty.exe" -ssh <user>@<server> -L 5555:localhost:5432
 ping 1.1.1.1 -n 1 -w 5000 >NUL
 ```
@@ -22,7 +20,6 @@ ping 1.1.1.1 -n 1 -w 5000 >NUL
 
 ```batchfile
 taskkill /f /im putty.exe
-taskkill /f /im pageant.exe
 ```
 
 Run commands
