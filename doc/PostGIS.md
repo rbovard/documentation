@@ -1,7 +1,11 @@
 PostGIS
 =======
 
+* [Create table](#create-table)
 * [Data types](#data-types)
+* [Geometries](#geometries)
+    * [Create column](#create-column)
+    * [Create index](#create-index)
 * [Queries](#queries)
     * [Create an unique id](#create-an-unique-id)
     * [Set first character to uppercase](#set-first-character-to-uppercase)
@@ -29,9 +33,6 @@ PostGIS
     * [Get absolute path](#get-absolute-path)
 * [Sequences](#sequences)
     * [Set current value](#set-current-value)
-* [Geometries](#geometries)
-    * [Create column](#create-column)
-    * [Create index](#create-index)
 * [Information schema](#information-schema)
     * [Get all tables](#get-all-tables)
     * [Get all views](#get-all-views)
@@ -46,6 +47,14 @@ PostGIS
     * [Backup specific schemas](#backup-specific-schemas)
     * [Restore backup](#restore-backup)
 
+Create table
+------------
+
+```sql
+CREATE TABLE <schema>.<table> (id serial PRIMARY KEY);
+COMMENT ON TABLE <schema>.<table> IS '<comment>';
+```
+
 Data types
 ----------
 
@@ -56,6 +65,23 @@ Data types
 | **Boolean**   | `bool`                                     |
 | **Date/Time** | `date`, `timestamp`                        |
 | **Geometry**  | `Point`, `MultiLineString`, `MultiPolygon` |
+
+Geometries
+----------
+
+### Create column
+
+```sql
+ALTER TABLE <schema>.<table> ADD COLUMN geom geometry(<Point|MultiLineString|MultiPolygon>, 21781);
+```
+
+### Create index
+
+```sql
+CREATE INDEX <table>_geom_idx
+ON <schema>.<table>
+USING gist (geom);
+```
 
 Queries
 -------
@@ -276,23 +302,6 @@ Sequences
 
 ```sql
 SELECT setval('<schema>.<table>_<field>_seq', (SELECT MAX(<field>) FROM <schema>.<table>));
-```
-
-Geometries
-----------
-
-### Create column
-
-```sql
-ALTER TABLE <schema>.<table> ADD COLUMN geom geometry(<Point|MultiLineString|MultiPolygon>, 21781);
-```
-
-### Create index
-
-```sql
-CREATE INDEX table_geom_idx
-ON <schema>.<table>
-USING gist (geom);
 ```
 
 Information schema
