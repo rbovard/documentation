@@ -360,6 +360,24 @@ WHERE v.table_schema NOT IN ('information_schema', 'pg_catalog', 'public', 'topo
 ORDER BY v.table_schema, v.table_name;
 ```
 
+### Get tables with wrong SRID
+
+```sql
+SELECT g.f_table_catalog, g.f_table_schema, g.f_table_name, g.f_geometry_column, g.coord_dimension, g.srid, g.type
+FROM geometry_columns g
+WHERE g.srid <> 21781
+ORDER BY g.f_table_schema, g.f_table_name;
+```
+
+### Get tables with wrong geometry type
+
+```sql
+SELECT g.f_table_catalog, g.f_table_schema, g.f_table_name, g.f_geometry_column, g.coord_dimension, g.srid, g.type
+FROM geometry_columns g
+WHERE g.type NOT IN ('POINT', 'MULTILINESTRING', 'MULTIPOLYGON')
+ORDER BY g.f_table_schema, g.f_table_name;
+```
+
 Miscellaneous
 -------------
 
