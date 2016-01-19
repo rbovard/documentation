@@ -37,6 +37,8 @@ PostGIS
 * [Information schema](#information-schema)
     * [Get all tables](#get-all-tables)
     * [Get all views](#get-all-views)
+    * [Get tables with wrong SRID](#get-tables-with-wrong-srid)
+    * [Get tables with wrong geometry type](#get-tables-with-wrong-geometry-type)
 * [Miscellaneous](#miscellaneous)
     * [Get PostGIS version](#get-postgis-version)
 * [psql](#psql)
