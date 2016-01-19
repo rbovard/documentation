@@ -6,6 +6,7 @@ PostGIS
 * [Geometries](#geometries)
     * [Create column](#create-column)
     * [Create index](#create-index)
+    * [Cast geometry to multi](#cast-geometry-to-multi)
 * [Queries](#queries)
     * [Create an unique id](#create-an-unique-id)
     * [Set first character to uppercase](#set-first-character-to-uppercase)
@@ -81,6 +82,13 @@ ALTER TABLE <schema>.<table> ADD COLUMN geom geometry(<Point|MultiLineString|Mul
 CREATE INDEX <table>_geom_idx
 ON <schema>.<table>
 USING gist (geom);
+```
+
+### Cast geometry to multi
+
+```sql
+SELECT ST_Multi(geom) :: Geometry(<MultiLineString|MultiPolygon>, 21781) AS geom
+FROM <table>;
 ```
 
 Queries
