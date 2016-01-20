@@ -6,7 +6,8 @@ PostGIS
 * [Geometries](#geometries)
     * [Create column](#create-column)
     * [Create index](#create-index)
-    * [Cast geometry to multi](#cast-geometry-to-multi)
+    * [Cast simple geometry to multi geometry](#cast-simple-geometry-to-multi-geometry)
+    * [Cast MultiPoint to Point](#cast-multipoint-to-point)
 * [Queries](#queries)
     * [Create an unique id](#create-an-unique-id)
     * [Set first character to uppercase](#set-first-character-to-uppercase)
@@ -86,10 +87,17 @@ ON <schema>.<table>
 USING gist (geom);
 ```
 
-### Cast geometry to multi
+### Cast simple geometry to multi geometry
 
 ```sql
 SELECT ST_Multi(geom) :: Geometry(<MultiLineString|MultiPolygon>, 21781) AS geom
+FROM <table>;
+```
+
+### Cast MultiPoint to Point
+
+```sql
+SELECT (ST_Dump(geom)).geom :: Geometry(Point, 21781) AS geom
 FROM <table>;
 ```
 
