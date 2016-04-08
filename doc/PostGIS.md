@@ -2,10 +2,11 @@ PostGIS
 =======
 
 * [Create table](#create-table)
+    * [Create index](#create-index)
 * [Data types](#data-types)
 * [Geometries](#geometries)
     * [Create column](#create-column)
-    * [Create index](#create-index)
+    * [Create spatial index](#create-spatial-index)
     * [Convert simple geometry to multi geometry](#convert-simple-geometry-to-multi-geometry)
     * [Convert MultiPoint to Point](#convert-multipoint-to-point)
 * [Queries](#queries)
@@ -59,6 +60,14 @@ CREATE TABLE <schema>.<table> (id serial PRIMARY KEY);
 COMMENT ON TABLE <schema>.<table> IS '<comment>';
 ```
 
+### Create index
+
+```sql
+CREATE INDEX <table>_<field>_idx
+ON <schema>.<table>
+USING btree (<field>);
+```
+
 Data types
 ----------
 
@@ -79,7 +88,7 @@ Geometries
 ALTER TABLE <schema>.<table> ADD COLUMN geom geometry(<Point|MultiLineString|MultiPolygon>, 21781);
 ```
 
-### Create index
+### Create spatial index
 
 ```sql
 CREATE INDEX <table>_geom_idx
