@@ -13,6 +13,8 @@ Cmd
     * [Echo](#echo)
     * [Remark](#remark)
     * [Wait](#wait)
+* [Terminal server](#terminal-server)
+    * [Disconnect user](#disconnect-user)
 
 Directories and files
 ---------------------
@@ -82,4 +84,14 @@ REM Text
 
 ```batchfile
 ping 1.1.1.1 -n 1 -w 5000 >NUL
+```
+
+Terminal server
+---------------
+
+### Disconnect user
+
+```batchfile
+query session /server:<server>
+reset session <id> /server:<server>
 ```
