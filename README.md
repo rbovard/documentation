@@ -4,23 +4,38 @@ Code snippets
 GIS
 ---
 
+### Tools
+
 * [FME](doc/FME.md)
 * [GDAL](doc/GDAL.md)
-* [MapServer](doc/MapServer.md)
+
+### Server
+
 * [PostGIS](doc/PostGIS.md)
+* [MapServer](doc/MapServer.md)
+
+### Client
+
 * [QGIS](doc/QGIS.md)
 
-SSH
----
+IT
+--
+
+### Console
+
+* [Bash](doc/Bash.md)
+* [Cmd](doc/Cmd.md)
+
+### Development
+
+* [Git](doc/Git.md)
+* [Vim](doc/Vim.md)
+
+### SSH
 
 * [PuTTY](doc/PuTTY.md)
 * [WinSCP](doc/WinSCP.md)
 
-Tools
------
+### Miscellaneous
 
-* [Bash](doc/Bash.md)
-* [Cmd](doc/Cmd.md)
-* [Git](doc/Git.md)
 * [NConvert](doc/NConvert.md)
-* [Vim](doc/Vim.md)
