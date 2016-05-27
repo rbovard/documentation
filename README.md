@@ -38,4 +38,5 @@ IT
 
 ### Miscellaneous
 
+* [Nagios](doc/Nagios.md)
 * [NConvert](doc/NConvert.md)
