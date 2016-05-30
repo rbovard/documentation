@@ -23,6 +23,7 @@ for file in os.listdir(inputPath):
             outputFile = os.path.join(outputPath, fileName[0] + "." + outputRasterExtension)
 
             # Create tiled file
+            # Use `-co \"COMPRESS=JPEG\"` to compress
             gdalCommand = "gdal_translate -of GTiff -co \"TILED=YES\" -co \"TFW=YES\" {} {}" . format(inputFile, outputFile)
             process = subprocess.Popen(gdalCommand).communicate()[0]
 
