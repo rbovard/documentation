@@ -30,6 +30,7 @@ PostGIS
     * [Merge polygons with an attribute](#merge-polygons-with-an-attribute)
     * [Check validity of geometries](#check-validity-of-geometries)
     * [Return features inside buffer around points](#return-features-inside-buffer-around-points)
+    * [Create a parallel](#create-a-parallel)
 * [Triggers](#triggers)
     * [Get parcel number](#get-parcel-number)
     * [Get parcels numbers](#get-parcels-numbers)
@@ -283,6 +284,13 @@ WHERE ST_IsValid(geom) = true;
 SELECT a.*
 FROM <table1> a
 JOIN <table2> b ON ST_Contains(ST_Buffer(b.geom, 100), a.geom);
+```
+
+### Create a parallel
+
+```sql
+SELECT ST_OffsetCurve((ST_Dump(geom)).geom :: Geometry(LineString, 21781), <offset>) :: Geometry(MultiLineString, 21781) AS geom
+FROM <table>;
 ```
 
 Triggers
