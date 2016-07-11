@@ -87,6 +87,7 @@ Key
 ```bash
 wget -O - http://qgis.org/downloads/qgis-2015.gpg.key | gpg --import
 gpg --fingerprint 3FF5FFCAD71472C4
+gpg --export --armor 3FF5FFCAD71472C4 | sudo apt-key add -
 ```
 
 ### Installation
