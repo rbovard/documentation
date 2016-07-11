@@ -74,19 +74,19 @@ File `/etc/apt/sources.list`
 
 ```bash
 ## QGIS stable
-deb http://qgis.org/debian trusty main
-deb-src http://qgis.org/debian trusty main
+deb http://qgis.org/debian xenial main
+deb-src http://qgis.org/debian xenial main
 
 ## QGIS nightly
-#deb http://qgis.org/debian-nightly trusty main
-#deb-src http://qgis.org/debian-nightly trusty main
+#deb http://qgis.org/debian-nightly xenial main
+#deb-src http://qgis.org/debian-nightly xenial main
 ```
 
 Key
 
 ```bash
-gpg --keyserver keyserver.ubuntu.com --recv DD45F6C3
-gpg --export --armor DD45F6C3 | sudo apt-key add -
+wget -O - http://qgis.org/downloads/qgis-2015.gpg.key | gpg --import
+gpg --fingerprint 3FF5FFCAD71472C4
 ```
 
 ### Installation
