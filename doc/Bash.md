@@ -21,7 +21,8 @@ Bash
     * [Tomcat](#tomcat)
 * [Proxy](#proxy)
     * [Most programs](#most-programs)
-    * [apt-get and Update Manager](#apt-get-and-update-manager)
+    * [apt-get and Update Manager](#advanced-packaging-tool-and-update-manager)
+    * [GTK based programs](#gtk-based-programs)
 * [Monitoring](#monitoring)
     * [Get HTTP status](#get-http-status)
 
@@ -137,7 +138,7 @@ FTP_PROXY=http://<server>:<port>/
 no_proxy="127.0.0.1, localhost"
 ```
 
-### apt-get and Update Manager
+### Advanced Packaging Tool and Update Manager
 
 File `/etc/apt/apt.conf.d/95proxies`
 
@@ -145,6 +146,18 @@ File `/etc/apt/apt.conf.d/95proxies`
 Acquire::http::proxy "http://<server>:<port>/";
 Acquire::ftp::proxy "http://<server>:<port>/";
 Acquire::https::proxy "http://<server>:<port>/";
+```
+
+### GTK based programs
+
+```bash
+gsettings set org.gnome.system.proxy mode "manual"
+gsettings set org.gnome.system.proxy.http host "<server>"
+gsettings set org.gnome.system.proxy.http port <port>
+gsettings set org.gnome.system.proxy.ftp host "<server>"
+gsettings set org.gnome.system.proxy.ftp port <port>
+gsettings set org.gnome.system.proxy.https host "<server>"
+gsettings set org.gnome.system.proxy.https port <port>
 ```
 
 Monitoring
