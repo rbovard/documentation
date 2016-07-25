@@ -22,16 +22,16 @@ Settings
 ```python
 from PyQt4.QtCore import QSettings
 
-s = QSettings()
+settings = QSettings()
 
 # Display all settings
-for k in s.allKeys(): print k, ":", s.value(k)
+for k in settings.allKeys(): print k, ":", settings.value(k)
 
 # Read a setting
-s.value("Qgis/stylesheet/fontFamily")
+settings.value("<setting>")
 
 # Write a setting
-s.setValue("Qgis/stylesheet/fontFamily", u"Arial")
+settings.setValue("<setting>", u"<value>")
 ```
 
 ### Default settings
