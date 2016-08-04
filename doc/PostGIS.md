@@ -31,6 +31,7 @@ PostGIS
     * [Check validity of geometries](#check-validity-of-geometries)
     * [Return features inside buffer around points](#return-features-inside-buffer-around-points)
     * [Create a parallel](#create-a-parallel)
+    * [Create a zone with buffers](#create-a-zone-with-buffers)
 * [Triggers](#triggers)
     * [Get parcel number](#get-parcel-number)
     * [Get parcels numbers](#get-parcels-numbers)
@@ -290,6 +291,13 @@ JOIN <table2> b ON ST_Contains(ST_Buffer(b.geom, 100), a.geom);
 
 ```sql
 SELECT ST_OffsetCurve((ST_Dump(geom)).geom :: Geometry(LineString, 21781), <offset>) :: Geometry(MultiLineString, 21781) AS geom
+FROM <table>;
+```
+
+### Create a zone with buffers
+
+```sql
+SELECT ST_Multi(ST_Union(ST_SnapToGrid(ST_Buffer(geom, <radius>), 0.0001))) :: Geometry(MultiPolygon, 21781) AS geom
 FROM <table>;
 ```
 
