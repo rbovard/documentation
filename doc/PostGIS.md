@@ -9,6 +9,7 @@ PostGIS
     * [Create spatial index](#create-spatial-index)
     * [Convert simple geometry to multi geometry](#convert-simple-geometry-to-multi-geometry)
     * [Convert MultiPoint to Point](#convert-multipoint-to-point)
+    * [Change projection](#change-projection)
 * [Queries](#queries)
     * [Create an unique id](#create-an-unique-id)
     * [Set first character to uppercase](#set-first-character-to-uppercase)
@@ -111,6 +112,13 @@ See [convert_simple_geometry_to_multi.sql](../sql/convert_simple_geometry_to_mul
 
 ```sql
 SELECT (ST_Dump(geom)).geom :: Geometry(Point, 21781) AS geom
+FROM <table>;
+```
+
+### Change projection
+
+```sql
+SELECT ST_Transform(geom, 21781) :: Geometry(<Point|MultiLineString|MultiPolygon>, 21781) AS geom
 FROM <table>;
 ```
 
