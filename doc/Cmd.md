@@ -4,6 +4,7 @@ Cmd
 * [Directories and files](#directories-and-files)
     * [Delete directory](#delete-directory)
     * [Copy directory](#copy-directory)
+    * [List all specific files](#list-all-specific-files)
 * [Applications](#applications)
     * [Start installation](#start-installation)
     * [Run batch](#run-batch)
@@ -39,6 +40,12 @@ del todelete.txt
 
 ```batchfile
 XCOPY \\orcus\SITNyon\Geodata\Outils\Plugins\.qgis2 %USERPROFILE%\.qgis2 /E /I /Q /Y
+```
+
+### List all specific files
+
+```batchfile
+dir /s /b *.tif > list.txt
 ```
 
 Applications
