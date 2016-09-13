@@ -42,6 +42,8 @@ PostGIS
 * [Information schema](#information-schema)
     * [Get all tables](#get-all-tables)
     * [Get all views](#get-all-views)
+    * [Get all triggers](#get-all-triggers)
+    * [Get all sequences](#get-all-sequences)
     * [Get tables with wrong SRID](#get-tables-with-wrong-srid)
     * [Get tables with wrong geometry type](#get-tables-with-wrong-geometry-type)
 * [Miscellaneous](#miscellaneous)
@@ -403,6 +405,24 @@ SELECT v.table_schema, v.table_name, v.view_definition
 FROM information_schema.views v
 WHERE v.table_schema NOT IN ('information_schema', 'pg_catalog', 'public', 'topology')
 ORDER BY v.table_schema, v.table_name;
+```
+
+### Get all triggers
+
+```sql
+SELECT r.routine_schema, r.routine_name, r.routine_definition
+FROM information_schema.routines r
+WHERE r.routine_definition LIKE 'BEGIN%'
+ORDER BY r.routine_schema, r.routine_name;
+```
+
+### Get all sequences
+
+```sql
+SELECT c.relname
+FROM pg_class c
+WHERE c.relkind = 'S'
+ORDER BY c.relname;
 ```
 
 ### Get tables with wrong SRID
