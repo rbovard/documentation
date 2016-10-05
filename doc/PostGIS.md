@@ -56,6 +56,8 @@ PostGIS
     * [Backup in custom format](#backup-in-custom-format)
     * [Backup specific schemas](#backup-specific-schemas)
     * [Restore backup](#restore-backup)
+* [Log Analyzer](#log-analyzer)
+    * [pgBadger](#pgbadger)
 
 Create table
 ------------
@@ -496,4 +498,16 @@ pg_dump --format=custom --blobs <database> --schema='<pattern>' --file=<database
 
 ```bash
 pg_restore --dbname=<database> <database>.backup
+```
+
+Log
+---
+
+### pgBadger
+
+```bash
+cd /d <path-to-postgres-data>\pg_log
+dir postgresql-<YYYY-MM>-* /b > list-<YYYY-MM>.txt
+perl "<path-to-pgbadger>\pgbadger" --exclude-time "^* (20|21|22|23):*" --exclude-query="^(COPY|COMMIT|FETCH|VACUUM)" --disable-checkpoint --disable-lock --disable-temporary --disable-autovacuum --outfile ..\pg_log_reports\postgresql-<YYYY-MM>.html --logfile-list list-<YYYY-MM>.txt
+del list-<YYYY-MM>.txt
 ```
