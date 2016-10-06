@@ -508,6 +508,6 @@ Log
 ```bash
 cd /d <path-to-postgres-data>\pg_log
 dir postgresql-<YYYY-MM>-* /b > list-<YYYY-MM>.txt
-perl "<path-to-pgbadger>\pgbadger" --exclude-time "^* (20|21|22|23):*" --exclude-query="^(COPY|COMMIT|FETCH|VACUUM)" --disable-checkpoint --disable-lock --disable-temporary --disable-autovacuum --outfile ..\pg_log_reports\postgresql-<YYYY-MM>.html --logfile-list list-<YYYY-MM>.txt
+perl "<path-to-pgbadger>\pgbadger" --exclude-time "^* (20|21|22|23):*" --exclude-query="^(COPY|COMMIT|FETCH|VACUUM)" --disable-checkpoint --disable-lock --disable-temporary --disable-autovacuum --outfile postgresql-<YYYY-MM>.html --logfile-list list-<YYYY-MM>.txt
 del list-<YYYY-MM>.txt
 ```
