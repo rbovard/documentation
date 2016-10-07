@@ -8,6 +8,7 @@ GIS
 
 * [FME](doc/FME.md)
 * [GDAL](doc/GDAL.md)
+* [osm2pgsql](doc/osm2pgsql.md)
 
 ### Server
 
