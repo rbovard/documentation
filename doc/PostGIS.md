@@ -10,6 +10,7 @@ PostGIS
     * [Convert simple geometry to multi geometry](#convert-simple-geometry-to-multi-geometry)
     * [Convert MultiPoint to Point](#convert-multipoint-to-point)
     * [Change projection](#change-projection)
+    * [Create polygon with closed linestrings](#create-polygon-with-closed-linestrings)
 * [Queries](#queries)
     * [Create an unique id](#create-an-unique-id)
     * [Set first character to uppercase](#set-first-character-to-uppercase)
@@ -124,6 +125,14 @@ FROM <table>;
 ```sql
 SELECT ST_Transform(geom, 21781) :: Geometry(<Point|MultiLineString|MultiPolygon>, 21781) AS geom
 FROM <table>;
+```
+
+### Create polygon with closed linestrings
+
+```sql
+SELECT ST_MakePolygon((ST_Dump(geom)).geom) AS geom
+FROM <table>
+WHERE ST_IsClosed(geom);
 ```
 
 Queries
