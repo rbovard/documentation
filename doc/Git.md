@@ -52,7 +52,9 @@ git checkout -b <branch> origin/<branch>
 #### From an existing branch
 
 ```bash
-git checkout -b <branch> <existing-branch>
+git checkout master
+git fetch origin
+git checkout -b <branch> origin/<branch>
 ```
 
 ### Rebase branch onto master (if necessary)
