@@ -23,6 +23,7 @@ Bash
     * [Most programs](#most-programs)
     * [apt-get and Update Manager](#advanced-packaging-tool-and-update-manager)
     * [GTK based programs](#gtk-based-programs)
+    * [Git](#git)
 * [Monitoring](#monitoring)
     * [Get HTTP status](#get-http-status)
 
@@ -158,6 +159,12 @@ gsettings set org.gnome.system.proxy.ftp host "<server>"
 gsettings set org.gnome.system.proxy.ftp port <port>
 gsettings set org.gnome.system.proxy.https host "<server>"
 gsettings set org.gnome.system.proxy.https port <port>
+```
+
+### Git
+
+```bash
+git config --global url."https://".insteadOf git://
 ```
 
 Monitoring
