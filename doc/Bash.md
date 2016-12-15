@@ -9,6 +9,7 @@ Bash
 * [Packages](#packages)
     * [Update and upgrade](#update-and-upgrade)
     * [Check if a package is present](#check-if-a-package-is-present)
+    * [Add key](#add-key)
 * [Logs](#logs)
     * [Display Apache logs in realtime](#display-apache-logs-in-realtime)
 * [Disk](#disk)
@@ -69,6 +70,12 @@ sudo apt update && sudo apt full-upgrade
 
 ```bash
 dpkg -l <package-name>
+```
+
+### Add key
+
+```bash
+curl --silent <url>.key | sudo apt-key add -
 ```
 
 Logs
