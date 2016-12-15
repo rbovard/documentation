@@ -26,6 +26,8 @@ Bash
     * [Git](#git)
 * [Monitoring](#monitoring)
     * [Get HTTP status](#get-http-status)
+* [Miscellaneous](#miscellaneous)
+    * [Check OS version](#check-os-version)
 
 Search
 ------
@@ -174,4 +176,13 @@ Monitoring
 
 ```bash
 curl -Is <url> | head -n 1
+```
+
+Miscellaneous
+-------------
+
+### Check OS version
+
+```bash
+lsb_release -a
 ```
