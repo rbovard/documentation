@@ -69,6 +69,13 @@ git rebase --continue
 git push -f origin <branch>
 ```
 
+If error `fatal: 'upstream' does not appear to be a git repository`
+
+```bash
+git remote -v
+git remote add upstream <upstream-url>
+```
+
 ### Merge branch
 
 ```bash
