@@ -39,5 +39,6 @@ IT
 
 ### Miscellaneous
 
+* [7-Zip](doc/7-Zip.md)
 * [Nagios](doc/Nagios.md)
 * [NConvert](doc/NConvert.md)
