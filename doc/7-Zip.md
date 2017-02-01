@@ -1,7 +1,7 @@
 7-Zip
 =====
 
-* [Create an archive from a list](#reduce-jpeg-images)
+* [Create an archive from a list](#create-an-archive-from-a-list)
 
 Create an archive from a list
 -----------------------------
