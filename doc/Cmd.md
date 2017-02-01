@@ -29,11 +29,11 @@ IF EXIST %USERPROFILE%\.qgis2\python\plugins\SettingsManager RD %USERPROFILE%\.q
 ### Delete all directories
 
 ```batchfile
-dir *. /b > todelete.txt
-for /f %%a in (todelete.txt) do (
+dir *. /b > <list>.txt
+for /f %%a in (<list>.txt) do (
     RD %%a /S /Q
 )
-del todelete.txt
+del <list>.txt
 ```
 
 ### Copy directory
@@ -45,7 +45,13 @@ XCOPY \\orcus\SITNyon\Geodata\Outils\Plugins\.qgis2 %USERPROFILE%\.qgis2 /E /I /
 ### List all specific files
 
 ```batchfile
-dir /s /b *.tif > list.txt
+dir /s /b *.tif > <list>.txt
+```
+
+### Delete files from a list
+
+```
+for /f %i in (<list>.txt) do del %i
 ```
 
 Applications
