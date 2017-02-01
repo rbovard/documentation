@@ -5,6 +5,7 @@ Cmd
     * [Delete directory](#delete-directory)
     * [Copy directory](#copy-directory)
     * [List all specific files](#list-all-specific-files)
+    * [Delete files from a list](#delete-files-from-a-list)
 * [Applications](#applications)
     * [Start installation](#start-installation)
     * [Run batch](#run-batch)
