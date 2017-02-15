@@ -34,6 +34,7 @@ PostGIS
     * [Return features inside buffer around points](#return-features-inside-buffer-around-points)
     * [Create a parallel](#create-a-parallel)
     * [Create a zone with buffers](#create-a-zone-with-buffers)
+    * [Return the nth point of a LineString](#return-the-nth-point-of-a-linestring)
 * [Triggers](#triggers)
     * [Get parcel number](#get-parcel-number)
     * [Get parcels numbers](#get-parcels-numbers)
@@ -319,6 +320,13 @@ FROM <table>;
 
 ```sql
 SELECT ST_Multi(ST_Union(ST_SnapToGrid(ST_Buffer(geom, <radius>), 0.0001))) :: Geometry(MultiPolygon, 21781) AS geom
+FROM <table>;
+```
+
+### Return the nth point of a LineString
+
+```sql
+SELECT ST_PointN(geom, <n>) AS geom
 FROM <table>;
 ```
 
