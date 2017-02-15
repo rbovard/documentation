@@ -34,7 +34,8 @@ PostGIS
     * [Return features inside buffer around points](#return-features-inside-buffer-around-points)
     * [Create a parallel](#create-a-parallel)
     * [Create a zone with buffers](#create-a-zone-with-buffers)
-    * [Return the nth point of a LineString](#return-the-nth-point-of-a-linestring)
+    * [Return the nth point of a linestring](#return-the-nth-point-of-a-linestring)
+    * [Get azimuth of a linestring](#get-azimuth-of-a-linestring)
 * [Triggers](#triggers)
     * [Get parcel number](#get-parcel-number)
     * [Get parcels numbers](#get-parcels-numbers)
@@ -323,11 +324,25 @@ SELECT ST_Multi(ST_Union(ST_SnapToGrid(ST_Buffer(geom, <radius>), 0.0001))) :: G
 FROM <table>;
 ```
 
-### Return the nth point of a LineString
+### Return the nth point of a linestring
 
 ```sql
 SELECT ST_PointN(geom, <n>) AS geom
 FROM <table>;
+```
+
+### Get azimuth of a linestring
+
+```sql
+WITH line AS (
+    SELECT
+        ST_PointN((ST_Dump(geom)).geom, 1) :: Geometry(Point, 21781) as p1,
+        ST_PointN((ST_Dump(geom)).geom, 2) :: Geometry(Point, 21781) as p2
+    FROM <table>
+)
+SELECT
+    degrees(ST_Azimuth(p1, p2)) AS azimuth
+FROM line;
 ```
 
 Triggers
