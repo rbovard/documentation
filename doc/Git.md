@@ -16,7 +16,7 @@ Git
 * [Rebase](#rebase)
     * [Squash commits](#squash-commits)
     * [Edit commit](#edit-commit)
-    * [Rebase branch onto master](#rebase-branch-onto-master)
+    * [Rebase onto other branch](#rebase-onto-other-branch)
 
 Configuration
 -------------
@@ -183,5 +183,17 @@ Make changes
 ```bash
 git commit --all --amend --no-edit
 git rebase --continue
+git push -f origin <branch>
+```
+
+### Rebase onto other branch
+
+```bash
+git rebase -i origin/<other-branch>
+```
+
+Remove all `pick` expect the ones to commit
+
+```bash
 git push -f origin <branch>
 ```
