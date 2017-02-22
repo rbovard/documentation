@@ -189,7 +189,7 @@ git push -f origin <branch>
 ### Rebase onto other branch
 
 ```bash
-git rebase -i origin/<other-branch>
+git rebase -i upstream/<other-branch>
 ```
 
 Remove all `pick` expect the ones to commit
