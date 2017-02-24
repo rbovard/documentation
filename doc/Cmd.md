@@ -46,7 +46,13 @@ XCOPY \\orcus\SITNyon\Geodata\Outils\Plugins\.qgis2 %USERPROFILE%\.qgis2 /E /I /
 ### List all specific files
 
 ```batchfile
-dir /s /b *.tif > <list>.txt
+dir /s /b *.<ext> > <list>.txt
+```
+
+With date of last modification
+
+```batchfile
+for /f "delims=" %a in ('dir /s /b *.<ext>') do @echo %~ta %~a
 ```
 
 ### Delete files from a list
