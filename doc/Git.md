@@ -2,6 +2,7 @@ Git
 ===
 
 * [Configuration](#configuration)
+* [Clone](#clone)
 * [Branch](#branch)
     * [Create new branch](#create-new-branch)
     * [Rebase branch onto master (if necessary)](#rebase-branch-onto-master-if-necessary)
@@ -34,6 +35,13 @@ File `~/.gitconfig`
 
 [credential]
     helper = cache --timeout=3600
+```
+
+Clone
+-----
+
+```bash
+git clone <url>
 ```
 
 Branch
