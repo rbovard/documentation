@@ -85,9 +85,9 @@ deb-src http://qgis.org/debian xenial main
 Key
 
 ```bash
-wget -O - http://qgis.org/downloads/qgis-2015.gpg.key | gpg --import
-gpg --fingerprint 3FF5FFCAD71472C4
-gpg --export --armor 3FF5FFCAD71472C4 | sudo apt-key add -
+wget -O - http://qgis.org/downloads/qgis-2016.gpg.key | gpg --import
+gpg --fingerprint 073D307A618E5811
+gpg --export --armor 073D307A618E5811 | sudo apt-key add -
 ```
 
 ### Installation
