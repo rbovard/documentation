@@ -15,6 +15,7 @@ Cmd
     * [Echo](#echo)
     * [Remark](#remark)
     * [Wait](#wait)
+    * [Prompt variable](#prompt-variable)
 * [Terminal server](#terminal-server)
     * [Disconnect user](#disconnect-user)
 
@@ -104,6 +105,13 @@ REM Text
 
 ```batchfile
 ping 1.1.1.1 -n 1 -w 5000 >NUL
+```
+
+### Prompt variable
+
+```batchfile
+SET my_var=
+SET /P my_var="My var: "
 ```
 
 Terminal server
