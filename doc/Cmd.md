@@ -95,6 +95,12 @@ Batch scripts
 @ECHO OFF
 ```
 
+#### Empty line
+
+```batchfile
+ECHO:
+```
+
 ### Remark
 
 ```batchfile
