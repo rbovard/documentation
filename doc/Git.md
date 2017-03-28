@@ -18,6 +18,8 @@ Git
     * [Squash commits](#squash-commits)
     * [Edit commit](#edit-commit)
     * [Rebase onto other branch](#rebase-onto-other-branch)
+* [Cherry pick](#cherry-pick)
+    * [Cherry pick commit](#cherry-pick-commit)
 
 Configuration
 -------------
@@ -204,4 +206,13 @@ Remove all `pick` expect the ones to commit
 
 ```bash
 git push -f origin <branch>
+```
+
+Cherry pick
+-----------
+
+### Cherry pick commit
+
+```bash
+git cherry-pick <SHA>
 ```
