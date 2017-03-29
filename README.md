@@ -37,6 +37,10 @@ IT
 * [PuTTY](doc/PuTTY.md)
 * [WinSCP](doc/WinSCP.md)
 
+### Operating system
+
+* [Windows](doc/Windows.md)
+
 ### Miscellaneous
 
 * [7-Zip](doc/7-Zip.md)
