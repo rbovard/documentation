@@ -51,6 +51,7 @@ PostGIS
     * [Get tables with wrong geometry type](#get-tables-with-wrong-geometry-type)
 * [Miscellaneous](#miscellaneous)
     * [Get PostGIS version](#get-postgis-version)
+    * [Set schema](#set-schema)
 * [psql](#psql)
     * [Create database with template](#create-database-with-template)
     * [Create schema and allow rights](#create-schema-and-allow-rights)
@@ -493,6 +494,12 @@ psql
 
 ```bash
 sudo -u postgres createdb --template=template_postgis <database>
+```
+
+### Set schema
+
+```bash
+SET search_path = <schema>;
 ```
 
 ### Create schema and allow rights
