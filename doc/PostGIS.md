@@ -487,6 +487,12 @@ Miscellaneous
 SELECT PostGIS_full_version();
 ```
 
+### Set schema
+
+```bash
+SET search_path = <schema>;
+```
+
 psql
 ----
 
@@ -494,12 +500,6 @@ psql
 
 ```bash
 sudo -u postgres createdb --template=template_postgis <database>
-```
-
-### Set schema
-
-```bash
-SET search_path = <schema>;
 ```
 
 ### Create schema and allow rights
