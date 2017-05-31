@@ -5,6 +5,7 @@ PostGIS
     * [Create index](#create-index)
 * [Data types](#data-types)
 * [Geometries](#geometries)
+    * [Activate PostGIS extension](#activate-postgis-extension)
     * [Create column](#create-column)
     * [Create spatial index](#create-spatial-index)
     * [Convert simple geometry to multi geometry](#convert-simple-geometry-to-multi-geometry)
@@ -92,6 +93,12 @@ Data types
 
 Geometries
 ----------
+
+### Activate PostGIS extension
+
+```sql
+CREATE EXTENSION postgis;
+```
 
 ### Create column
 
