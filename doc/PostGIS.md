@@ -37,6 +37,7 @@ PostGIS
     * [Create a zone with buffers](#create-a-zone-with-buffers)
     * [Return the nth point of a linestring](#return-the-nth-point-of-a-linestring)
     * [Get azimuth of a linestring](#get-azimuth-of-a-linestring)
+    * [Extract boundary of a MultiPolygon into a MultiLineString](#extract-boundary-of-a-multipolygon-into-a-multilinestring)
 * [Triggers](#triggers)
     * [Get parcel number](#get-parcel-number)
     * [Get parcels numbers](#get-parcels-numbers)
@@ -351,6 +352,13 @@ WITH line AS (
 SELECT
     degrees(ST_Azimuth(p1, p2)) AS azimuth
 FROM line;
+```
+
+### Extract boundary of a MultiPolygon into a MultiLineString
+
+```sql
+SELECT ST_Boundary(geom) AS geom
+FROM <table>
 ```
 
 Triggers
