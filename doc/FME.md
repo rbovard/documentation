@@ -5,6 +5,7 @@ FME
     * [Use multiple source datasets](#use-multiple-source-datasets)
 * [Python scripts](#python-scripts)
     * [Check if file exists](#check-if-file-exists)
+    * [Remove accents](#remov-accents)
 * [Expressions](#expressions)
     * [Check if attribute is integer](#check-if-attribute-is-integer)
 * [Remove geometry dimension](#remove-geometry-dimension)
@@ -33,6 +34,34 @@ import os
 def processFeature(feature):
     doesFileExist = os.path.exists(feature.getAttribute("path"))
     feature.setAttribute("file_exists", doesFileExist)
+```
+
+### Remove accents
+
+```python
+import fmeobjects
+import unicodedata as ud
+
+def rmdiacritics(char):
+    '''
+    Return the base character of char, by "removing" any
+    diacritics like accents or curls and strokes and the like.
+    '''
+    desc = ud.name(unicode(char))
+    cutoff = desc.find(' WITH ')
+    if cutoff != -1:
+        desc = desc[:cutoff]
+    return ud.lookup(desc)
+
+def removeAccents(feature):
+    attribute_list = ("name", "type", "state") # Modify as needed
+    for attrib in feature.getAllAttributeNames():
+        if attrib in attribute_list:
+            value = feature.getAttribute(attrib)
+            if value:
+                value = unicode(value)
+                new_value = ''.join([rmdiacritics(char) for char in value])
+                feature.setAttribute(attrib, new_value)
 ```
 
 Expressions
