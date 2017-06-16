@@ -5,7 +5,7 @@ FME
     * [Use multiple source datasets](#use-multiple-source-datasets)
 * [Python scripts](#python-scripts)
     * [Check if file exists](#check-if-file-exists)
-    * [Remove accents](#remov-accents)
+    * [Remove accents](#remove-accents)
 * [Expressions](#expressions)
     * [Check if attribute is integer](#check-if-attribute-is-integer)
 * [Remove geometry dimension](#remove-geometry-dimension)
