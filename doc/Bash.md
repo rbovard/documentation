@@ -8,6 +8,7 @@ Bash
     * [Find file by extension](#find-file-by-extension)
 * [Packages](#packages)
     * [Update and upgrade](#update-and-upgrade)
+    * [Clean cache](#clean-cache)
     * [Check if a package is present](#check-if-a-package-is-present)
     * [Add key](#add-key)
 * [Logs](#logs)
@@ -64,6 +65,12 @@ Packages
 
 ```bash
 sudo apt update && sudo apt full-upgrade
+```
+
+### Clean cache
+
+```bash
+sudo apt clean
 ```
 
 ### Check if a package is present
