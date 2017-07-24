@@ -44,6 +44,8 @@ PostGIS
     * [Get absolute path](#get-absolute-path)
 * [Sequences](#sequences)
     * [Set current value](#set-current-value)
+* [Constraints](#constraints)
+    * [Drop foreign key only if exists](#drop-foreign-key-only-if-exists)
 * [Information schema](#information-schema)
     * [Get all tables](#get-all-tables)
     * [Get all views](#get-all-views)
@@ -407,6 +409,15 @@ Sequences
 
 ```sql
 SELECT setval('<schema>.<table>_<field>_seq', (SELECT MAX(<field>) FROM <schema>.<table>));
+```
+
+Constraints
+-----------
+
+### Drop foreign key only if exists
+
+```sql
+ALTER TABLE <schema>.<table> DROP CONSTRAINT IF EXISTS <table>_<field>_fkey;
 ```
 
 Information schema
