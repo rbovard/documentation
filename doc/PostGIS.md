@@ -78,9 +78,9 @@ COMMENT ON TABLE <schema>.<table> IS '<comment>';
 ### Create index
 
 ```sql
-CREATE INDEX <table>_<field>_idx
+CREATE INDEX <table>_<column>_idx
 ON <schema>.<table>
-USING btree (<field>);
+USING btree (<column>);
 ```
 
 Data types
@@ -408,7 +408,7 @@ Sequences
 ### Set current value
 
 ```sql
-SELECT setval('<schema>.<table>_<field>_seq', (SELECT MAX(<field>) FROM <schema>.<table>));
+SELECT setval('<schema>.<table>_<column>_seq', (SELECT MAX(<column>) FROM <schema>.<table>));
 ```
 
 Constraints
@@ -417,7 +417,7 @@ Constraints
 ### Drop foreign key only if exists
 
 ```sql
-ALTER TABLE <schema>.<table> DROP CONSTRAINT IF EXISTS <table>_<field>_fkey;
+ALTER TABLE <schema>.<table> DROP CONSTRAINT IF EXISTS <table>_<column>_fkey;
 ```
 
 Information schema
