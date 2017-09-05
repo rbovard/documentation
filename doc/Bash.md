@@ -30,6 +30,7 @@ Bash
     * [Get HTTP status](#get-http-status)
 * [Miscellaneous](#miscellaneous)
     * [Check OS version](#check-os-version)
+    * [Pass HTTP Referer in URL](#pass-http-referer-in-url)
 
 Search
 ------
@@ -199,4 +200,10 @@ Miscellaneous
 
 ```bash
 lsb_release -a
+```
+
+### Pass HTTP Referer in URL
+
+```bash
+curl --referer <referer> "<url>"
 ```
