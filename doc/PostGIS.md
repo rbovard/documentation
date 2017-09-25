@@ -26,6 +26,7 @@ PostGIS
     * [Convert date to string](#convert-date-to-string)
     * [Order results by list](#order-results-by-list)
     * [Split string with a separator and get specific part](#split-string-with-a-separator-and-get-specific-part)
+    * [Test with a list of values](#test-with-a-list-of-values)
 * [Spatial queries](#spatial-queries)
     * [Spatial join (point in polygon)](#spatial-join-point-in-polygon)
     * [Create a line between two points](#create-a-line-between-two-points)
@@ -268,6 +269,14 @@ ORDER BY
 ```sql
 SELECT (REGEXP_SPLIT_TO_ARRAY(<attribute>, '/'))[3] AS <column>
 FROM <table>;
+```
+
+### Test with a list of values
+
+```sql
+SELECT *
+FROM <table>
+WHERE <attribute> SIMILAR TO '(<value1>|<value2>|<value3>)';
 ```
 
 Spatial queries
