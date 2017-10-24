@@ -43,6 +43,7 @@ PostGIS
     * [Get parcel number](#get-parcel-number)
     * [Get parcels numbers](#get-parcels-numbers)
     * [Get absolute path](#get-absolute-path)
+    * [Update a view](#update-a-view)
 * [Sequences](#sequences)
     * [Set current value](#set-current-value)
 * [Constraints](#constraints)
@@ -409,6 +410,30 @@ BEGIN
     END;
     RETURN new;
 END;
+```
+
+### Update a view
+
+```sql
+CREATE OR REPLACE FUNCTION <schema>.update_<view>()
+    RETURNS trigger AS
+        $BODY$
+        BEGIN
+            UPDATE <schema>.<table>
+            SET
+            <column1> = NEW.<column1>,
+            <column2> = NEW.<column2>,
+            <column3> = NEW.<column3>,
+            WHERE id = OLD.id;
+            RETURN NEW;
+        RETURN NEW;
+        END;
+
+CREATE TRIGGER tr_update_<view>
+INSTEAD OF UPDATE
+ON <schema>.<view>
+FOR EACH ROW
+EXECUTE PROCEDURE <schema>.update_<view>();
 ```
 
 Sequences
