@@ -46,3 +46,4 @@ IT
 * [7-Zip](doc/7-Zip.md)
 * [Nagios](doc/Nagios.md)
 * [NConvert](doc/NConvert.md)
+* [VLC](doc/VLC.md)
