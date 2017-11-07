@@ -6,6 +6,7 @@ MapServer
     * [Projection](#projection)
     * [Simple comparison](#simple-comparison)
     * [List expressions](#list-expressions)
+    * [Raster](#raster)
 * [Miscellaneous](#miscellaneous)
     * [Get MapServer version](#get-mapserver-version)
 
@@ -56,6 +57,13 @@ EXPRESSION /motorway|trunk/
 # MapServer expression
 EXPRESSION ("[roadtype]" IN "motorway,trunk")
 ```
+
+### Raster
+
+* Use tile indexes instead of multiple layers (`gdaltindex` to generate it), with `TILEINDEX` and `TILEITEM`
+* Use tiled TIFF files (`gdal_translate -of GTiff -co "TILED=YES"`) and build overview images (`gdaladdo -r average`)
+
+See [optimize_raster.py](../python/optimize_raster.py)
 
 Miscellaneous
 -------------
