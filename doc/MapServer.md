@@ -4,8 +4,8 @@ MapServer
 * [Optimization](#optimization)
     * [Layer](#layer)
     * [Projection](#projection)
-    * [Simple comparison](#simple-comparison)
-    * [List expressions](#list-expressions)
+    * [Class](#class)
+    * [Expressions](#expressions)
     * [Raster](#raster)
 * [Miscellaneous](#miscellaneous)
     * [Get MapServer version](#get-mapserver-version)
@@ -24,7 +24,13 @@ Define those parameters for each layer:
 
 Remove all unneeded projection definitions from the EPSG database (`CONFIG "PROJ_LIB" "/path/to/epsg"`) to avoid to lookup all defintions at each query.
 
-### Simple comparison
+### Class
+
+Place the most commonly-used classes at the top of the class list because classes are processed in order and a feature is assigned to the first class that matches.
+
+### Expressions
+
+#### Simple comparison
 
 Use string comparison instead of regular expression comparison:
 
@@ -40,7 +46,7 @@ Instead of:
 EXPRESSION ("[foo]" = "bar")
 ```
 
-### List expressions
+#### List expressions
 
 Use list expressions to compare a string attribute to a list of multiple possible values instead of regex or mapserver expressions:
 
