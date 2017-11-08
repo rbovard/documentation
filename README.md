@@ -30,6 +30,7 @@ IT
 ### Development
 
 * [Git](doc/Git.md)
+* [Notepad++](doc/Notepad++.md)
 * [Vim](doc/Vim.md)
 
 ### SSH
