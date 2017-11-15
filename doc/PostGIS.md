@@ -39,6 +39,7 @@ PostGIS
     * [Return the nth point of a linestring](#return-the-nth-point-of-a-linestring)
     * [Get azimuth of a linestring](#get-azimuth-of-a-linestring)
     * [Extract boundary of a MultiPolygon into a MultiLineString](#extract-boundary-of-a-multipolygon-into-a-multilinestring)
+    * [Move a point with a distance and an azimuth](#move-a-point-with-a-distance-and-an-azimuth)
 * [Triggers](#triggers)
     * [Get parcel number](#get-parcel-number)
     * [Get parcels numbers](#get-parcels-numbers)
@@ -371,6 +372,13 @@ FROM line;
 ```sql
 SELECT ST_Boundary(geom) AS geom
 FROM <table>
+```
+
+### Move a point with a distance and an azimuth
+
+```sql
+SELECT ST_Transform(ST_Project(ST_Transform(geom, 4326), <distance>, <azimuth>)::Geometry, 21781)::Geometry(Point, 21781) AS geom
+FROM <table>;
 ```
 
 Triggers
