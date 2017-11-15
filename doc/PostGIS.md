@@ -122,7 +122,7 @@ USING gist (geom);
 ### Convert simple geometry to multi geometry
 
 ```sql
-SELECT ST_Multi(geom) :: Geometry(<MultiLineString|MultiPolygon>, 21781) AS geom
+SELECT ST_Multi(geom)::Geometry(<MultiLineString|MultiPolygon>, 21781) AS geom
 FROM <table>;
 ```
 
@@ -131,14 +131,14 @@ See [convert_simple_geometry_to_multi.sql](../sql/convert_simple_geometry_to_mul
 ### Convert MultiPoint to Point
 
 ```sql
-SELECT (ST_Dump(geom)).geom :: Geometry(Point, 21781) AS geom
+SELECT (ST_Dump(geom)).geom::Geometry(Point, 21781) AS geom
 FROM <table>;
 ```
 
 ### Change projection
 
 ```sql
-SELECT ST_Transform(geom, 21781) :: Geometry(<Point|MultiLineString|MultiPolygon>, 21781) AS geom
+SELECT ST_Transform(geom, 21781)::Geometry(<Point|MultiLineString|MultiPolygon>, 21781) AS geom
 FROM <table>;
 ```
 
@@ -163,7 +163,7 @@ FROM <table>;
 ### Set first character to uppercase
 
 ```sql
-SELECT ((UPPER(SUBSTR(<column>, 1, 1)) || SUBSTR(<column>, 2))) :: varchar AS <column>
+SELECT ((UPPER(SUBSTR(<column>, 1, 1)) || SUBSTR(<column>, 2)))::varchar AS <column>
 FROM <table>;
 ```
 
@@ -228,7 +228,7 @@ FROM <table>;
 ### Add an unit to a value
 
 ```sql
-SELECT (ROUND(length :: numeric, 2) || ' m') :: varchar AS length
+SELECT (ROUND(length::numeric, 2) || ' m')::varchar AS length
 FROM <table>;
 ```
 
@@ -236,10 +236,10 @@ FROM <table>;
 
 ```sql
 SELECT
-    TRIM(TO_CHAR(p.numero :: numeric, '9999 999 9')) :: varchar(20) AS numero,
-    TRIM(TO_CHAR(ST_X(p.geom), '999G999.99 m')) :: varchar(20) AS coord_y,
-    TRIM(TO_CHAR(ST_Y(p.geom), '999G999.99 m')) :: varchar(20) AS coord_x,
-    TRIM(TO_CHAR(p.geomalt, '9G999.99 m')) :: varchar(20) AS altitude
+    TRIM(TO_CHAR(p.numero::numeric, '9999 999 9'))::varchar(20) AS numero,
+    TRIM(TO_CHAR(ST_X(p.geom), '999G999.99 m'))::varchar(20) AS coord_y,
+    TRIM(TO_CHAR(ST_Y(p.geom), '999G999.99 m'))::varchar(20) AS coord_x,
+    TRIM(TO_CHAR(p.geomalt, '9G999.99 m'))::varchar(20) AS altitude
 FROM mo.mo_pfp1 p;
 ```
 
@@ -294,7 +294,7 @@ WHERE ST_Within(a.geom, b.geom);
 ### Create a line between two points
 
 ```sql
-SELECT ST_MakeLine(a.geom, b.geom) :: Geometry(LineString, 21781) AS geom
+SELECT ST_MakeLine(a.geom, b.geom)::Geometry(LineString, 21781) AS geom
 FROM <table1> a
 JOIN <table2> b ON a.id = b.fk;
 ```
@@ -310,7 +310,7 @@ WHERE ST_Intersects(a.geom, b.geom);
 ### Merge polygons with an attribute
 
 ```sql
-SELECT attribute, ST_Union(ST_SnapToGrid(geom, 0.0001)) :: Geometry(MultiPolygon, 21781) AS geom
+SELECT attribute, ST_Union(ST_SnapToGrid(geom, 0.0001))::Geometry(MultiPolygon, 21781) AS geom
 FROM <table>
 GROUP BY attribute;
 ```
@@ -334,14 +334,14 @@ JOIN <table2> b ON ST_Contains(ST_Buffer(b.geom, 100), a.geom);
 ### Create a parallel
 
 ```sql
-SELECT ST_OffsetCurve((ST_Dump(geom)).geom :: Geometry(LineString, 21781), <offset>) :: Geometry(MultiLineString, 21781) AS geom
+SELECT ST_OffsetCurve((ST_Dump(geom)).geom::Geometry(LineString, 21781), <offset>)::Geometry(MultiLineString, 21781) AS geom
 FROM <table>;
 ```
 
 ### Create a zone with buffers
 
 ```sql
-SELECT ST_Multi(ST_Union(ST_SnapToGrid(ST_Buffer(geom, <radius>), 0.0001))) :: Geometry(MultiPolygon, 21781) AS geom
+SELECT ST_Multi(ST_Union(ST_SnapToGrid(ST_Buffer(geom, <radius>), 0.0001)))::Geometry(MultiPolygon, 21781) AS geom
 FROM <table>;
 ```
 
@@ -357,8 +357,8 @@ FROM <table>;
 ```sql
 WITH line AS (
     SELECT
-        ST_PointN((ST_Dump(geom)).geom, 1) :: Geometry(Point, 21781) as p1,
-        ST_PointN((ST_Dump(geom)).geom, 2) :: Geometry(Point, 21781) as p2
+        ST_PointN((ST_Dump(geom)).geom, 1)::Geometry(Point, 21781) as p1,
+        ST_PointN((ST_Dump(geom)).geom, 2)::Geometry(Point, 21781) as p2
     FROM <table>
 )
 SELECT
