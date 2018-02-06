@@ -6,6 +6,7 @@ Bash
     * [Search specific words in given files](#search-specific-words-in-given-files)
     * [Find empty subfolders](#find-empty-subfolders)
     * [Find file by extension](#find-file-by-extension)
+    * [Count files in subfolders](#count-files-in-subfolders)
 * [Packages](#packages)
     * [Update and upgrade](#update-and-upgrade)
     * [Clean cache](#clean-cache)
@@ -57,6 +58,12 @@ find <path> -type d -empty
 
 ```bash
 find <path> -type f -name "*.<extension>"
+```
+
+### Count files in subfolders
+
+```bash
+ls -lR | egrep -c '^-'
 ```
 
 Packages
