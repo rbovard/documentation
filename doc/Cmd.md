@@ -15,6 +15,7 @@ Cmd
     * [Echo](#echo)
     * [Remark](#remark)
     * [Wait](#wait)
+    * [Time](#time)
     * [Prompt variable](#prompt-variable)
 * [Terminal server](#terminal-server)
     * [Disconnect user](#disconnect-user)
@@ -111,6 +112,12 @@ REM Text
 
 ```batchfile
 ping 1.1.1.1 -n 1 -w 5000 >NUL
+```
+
+### Time
+
+```batchfile
+ECHO %time%
 ```
 
 ### Prompt variable
