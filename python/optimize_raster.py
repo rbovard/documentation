@@ -25,13 +25,13 @@ for file in os.listdir(inputPath):
             # Create tiled file
             # Use `COMPRESS=LZW` for lossless compression
             # Use `COMPRESS=JPEG` for lossy compression
-            gdalCommand = "gdal_translate -of GTiff -co \"TILED=YES\" -co \"TFW=YES\" -co \"COMPRESS=LZW\" {} {}" . format(inputFile, outputFile)
+            gdalCommand = "gdal_translate -of GTiff -co \"TILED=YES\" -co \"TFW=YES\" -co \"COMPRESS=LZW\" {} {}".format(inputFile, outputFile)
             process = subprocess.Popen(gdalCommand).communicate()[0]
 
             # Build overview images
-            gdalCommand = "gdaladdo -r average {} 2 4 8 16" . format(outputFile)
+            gdalCommand = "gdaladdo -r average {} 2 4 8 16".format(outputFile)
             process = subprocess.Popen(gdalCommand).communicate()[0]
 
 # Generate raster tileindex
-gdalCommand = "gdaltindex {} {}" . format(tileindexFile, os.path.join(outputPath, "*." + outputRasterExtension))
+gdalCommand = "gdaltindex {} {}".format(tileindexFile, os.path.join(outputPath, "*." + outputRasterExtension))
 output = subprocess.Popen(gdalCommand).communicate()[0]
