@@ -32,6 +32,7 @@ Bash
 * [Miscellaneous](#miscellaneous)
     * [Check OS version](#check-os-version)
     * [Pass HTTP Referer in URL](#pass-http-referer-in-url)
+    * [Get current public IP](#get-current-public-ip)
 
 Search
 ------
@@ -213,4 +214,10 @@ lsb_release -a
 
 ```bash
 curl --referer <referer> "<url>"
+```
+
+### Get current public IP
+
+```bash
+curl ipinfo.io/ip
 ```
