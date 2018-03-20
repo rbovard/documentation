@@ -2,6 +2,9 @@ QGIS
 ====
 
 * [Actions](#actions)
+* [Atlas](#atlas)
+    * [Display only current altlas attribute related features](#display-only-current-altlas-attribute-related-features)
+    * [Display number of features in current atlas](#display-number-of-features-in-current-atlas)
 * [Settings](#settings)
     * [Default settings](#default-settings)
 * [Message bar](#message-bar)
@@ -15,6 +18,23 @@ Actions
 | PDF          | Open | ```"[% "file" %]"``` |
 | RF simplifié | Open | ```http://www.rfinfo.vd.ch/rfinfo.php?no_commune=[%substr("IDENTDN", 4, 3)%]&no_immeuble=[%"numero"%]``` |
 | RF complet   | Open | ```https://secure.vd.ch/territoire/intercapi/faces?bfs=[%substr("IDENTDN", 4, 3)%]&kr=0&n1=[%"numero"%]&type=grundstueck_grundbuch_auszug&sec=<key>&intercapi=Extrait+RF+online``` |
+
+Atlas
+-----
+
+### Display only current altlas attribute related features
+
+With a rule based symbology
+
+```
+<attribute> = attribute(@atlas_feature , '<attribute>')
+```
+
+### Display number of features in current atlas
+
+```
+aggregate('<layer>', 'count', 'id', intersects(@atlas_geometry, $geometry))
+```
 
 Settings
 --------
