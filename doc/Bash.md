@@ -18,6 +18,7 @@ Bash
     * [Display disk free](#display-disk-free)
     * [Display disk free inodes](#display-disk-free-inodes)
     * [Display directory usage](#display-directory-usage)
+    * [Display subdirectories usage](#display-subdirectories-usage)
 * [Restart services](#restart-services)
     * [Apache](#apache)
     * [PostgreSQL](#postgresql)
@@ -123,6 +124,14 @@ df -i
 
 ```bash
 du -hs <path>
+```
+
+### Display subdirectories usage
+
+Ordered by size
+
+```bash
+du -h --max-depth=1 <path> | sort -hr
 ```
 
 Restart services
