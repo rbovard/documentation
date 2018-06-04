@@ -7,6 +7,7 @@ Bash
     * [Find empty subfolders](#find-empty-subfolders)
     * [Find file by extension](#find-file-by-extension)
     * [Count files in subfolders](#count-files-in-subfolders)
+    * [Filter unique grep results](#filter-unique-grep-results)
 * [Packages](#packages)
     * [Update and upgrade](#update-and-upgrade)
     * [Clean cache](#clean-cache)
@@ -66,6 +67,12 @@ find <path> -type f -name "*.<extension>"
 
 ```bash
 ls -lR | egrep -c '^-'
+```
+
+### Filter unique grep results
+
+```bash
+grep <word> <file> | sort | uniq
 ```
 
 Packages
