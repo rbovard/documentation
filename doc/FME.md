@@ -3,6 +3,8 @@ FME
 
 * [Batch process](#batch-process)
     * [Use multiple source datasets](#use-multiple-source-datasets)
+* [String replacer](#string-replacer)
+    * [Add thousand separator](#add-thousand-separator)
 * [Python scripts](#python-scripts)
     * [Check if file exists](#check-if-file-exists)
     * [Remove accents](#remove-accents)
@@ -21,6 +23,15 @@ Batch process
 ```batchfile
 for %%f in (*.ext) do fme <workspace>.fmw --parameter "%%f"
 ```
+
+String replacer
+---------------
+
+### Add thousand separator
+
+* Mode: *Replace regular expression*
+* Text to replace: `(?<=\d)(?=(\d\d\d)+(?!\d))`
+* Replacemeent text: `'`
 
 Python scripts
 --------------
