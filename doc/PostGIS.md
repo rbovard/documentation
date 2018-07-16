@@ -40,6 +40,7 @@ PostGIS
     * [Get azimuth of a linestring](#get-azimuth-of-a-linestring)
     * [Extract boundary of a MultiPolygon into a MultiLineString](#extract-boundary-of-a-multipolygon-into-a-multilinestring)
     * [Move a point with a distance and an azimuth](#move-a-point-with-a-distance-and-an-azimuth)
+    * [Find nearest point from another table](#find-nearest-point-from-another-table)
 * [Cryptography](#cryptography)
     * [Activate pgcrypto extension](#activate-pgcrypto-extension)
     * [Function sha1](#function-sha1)
@@ -382,6 +383,24 @@ FROM <table>
 ```sql
 SELECT ST_Transform(ST_Project(ST_Transform(geom, 4326), <distance>, <azimuth>)::Geometry, 21781)::Geometry(Point, 21781) AS geom
 FROM <table>;
+```
+
+### Find nearest point from another table
+
+With:
+
+* `<->` as distance between bbox centers
+* `<#>` as distance between bbox edges
+
+```sql
+SELECT a.id,
+(
+    SELECT b.id
+    FROM <table2> b
+    ORDER BY a.geom <#> b.geom
+    LIMIT 1
+)
+FROM <table1> a;
 ```
 
 Cryptography
