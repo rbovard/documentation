@@ -31,6 +31,7 @@ IT
 
 * [Git](doc/Git.md)
 * [Notepad++](doc/Notepad++.md)
+* [Python](doc/Python.md)
 * [Vim](doc/Vim.md)
 
 ### SSH
