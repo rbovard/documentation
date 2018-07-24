@@ -3,7 +3,7 @@
 import os
 import subprocess
 
-inputPath = os.path.normpath("C:\Temp")
+inputPath = os.path.normpath(r"C:\Temp")
 outputPath = os.path.join(inputPath, "output")
 tileindexFile = os.path.join(outputPath, "tileindex.shp")
 inputRasterExtension = "tif"
