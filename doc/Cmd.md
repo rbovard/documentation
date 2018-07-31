@@ -5,6 +5,7 @@ Cmd
     * [Delete directory](#delete-directory)
     * [Copy directory](#copy-directory)
     * [List all specific files](#list-all-specific-files)
+    * [List all files](#list-all-files)
     * [Delete files from a list](#delete-files-from-a-list)
 * [Applications](#applications)
     * [Start installation](#start-installation)
@@ -55,6 +56,12 @@ With date of last modification
 
 ```batchfile
 for /f "delims=" %a in ('dir /s /b *.<ext>') do @echo %~ta %~a
+```
+
+### List all files
+
+```batchfile
+dir /s /b /a-d * > <list>.txt
 ```
 
 ### Delete files from a list
