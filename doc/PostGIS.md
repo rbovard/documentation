@@ -63,6 +63,7 @@ PostGIS
 * [Miscellaneous](#miscellaneous)
     * [Get PostGIS version](#get-postgis-version)
     * [Set schema](#set-schema)
+    * [Disconnect users](#disconnect-users)
 * [psql](#psql)
     * [Create database with template](#create-database-with-template)
     * [Create schema and allow rights](#create-schema-and-allow-rights)
@@ -601,6 +602,15 @@ SELECT PostGIS_full_version();
 
 ```bash
 SET search_path = <schema>;
+```
+
+### Disconnect users
+
+```bash
+SELECT pg_terminate_backend(pg_stat_activity.pid)
+FROM pg_stat_activity
+WHERE (pg_stat_activity.datname = '<database>')
+AND pid <> pg_backend_pid();
 ```
 
 psql
