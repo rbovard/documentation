@@ -60,6 +60,7 @@ PostGIS
     * [Get all sequences](#get-all-sequences)
     * [Get tables with wrong SRID](#get-tables-with-wrong-srid)
     * [Get tables with wrong geometry type](#get-tables-with-wrong-geometry-type)
+    * [Get trigger definition](#get-trigger-definition)
 * [Miscellaneous](#miscellaneous)
     * [Get PostGIS version](#get-postgis-version)
     * [Set schema](#set-schema)
@@ -587,6 +588,14 @@ SELECT g.f_table_catalog, g.f_table_schema, g.f_table_name, g.f_geometry_column,
 FROM geometry_columns g
 WHERE g.type NOT IN ('POINT', 'MULTILINESTRING', 'MULTIPOLYGON')
 ORDER BY g.f_table_schema, g.f_table_name;
+```
+
+### Get trigger definition
+
+```sql
+SELECT pg_get_triggerdef(oid)
+FROM pg_trigger
+WHERE tgname = '<trigger>';
 ```
 
 Miscellaneous
