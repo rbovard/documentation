@@ -1,6 +1,8 @@
 Bash
 ====
 
+* [Files](#files)
+    * [Symlink content of directory](symlink-content-of-directory)
 * [Search](#search)
     * [Return filenames with searched text in subfolders](#return-filenames-with-searched-text-in-subfolders)
     * [Search specific words in given files](#search-specific-words-in-given-files)
@@ -35,6 +37,15 @@ Bash
     * [Check OS version](#check-os-version)
     * [Pass HTTP Referer in URL](#pass-http-referer-in-url)
     * [Get current public IP](#get-current-public-ip)
+
+Files
+------
+
+### Symlink content of directory
+
+```bash
+cp --symbolic-link /path/to/source/* /path/to/destination
+```
 
 Search
 ------
