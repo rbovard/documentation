@@ -25,7 +25,7 @@ for file in os.listdir(inputPath):
             # Create tiled file
             # Use `COMPRESS=LZW` for lossless compression
             # Use `COMPRESS=JPEG` for lossy compression
-            gdalCommand = "gdal_translate -of GTiff -co \"TILED=YES\" -co \"TFW=YES\" -co \"PROFILE=BASELINE\" -co \"COMPRESS=LZW\" {} {}".format(inputFile, outputFile)
+            gdalCommand = "gdal_translate -of GTiff -co TILED=YES -co TFW=YES -co PROFILE=BASELINE -co COMPRESS=LZW {} {}".format(inputFile, outputFile)
             process = subprocess.Popen(gdalCommand).communicate()[0]
 
             # Build overview images
