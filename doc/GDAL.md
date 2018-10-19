@@ -63,6 +63,8 @@ Convert raster data
 gdal_translate -of bt <file>.tif <file>.bt
 ```
 
+See [asc2bt.py](../python/asc2bt.py)
+
 Convert vector data
 -------------------
 
