@@ -109,8 +109,10 @@ git branch -d <branch>
 
 ```bash
 git checkout master
-git pull https://github.com/<user>/<repository>.git <branch>
 git merge <branch>
+git push upstream master
+git branch -d <branch>
+git push origin :<branch>
 git push origin master
 ```
 
