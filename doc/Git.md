@@ -105,6 +105,15 @@ git push origin <existing-branch>
 git branch -d <branch>
 ```
 
+#### From a fork
+
+```bash
+git checkout master
+git pull https://github.com/<user>/<repository>.git <branch>
+git merge <branch>
+git push origin master
+```
+
 Reset
 -----
 
