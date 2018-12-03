@@ -4,6 +4,7 @@ Cmd
 * [Directories and files](#directories-and-files)
     * [Delete directory](#delete-directory)
     * [Copy directory](#copy-directory)
+    * [Backup directory](#backup-directory)
     * [List all specific files](#list-all-specific-files)
     * [List all files](#list-all-files)
     * [Delete files from a list](#delete-files-from-a-list)
@@ -44,6 +45,12 @@ del <list>.txt
 
 ```batchfile
 XCOPY \\orcus\SITNyon\Geodata\Outils\Plugins\.qgis2 %USERPROFILE%\.qgis2 /E /I /Q /Y
+```
+
+### Backup directory
+
+```batchfile
+XCOPY <source> <destination> /E /Y /D
 ```
 
 ### List all specific files
