@@ -116,7 +116,7 @@ CREATE EXTENSION postgis;
 ### Create column
 
 ```sql
-ALTER TABLE <schema>.<table> ADD COLUMN geom geometry(<Point|MultiLineString|MultiPolygon>, 21781);
+ALTER TABLE <schema>.<table> ADD COLUMN geom geometry(<Point|MultiLineString|MultiPolygon>, 2056);
 ```
 
 ### Create spatial index
@@ -130,7 +130,7 @@ USING gist (geom);
 ### Convert simple geometry to multi geometry
 
 ```sql
-SELECT ST_Multi(geom)::Geometry(<MultiLineString|MultiPolygon>, 21781) AS geom
+SELECT ST_Multi(geom)::Geometry(<MultiLineString|MultiPolygon>, 2056) AS geom
 FROM <table>;
 ```
 
@@ -139,14 +139,14 @@ See [convert_simple_geometry_to_multi.sql](../sql/convert_simple_geometry_to_mul
 ### Convert MultiPoint to Point
 
 ```sql
-SELECT (ST_Dump(geom)).geom::Geometry(Point, 21781) AS geom
+SELECT (ST_Dump(geom)).geom::Geometry(Point, 2056) AS geom
 FROM <table>;
 ```
 
 ### Change projection
 
 ```sql
-SELECT ST_Transform(geom, 21781)::Geometry(<Point|MultiLineString|MultiPolygon>, 21781) AS geom
+SELECT ST_Transform(geom, 2056)::Geometry(<Point|MultiLineString|MultiPolygon>, 2056) AS geom
 FROM <table>;
 ```
 
@@ -310,7 +310,7 @@ WHERE ST_Within(a.geom, b.geom);
 ### Create a line between two points
 
 ```sql
-SELECT ST_MakeLine(a.geom, b.geom)::Geometry(LineString, 21781) AS geom
+SELECT ST_MakeLine(a.geom, b.geom)::Geometry(LineString, 2056) AS geom
 FROM <table1> a
 JOIN <table2> b ON a.id = b.fk;
 ```
@@ -326,7 +326,7 @@ WHERE ST_Intersects(a.geom, b.geom);
 ### Merge polygons with an attribute
 
 ```sql
-SELECT attribute, ST_Union(ST_SnapToGrid(geom, 0.0001))::Geometry(MultiPolygon, 21781) AS geom
+SELECT attribute, ST_Union(ST_SnapToGrid(geom, 0.0001))::Geometry(MultiPolygon, 2056) AS geom
 FROM <table>
 GROUP BY attribute;
 ```
@@ -350,14 +350,14 @@ JOIN <table2> b ON ST_Contains(ST_Buffer(b.geom, 100), a.geom);
 ### Create a parallel
 
 ```sql
-SELECT ST_OffsetCurve((ST_Dump(geom)).geom::Geometry(LineString, 21781), <offset>)::Geometry(MultiLineString, 21781) AS geom
+SELECT ST_OffsetCurve((ST_Dump(geom)).geom::Geometry(LineString, 2056), <offset>)::Geometry(MultiLineString, 2056) AS geom
 FROM <table>;
 ```
 
 ### Create a zone with buffers
 
 ```sql
-SELECT ST_Multi(ST_Union(ST_SnapToGrid(ST_Buffer(geom, <radius>), 0.0001)))::Geometry(MultiPolygon, 21781) AS geom
+SELECT ST_Multi(ST_Union(ST_SnapToGrid(ST_Buffer(geom, <radius>), 0.0001)))::Geometry(MultiPolygon, 2056) AS geom
 FROM <table>;
 ```
 
@@ -373,8 +373,8 @@ FROM <table>;
 ```sql
 WITH line AS (
     SELECT
-        ST_PointN((ST_Dump(geom)).geom, 1)::Geometry(Point, 21781) as p1,
-        ST_PointN((ST_Dump(geom)).geom, 2)::Geometry(Point, 21781) as p2
+        ST_PointN((ST_Dump(geom)).geom, 1)::Geometry(Point, 2056) as p1,
+        ST_PointN((ST_Dump(geom)).geom, 2)::Geometry(Point, 2056) as p2
     FROM <table>
 )
 SELECT
@@ -392,7 +392,7 @@ FROM <table>
 ### Move a point with a distance and an azimuth
 
 ```sql
-SELECT ST_Transform(ST_Project(ST_Transform(geom, 4326), <distance>, <azimuth>)::Geometry, 21781)::Geometry(Point, 21781) AS geom
+SELECT ST_Transform(ST_Project(ST_Transform(geom, 4326), <distance>, <azimuth>)::Geometry, 2056)::Geometry(Point, 2056) AS geom
 FROM <table>;
 ```
 
@@ -586,7 +586,7 @@ ORDER BY c.relname;
 ```sql
 SELECT g.f_table_catalog, g.f_table_schema, g.f_table_name, g.f_geometry_column, g.coord_dimension, g.srid, g.type
 FROM geometry_columns g
-WHERE g.srid <> 21781
+WHERE g.srid <> 2056
 ORDER BY g.f_table_schema, g.f_table_name;
 ```
 
