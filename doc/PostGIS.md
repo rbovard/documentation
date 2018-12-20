@@ -681,7 +681,7 @@ pg_restore --dbname=<database> <database>.backup
 ### Extract plain SQL schema from compressed backup
 
 ```bash
-pg_restore -f <database>.sql --schema-only <database>.backup
+pg_restore --file <database>.sql --schema-only <database>.backup
 ```
 
 Log
