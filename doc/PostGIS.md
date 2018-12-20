@@ -74,6 +74,7 @@ PostGIS
     * [Backup in custom format](#backup-in-custom-format)
     * [Backup specific schemas](#backup-specific-schemas)
     * [Restore backup](#restore-backup)
+    * [Extract plain SQL schema from compressed backup](#extract-plain-sql-schema-from-compressed-backup)
 * [Log Analyzer](#log-analyzer)
     * [pgBadger](#pgbadger)
 
@@ -675,6 +676,12 @@ pg_dump --format=custom --blobs <database> --schema='<pattern>' --file=<database
 
 ```bash
 pg_restore --dbname=<database> <database>.backup
+```
+
+### Extract plain SQL schema from compressed backup
+
+```bash
+pg_restore -f <database>.sql --schema-only <database>.backup
 ```
 
 Log
