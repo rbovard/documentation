@@ -1,6 +1,9 @@
 FME
 ===
 
+* [Transformers](#Transformers)
+    * [Remove geometry dimension](#remove-geometry-dimension)
+    * [Convert GeometryCollection to MultiPolygon or MultiLineString](#convert-geometrycollection-to-multipolygon-or-multilinestring)
 * [Batch process](#batch-process)
     * [Use multiple source datasets](#use-multiple-source-datasets)
 * [String replacer](#string-replacer)
@@ -10,10 +13,21 @@ FME
     * [Remove accents](#remove-accents)
 * [Expressions](#expressions)
     * [Check if attribute is integer](#check-if-attribute-is-integer)
-* [Remove geometry dimension](#remove-geometry-dimension)
 * [Coordinates systems](#coordinates-systems)
     * [Projections](#projections)
     * [Transformers](#transformers)
+
+Transformers
+------------
+
+### Remove geometry dimension
+
+* Elevation: `2DForcer`
+* Measure: `MeasureRemover`
+
+### Convert GeometryCollection to MultiPolygon or MultiLineString
+
+* `GeometryRefiner`
 
 Batch process
 -------------
@@ -83,12 +97,6 @@ Expressions
 ```python
 (@Value(attribute) == int(@Value(attribute))) ? 1 : 0
 ```
-
-Remove geometry dimension
--------------------------
-
-* Elevation: `2DForcer`
-* Measure: `MeasureRemover`
 
 Coordinates systems
 -------------------
