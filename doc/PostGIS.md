@@ -663,13 +663,13 @@ Backup and restore
 ### Backup in custom format
 
 ```bash
-pg_dump --format=custom --blobs <database> --file=<database>.backup
+pg_dump --format=custom --blobs <database> > <database>.backup
 ```
 
 ### Backup specific schemas
 
 ```bash
-pg_dump --format=custom --blobs <database> --schema='<pattern>' --file=<database>.backup
+pg_dump --format=custom --blobs <database> --schema='<pattern>' > <database>.backup
 ```
 
 ### Restore backup
