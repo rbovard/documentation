@@ -210,6 +210,7 @@ git push -f origin <branch>
 ### Rebase onto other branch
 
 ```bash
+git fetch upstream
 git rebase -i upstream/<other-branch>
 ```
 
