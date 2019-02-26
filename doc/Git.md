@@ -103,6 +103,7 @@ git checkout <existing-branch>
 git merge --no-ff <branch>
 git push origin <existing-branch>
 git branch -d <branch>
+git push origin :<branch>
 ```
 
 #### From a fork
