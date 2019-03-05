@@ -240,4 +240,5 @@ Stash
 ```bash
 git stash
 git stash branch <branch> stash@{0}
+git push -u origin <branch>
 ```
