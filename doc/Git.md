@@ -20,6 +20,8 @@ Git
     * [Rebase onto other branch](#rebase-onto-other-branch)
 * [Cherry pick](#cherry-pick)
     * [Cherry pick commit](#cherry-pick-commit)
+* [Stash](#stash)
+    * [Move uncommitted changes to a new branch](#move-uncommitted-changes-to-a-new-branch)
 
 Configuration
 -------------
@@ -228,4 +230,14 @@ Cherry pick
 
 ```bash
 git cherry-pick <SHA>
+```
+
+Stash
+-----------
+
+### Move uncommitted changes to a new branch
+
+```bash
+git stash
+git stash branch <branch> stash@{0}
 ```
