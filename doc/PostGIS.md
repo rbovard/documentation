@@ -40,6 +40,7 @@ PostGIS
     * [Return the nth point of a linestring](#return-the-nth-point-of-a-linestring)
     * [Get azimuth of a linestring](#get-azimuth-of-a-linestring)
     * [Extract boundary of a MultiPolygon into a MultiLineString](#extract-boundary-of-a-multipolygon-into-a-multilinestring)
+    * [Create MultiPolygon from outer ring of multiple polygons](#create-multipolygon-from-outer-ring-of-multiple-polygons)
     * [Move a point with a distance and an azimuth](#move-a-point-with-a-distance-and-an-azimuth)
     * [Find nearest point from another table](#find-nearest-point-from-another-table)
 * [Cryptography](#cryptography)
@@ -387,6 +388,13 @@ FROM line;
 
 ```sql
 SELECT ST_Boundary(geom) AS geom
+FROM <table>
+```
+
+### Create MultiPolygon from outer ring of multiple polygons
+
+```sql
+SELECT ST_Multi(ST_MakePolygon(ST_ExteriorRing(ST_Union(geom))))::geometry(MultiPolygon, 2056) AS geom
 FROM <table>
 ```
 
