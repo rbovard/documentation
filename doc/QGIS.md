@@ -77,13 +77,14 @@ Message bar
 -----------
 
 ```python
-from qgis.gui import *
+from qgis.core import Qgis
 
 message = u"<message>"
 
-iface.messageBar().pushMessage("Information", message, level=QgsMessageBar.INFO, duration=3)
-iface.messageBar().pushMessage("Warning", message, level=QgsMessageBar.WARNING)
-iface.messageBar().pushMessage("Error", message, level=QgsMessageBar.CRITICAL)
+iface.messageBar().pushMessage("Information", message, level=Qgis.Info, duration=3)
+iface.messageBar().pushMessage("Warning", message, level=Qgis.Warning)
+iface.messageBar().pushMessage("Error", message, level=Qgis.Critical)
+iface.messageBar().pushMessage("Success", message, level=Qgis.Success, duration=3)
 ```
 
 Toolbar
