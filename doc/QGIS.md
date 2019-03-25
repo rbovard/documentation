@@ -8,6 +8,7 @@ QGIS
 * [Settings](#settings)
     * [Default settings](#default-settings)
 * [Message bar](#message-bar)
+* [Toolbar](#toolbar)
 * [Installation](#installation)
 
 Actions
@@ -83,6 +84,14 @@ message = u"<message>"
 iface.messageBar().pushMessage("Information", message, level=QgsMessageBar.INFO, duration=3)
 iface.messageBar().pushMessage("Warning", message, level=QgsMessageBar.WARNING)
 iface.messageBar().pushMessage("Error", message, level=QgsMessageBar.CRITICAL)
+```
+
+Toolbar
+-------
+
+```python
+from PyQt5.QtWidgets import QToolBar
+for x in iface.mainWindow().findChildren(QToolBar): print(x.objectName())
 ```
 
 Installation
