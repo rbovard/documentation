@@ -29,6 +29,7 @@ IT
 
 ### Development
 
+* [Docker](doc/Docker.md)
 * [Git](doc/Git.md)
 * [Notepad++](doc/Notepad++.md)
 * [Python](doc/Python.md)
