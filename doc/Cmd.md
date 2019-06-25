@@ -119,7 +119,7 @@ ECHO:
 ### Remark
 
 ```batchfile
-REM Text
+:: Text
 ```
 
 ### Wait
