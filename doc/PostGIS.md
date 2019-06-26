@@ -4,6 +4,7 @@ PostGIS
 * [Create table](#create-table)
     * [Create index](#create-index)
 * [Data types](#data-types)
+    * [Convert integer to UUID](#convert-integer-to-uuid)
 * [Geometries](#geometries)
     * [Activate PostGIS extension](#activate-postgis-extension)
     * [Create column](#create-column)
@@ -105,6 +106,13 @@ Data types
 | **Boolean**   | `bool`                                     |
 | **Date/Time** | `date`, `timestamp`                        |
 | **Geometry**  | `Point`, `MultiLineString`, `MultiPolygon` |
+
+### Convert integer to UUID
+
+```
+ALTER TABLE <schema>.<table> ALTER COLUMN <column> TYPE text;
+ALTER TABLE <schema>.<table> ALTER COLUMN <column> TYPE uuid USING <column>::uuid;
+```
 
 Geometries
 ----------
