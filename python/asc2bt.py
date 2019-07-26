@@ -3,8 +3,8 @@
 import os
 import subprocess
 
-''' Convert ASCII Grids to Binary Terrain files '''
-def asc2bt(input_path, output_path):
+''' Convert to Binary Terrain files '''
+def convert_to_bt(input_path, output_path):
     if not os.path.exists(output_path):
         os.mkdir(output_path)
 
@@ -14,13 +14,13 @@ def asc2bt(input_path, output_path):
         if os.path.isfile(input_file):
             file_name = file.split(".")
 
-            if file_name[1] == "asc":
+            if file_name[1] == input_raster_extension:
                 output_file = os.path.join(output_path, file_name[0] + ".bt")
                 gdal_command = "gdal_translate -of bt {} {}".format(input_file, output_file)
                 process = subprocess.Popen(gdal_command).communicate()[0]
 
 ''' Generate tileindex '''
-def generate_tileindex(path):
+def generate_raster_tileindex(path):
     tileindex_file = os.path.join(path, "tileindex.shp")
     gdal_command = "gdaltindex {} {}".format(tileindex_file, os.path.join(path, "*.bt"))
     output = subprocess.Popen(gdal_command).communicate()[0]
@@ -28,7 +28,8 @@ def generate_tileindex(path):
 # Define variables
 input_path = os.path.normpath(r"C:\Temp")
 output_path = os.path.join(input_path, "output")
+input_raster_extension = "asc"
 
 # Execute scripts
-asc2bt(input_path, output_path)
-generate_tileindex(output_path)
+convert_to_bt(input_path, output_path)
+generate_raster_tileindex(output_path)
