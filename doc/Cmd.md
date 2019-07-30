@@ -21,6 +21,7 @@ Cmd
     * [Prompt variable](#prompt-variable)
 * [Terminal server](#terminal-server)
     * [Disconnect user](#disconnect-user)
+    * [Restart server](#restart-server)
 
 Directories and files
 ---------------------
@@ -149,4 +150,10 @@ Terminal server
 ```batchfile
 query session /server:<server>
 reset session <id> /server:<server>
+```
+
+### Restart server
+
+```batchfile
+shutdown /r
 ```
