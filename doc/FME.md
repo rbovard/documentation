@@ -4,6 +4,7 @@ FME
 * [Transformers](#Transformers)
     * [Remove geometry dimension](#remove-geometry-dimension)
     * [Convert GeometryCollection to MultiPolygon or MultiLineString](#convert-geometrycollection-to-multipolygon-or-multilinestring)
+    * [Create an unique identifier](#create-an-unique-identifier)
 * [Batch process](#batch-process)
     * [Use multiple source datasets](#use-multiple-source-datasets)
 * [String replacer](#string-replacer)
@@ -28,6 +29,10 @@ Transformers
 ### Convert GeometryCollection to MultiPolygon or MultiLineString
 
 * `GeometryRefiner`
+
+### Create an unique identifier
+
+* `CRCCalculator`
 
 Batch process
 -------------
