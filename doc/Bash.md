@@ -3,6 +3,7 @@ Bash
 
 * [Files](#files)
     * [Symlink content of directory](symlink-content-of-directory)
+    * [Create new file with content](create-new-file-with-content)
 * [Search](#search)
     * [Return filenames with searched text in subfolders](#return-filenames-with-searched-text-in-subfolders)
     * [Search specific words in given files](#search-specific-words-in-given-files)
@@ -39,13 +40,21 @@ Bash
     * [Get current public IP](#get-current-public-ip)
 
 Files
-------
+-----
 
 ### Symlink content of directory
 
 ```bash
 cp --symbolic-link /path/to/source/* /path/to/destination
 ```
+
+### Create new file with content
+
+```bash
+echo '<text>' > <file>
+```
+
+Use `>>` to append text to existing file
 
 Search
 ------
