@@ -165,3 +165,10 @@ For *QGIS 2.18*
 
 * `EPSG:21781` > `EPSG:2056`
 * `tileMatrixSet=21781` > `tileMatrixSet=2056`
+
+### Print layout extent
+
+* `ymin="` > `ymin="1`
+* `xmin="` > `xmin="2`
+* `ymax="` > `ymax="1`
+* `xmax="` > `xmax="2`
