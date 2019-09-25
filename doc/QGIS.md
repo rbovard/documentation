@@ -10,6 +10,7 @@ QGIS
 * [Message bar](#message-bar)
 * [Toolbar](#toolbar)
 * [Installation](#installation)
+* [MN95 migration](#mn95-migration)
 
 Actions
 -------
@@ -134,3 +135,33 @@ Dev tools
 ```bash
 sudo apt install pyqt4-dev-tools qt4-designer
 ```
+
+MN95 migration
+--------------
+
+For *QGIS 2.18*
+
+### Database layer
+
+* `srid=21781` > `srid=2056`
+* `_03"."` > `"."`
+
+### Layer and project extent
+
+* `<xmin>` > `<xmin>2`
+* `<xmax>` > `<xmax>2`
+* `<ymin>` > `<ymin>1`
+* `<ymax>` > `<ymax>1`
+
+### SRID definition
+
+* `<proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>` > `<proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>`
+* `<srsid>1919</srsid>` > `<srsid>47</srsid>`
+* `<srid>21781</srid>` > `<srid>2056</srid>`
+* `<authid>EPSG:21781</authid>` > `<authid>EPSG:2056</authid>`
+* `<description>CH1903 / LV03</description>` > `<description>CH1903+ / LV95</description>`
+
+### WMS and WMTS connection
+
+* `EPSG:21781` > `EPSG:2056`
+* `tileMatrixSet=21781` > `tileMatrixSet=2056`
