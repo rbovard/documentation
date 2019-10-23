@@ -336,9 +336,9 @@ WHERE ST_Intersects(a.geom, b.geom);
 ### Merge polygons with an attribute
 
 ```sql
-SELECT attribute, ST_Union(ST_SnapToGrid(geom, 0.0001))::Geometry(MultiPolygon, 2056) AS geom
+SELECT <attribute>, ST_Union(ST_SnapToGrid(geom, 0.0001))::Geometry(MultiPolygon, 2056) AS geom
 FROM <table>
-GROUP BY attribute;
+GROUP BY <attribute>;
 ```
 
 ### Check validity of geometries
