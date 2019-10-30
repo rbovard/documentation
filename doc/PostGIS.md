@@ -25,6 +25,7 @@ PostGIS
     * [Add an unit to a value](#add-an-unit-to-a-value)
     * [Convert numeric to string](#convert-numeric-to-string)
     * [Convert date to string](#convert-date-to-string)
+    * [Convert string to date](#convert-string-to-date)
     * [Order results by list](#order-results-by-list)
     * [Split string with a separator and get specific part](#split-string-with-a-separator-and-get-specific-part)
     * [Test with a list of values](#test-with-a-list-of-values)
@@ -265,6 +266,13 @@ FROM mo.mo_pfp1 p;
 
 ```sql
 SELECT to_char(<column>, 'DD.MM.YYYY') AS <column>
+FROM <table>;
+```
+
+### Convert string to date
+
+```sql
+SELECT to_date(<column>, 'DD.MM.YYYY') AS <column>
 FROM <table>;
 ```
 
