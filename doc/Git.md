@@ -61,12 +61,20 @@ git push origin origin:refs/heads/<branch>
 git checkout -b <branch> origin/<branch>
 ```
 
-#### From an existing branch
+#### From an existing distant branch
 
 ```bash
 git checkout master
 git fetch origin
 git checkout -b <branch> origin/<branch>
+```
+
+#### Based on another local branch
+
+```bash
+git checkout master
+git fetch origin
+git checkout -b <branch> <existing-branch>
 ```
 
 ### Rebase branch onto master (if necessary)
