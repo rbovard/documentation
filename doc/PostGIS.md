@@ -30,6 +30,7 @@ PostGIS
     * [Split string with a separator and get specific part](#split-string-with-a-separator-and-get-specific-part)
     * [Test with a list of values](#test-with-a-list-of-values)
     * [Where not like multiple values](#where-not-like-multiple-values)
+    * [Get JSON object field as text](#get-json-object-field-as-text)
 * [Spatial queries](#spatial-queries)
     * [Spatial join (point in polygon)](#spatial-join-point-in-polygon)
     * [Create a line between two points](#create-a-line-between-two-points)
@@ -312,6 +313,12 @@ WHERE <attribute> SIMILAR TO '(<value1>|<value2>|<value3>)';
 SELECT *
 FROM <table>
 WHERE <attribute> NOT LIKE ALL (ARRAY['%<pattern1>%', '%<pattern2>%']);
+```
+
+### Get JSON object field as text
+
+```sql
+SELECT '{"format":"GPKG", "projection":"SWITZERLAND95"}'::json->>'projection' AS projection;
 ```
 
 Spatial queries
