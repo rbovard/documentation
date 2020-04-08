@@ -6,6 +6,7 @@ Windows
     * [Not specific extension](#not-specific-extension)
 * [OS](#os)
     * [Restart via scheduled task](#restart-via-scheduled-task)
+    * [Get system informations](get-system-informations)
 
 Search
 ------
@@ -27,3 +28,10 @@ OS
 
 Program: `C:\Windows\System32\shutdown.exe`
 Arguments: `-r`
+
+Get system informations
+-----------------------
+
+Like uptime
+
+`systeminfo`
