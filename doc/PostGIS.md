@@ -31,6 +31,7 @@ PostGIS
     * [Test with a list of values](#test-with-a-list-of-values)
     * [Where not like multiple values](#where-not-like-multiple-values)
     * [Get JSON object field as text](#get-json-object-field-as-text)
+    * [Update a column from another table](#ppdate-a-column-from-another-table)
 * [Spatial queries](#spatial-queries)
     * [Spatial join (point in polygon)](#spatial-join-point-in-polygon)
     * [Create a line between two points](#create-a-line-between-two-points)
@@ -319,6 +320,15 @@ WHERE <attribute> NOT LIKE ALL (ARRAY['%<pattern1>%', '%<pattern2>%']);
 
 ```sql
 SELECT '{"format":"GPKG", "projection":"SWITZERLAND95"}'::json->>'projection' AS projection;
+```
+
+### Update a column from another table
+
+```sql
+UPDATE <table1>
+SET <column> = <table2>.<column>
+FROM <table2>
+WHERE <table1>.<fk> = <table2>.id;
 ```
 
 Spatial queries
