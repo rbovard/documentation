@@ -8,6 +8,7 @@ PostGIS
 * [Geometries](#geometries)
     * [Activate PostGIS extension](#activate-postgis-extension)
     * [Create column](#create-column)
+    * [Insert geometry from text](#insert-geometry-from-text)
     * [Create spatial index](#create-spatial-index)
     * [Convert simple geometry to multi geometry](#convert-simple-geometry-to-multi-geometry)
     * [Convert MultiPoint to Point](#convert-multipoint-to-point)
@@ -130,6 +131,12 @@ CREATE EXTENSION postgis;
 
 ```sql
 ALTER TABLE <schema>.<table> ADD COLUMN geom geometry(<Point|MultiLineString|MultiPolygon>, 2056);
+```
+
+### Insert geometry from text
+
+```sql
+INSERT INTO <schema>.<table> (geom) VALUES (ST_GeomFromText('POINT (<coord_y> <coord_x>)', 2056))
 ```
 
 ### Create spatial index
