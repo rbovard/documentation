@@ -31,6 +31,7 @@ IT
 
 * [Docker](doc/Docker.md)
 * [Git](doc/Git.md)
+* [JavaScript](doc/JavaScript.md)
 * [Notepad++](doc/Notepad++.md)
 * [Python](doc/Python.md)
 * [Vim](doc/Vim.md)
