@@ -2,7 +2,7 @@ Cmd
 ===
 
 * [Directories and files](#directories-and-files)
-    * [Change directory and drive](#delete-directory-and-drive)
+    * [Change directory and drive](#change-directory-and-drive)
     * [Delete directory](#delete-directory)
     * [Copy directory](#copy-directory)
     * [Backup directory](#backup-directory)
@@ -24,6 +24,7 @@ Cmd
 * [Terminal server](#terminal-server)
     * [Disconnect user](#disconnect-user)
     * [Restart server](#restart-server)
+* [Environment path variables](#environment-path-variables)
 
 Directories and files
 ---------------------
@@ -171,3 +172,21 @@ RESET session <id> /server:<server>
 ```batchfile
 SHUTDOWN /r
 ```
+
+Environment path variables
+--------------------------
+
+* `%AllUsersProfile%`: `C:\ProgramData`
+* `%AppData%`: `C:\Users\<username>\AppData\Roaming`
+* `%CommonProgramFiles%`: `C:\Program Files\Common Files`
+* `%CommonProgramFiles(x86)%`: `C:\Program Files (x86)\Common Files`
+* `%HomeDrive%`: `C:\`
+* `%LocalAppData%`: `C:\Users\<username>\AppData\Local`
+* `%ProgramData%`: `C:\ProgramData`
+* `%ProgramFiles%`: `C:\Program Files` or `C:\Program Files (x86)`
+* `%ProgramFiles(x86)%`: `C:\Program Files (x86)`
+* `%Public%`: `C:\Users\Public`
+* `%SystemDrive%`: `C:`
+* `%SystemRoot%`: `C:\Windows`
+* `%Temp%`: `C:\Users\<username>\AppData\Local\Temp`
+* `%UserProfile%`: `C:\Users\<username>`
