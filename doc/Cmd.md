@@ -2,6 +2,7 @@ Cmd
 ===
 
 * [Directories and files](#directories-and-files)
+    * [Change directory and drive](#delete-directory-and-drive)
     * [Delete directory](#delete-directory)
     * [Copy directory](#copy-directory)
     * [Backup directory](#backup-directory)
@@ -25,6 +26,12 @@ Cmd
 
 Directories and files
 ---------------------
+
+### Change directory and drive
+
+```batchfile
+CD /d <drive>:\<path>
+```
 
 ### Delete directory
 
