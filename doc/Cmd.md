@@ -12,6 +12,7 @@ Cmd
 * [Applications](#applications)
     * [Start installation](#start-installation)
     * [Run batch](#run-batch)
+    * [Set environment variable](#set-environment-variable)
 * [Fonts](#fonts)
     * [Install font](#install-font)
 * [Batch scripts](#batch-scripts)
@@ -97,7 +98,13 @@ START /WAIT QGIS-OSGeo4W-2.8.1-1-Setup-x86.exe
 ### Run batch
 
 ```batchfile
-call <batch>.bat
+CALL <batch>.bat
+```
+
+### Set environment variable
+
+```batchfile
+SETX <variable> "<value>"
 ```
 
 Fonts
