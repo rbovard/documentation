@@ -17,6 +17,7 @@ Cmd
     * [Install font](#install-font)
 * [Batch scripts](#batch-scripts)
     * [Echo](#echo)
+    * [Pause](#pause)
     * [Remark](#remark)
     * [Wait](#wait)
     * [Time](#time)
@@ -124,6 +125,12 @@ Batch scripts
 
 ```batchfile
 @ECHO OFF
+```
+
+### Pause
+
+```batchfile
+PAUSE
 ```
 
 #### Empty line
