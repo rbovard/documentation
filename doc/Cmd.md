@@ -35,11 +35,11 @@ IF EXIST %USERPROFILE%\.qgis2\python\plugins\SettingsManager RD %USERPROFILE%\.q
 ### Delete all directories
 
 ```batchfile
-dir *. /b > <list>.txt
-for /f %%a in (<list>.txt) do (
+DIR *. /b > <list>.txt
+FOR /f %%a IN (<list>.txt) DO (
     RD %%a /S /Q
 )
-del <list>.txt
+DEL <list>.txt
 ```
 
 ### Copy directory
@@ -57,25 +57,25 @@ XCOPY <source> <destination> /E /Y /D
 ### List all specific files
 
 ```batchfile
-dir /s /b *.<ext> > <list>.txt
+DIR /s /b *.<ext> > <list>.txt
 ```
 
 With date of last modification
 
 ```batchfile
-for /f "delims=" %a in ('dir /s /b *.<ext>') do @echo %~ta %~a
+FOR /f "delims=" %a IN ('DIR /s /b *.<ext>') DO @echo %~ta %~a
 ```
 
 ### List all files
 
 ```batchfile
-dir /s /b /a-d * > <list>.txt
+DIR /s /b /a-d * > <list>.txt
 ```
 
 ### Delete files from a list
 
 ```
-for /f %i in (<list>.txt) do del %i
+FOR /f %i IN (<list>.txt) DO DEL %i
 ```
 
 Applications
@@ -126,7 +126,7 @@ ECHO:
 ### Wait
 
 ```batchfile
-ping 1.1.1.1 -n 1 -w 5000 >NUL
+PING 1.1.1.1 -n 1 -w 5000 >NUL
 ```
 
 ### Time
@@ -148,12 +148,12 @@ Terminal server
 ### Disconnect user
 
 ```batchfile
-query session /server:<server>
-reset session <id> /server:<server>
+QUERY session /server:<server>
+RESET session <id> /server:<server>
 ```
 
 ### Restart server
 
 ```batchfile
-shutdown /r
+SHUTDOWN /r
 ```
