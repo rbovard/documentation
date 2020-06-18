@@ -7,6 +7,8 @@
 * [Services](#services)
   * [Display logs of a service](#display-logs-of-a-service)
   * [Run commands in a service](#run-commands-in-a-service)
+* [Tools](#tools)
+  * [Copy a file into a container](#copy-a-file-into-a-container)
 * Compose files
   * [PostGIS and pgAdmin](../docker/postgis-pgadmin/docker-compose.yml)
 
@@ -42,4 +44,12 @@ docker-compose logs -f --tail=10 <service>
 
 ```
 docker-compose exec <service> bash
+```
+
+## Tools
+
+### Copy a file into a container
+
+```
+docker cp <source-file> <container-id>:<destination-file>
 ```
