@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+  postgis:
+    image: postgis/postgis
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgresql-data:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: unless-stopped
+    ports:
+      - 8080:80
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.org
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+
+volumes:
+  postgresql-data:
+  pgadmin-data:

@@ -7,6 +7,8 @@
 * [Services](#services)
   * [Display logs of a service](#display-logs-of-a-service)
   * [Run commands in a service](#run-commands-in-a-service)
+* Compose files
+  * [PostGIS and pgAdmin](../docker/postgis-pgadmin/docker-compose.yml)
 
 ## Containers
 
