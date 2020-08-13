@@ -23,6 +23,8 @@ Git
     * [Cherry pick commit](#cherry-pick-commit)
 * [Stash](#stash)
     * [Move uncommitted changes to a new branch](#move-uncommitted-changes-to-a-new-branch)
+* [Search](#search)
+    * [Search in repository files](#search-in-repository-files)
 
 Configuration
 -------------
@@ -250,7 +252,7 @@ git cherry-pick <SHA>
 ```
 
 Stash
------------
+-----
 
 ### Move uncommitted changes to a new branch
 
@@ -258,4 +260,13 @@ Stash
 git stash
 git stash branch <branch> stash@{0}
 git push -u origin <branch>
+```
+
+Search
+------
+
+### Search in repository files
+
+```bash
+git grep -n '<value>'
 ```
