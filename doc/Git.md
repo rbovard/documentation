@@ -11,6 +11,7 @@ Git
     * [Undo the last commit (not pushed)](#undo-the-last-commit-not-pushed)
     * [Remove all local changes (not committed)](#remove-all-local-changes-not-committed)
     * [Edit last commit message (not pushed)](#edit-last-commit-message-not-pushed)
+    * [Revert a commit](#revert-a-commit)
 * [Update](#update)
     * [Syncing a fork](#syncing-a-fork)
     * [Update submodules](#update-submodules)
@@ -146,6 +147,14 @@ git reset --hard
 
 ```bash
 git commit --amend -m '<new-message>'
+```
+
+### Revert a commit
+
+```bash
+git log
+# Search commit and copy its hash
+git revert --no-edit <hash>
 ```
 
 Update
