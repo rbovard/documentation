@@ -11,6 +11,7 @@ Bash
     * [Find file by extension](#find-file-by-extension)
     * [Count files in subfolders](#count-files-in-subfolders)
     * [Filter unique grep results](#filter-unique-grep-results)
+    * [Search latest occurences](#search-latest-occurences)
 * [Packages](#packages)
     * [Update and upgrade](#update-and-upgrade)
     * [Clean cache](#clean-cache)
@@ -93,6 +94,12 @@ ls -lR | egrep -c '^-'
 
 ```bash
 grep <word> <file> | sort | uniq
+```
+
+### Search latest occurences
+
+```bash
+tac <file> | grep -m 10 '<word>'
 ```
 
 Packages
