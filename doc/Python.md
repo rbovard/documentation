@@ -48,6 +48,14 @@ pip install --upgrade <package>
 pip uninstall <package>
 ```
 
+With its dependencies:
+
+```
+pip-autoremove <package> -y
+```
+
+*Need `pip-autoremove` package installed*
+
 ### Create a requirements file
 
 ```
