@@ -13,10 +13,13 @@ Bash
     * [Filter unique grep results](#filter-unique-grep-results)
     * [Search latest occurences](#search-latest-occurences)
 * [Packages](#packages)
+    * [Install a package](#install-a-package)
     * [Update and upgrade](#update-and-upgrade)
     * [Clean cache](#clean-cache)
     * [Check if a package is present](#check-if-a-package-is-present)
+    * [Search in packages list](#search-in-packages-list)
     * [Add key](#add-key)
+    * [Uninstall a package](#uninstall-a-package)    
 * [Logs](#logs)
     * [Display Apache logs in realtime](#display-apache-logs-in-realtime)
 * [Disk](#disk)
@@ -105,6 +108,12 @@ tac <file> | grep -m 10 '<word>'
 Packages
 --------
 
+### Install a package
+
+```bash
+sudo apt install <package>
+```
+
 ### Update and upgrade
 
 ```bash
@@ -117,10 +126,23 @@ sudo apt update && sudo apt full-upgrade
 sudo apt clean
 ```
 
+### Search in packages list
+
+```bash
+apt search <value>
+```
+
 ### Check if a package is present
 
 ```bash
-dpkg -l <package-name>
+dpkg -l <package>
+```
+
+### Uninstall a package
+
+```
+sudo apt purge <package>
+sudo apt autoremove
 ```
 
 ### Add key
