@@ -28,6 +28,7 @@ PostGIS
     * [Convert date to string](#convert-date-to-string)
     * [Convert string to date](#convert-string-to-date)
     * [Get previous business day](#get-previous-business-day)
+    * [Get next business day](#get-next-business-day)
     * [Order results by list](#order-results-by-list)
     * [Split string with a separator and get specific part](#split-string-with-a-separator-and-get-specific-part)
     * [Test with a list of values](#test-with-a-list-of-values)
@@ -295,6 +296,17 @@ SELECT
         WHEN 0 THEN current_date - 2
         ELSE current_date - 1
     END AS previous_business_day;
+```
+
+### Get next business day
+
+```sql
+SELECT
+    CASE (EXTRACT(ISODOW FROM current_date)::integer) % 7
+        WHEN 5 THEN current_date + 3
+        WHEN 6 THEN current_date + 2
+        ELSE current_date + 1
+    END AS next_business_day;
 ```
 
 ### Order results by list
