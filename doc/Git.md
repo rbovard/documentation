@@ -25,6 +25,9 @@ Git
     * [Move uncommitted changes to a new branch](#move-uncommitted-changes-to-a-new-branch)
 * [Search](#search)
     * [Search in repository files](#search-in-repository-files)
+* [Tag](#tag)
+    * [List all tags](#list-all-tags)
+    * [Checkout a tagged version](#checkout a tagged version)
 
 Configuration
 -------------
@@ -269,4 +272,19 @@ Search
 
 ```bash
 git grep -n '<value>'
+```
+
+Tag
+---
+
+### List all tags
+
+```bash
+git tag -l
+```
+
+### Checkout a tagged version
+
+```bash
+git checkout tags/<tag>
 ```
