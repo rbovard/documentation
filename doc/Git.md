@@ -27,7 +27,7 @@ Git
     * [Search in repository files](#search-in-repository-files)
 * [Tag](#tag)
     * [List all tags](#list-all-tags)
-    * [Checkout a tagged version](#checkout a tagged version)
+    * [Checkout a tagged version](#checkout-a-tagged-version)
 
 Configuration
 -------------
