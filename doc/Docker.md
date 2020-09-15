@@ -23,7 +23,7 @@ docker-compose up -d
 ### Restart containers
 
 ```
-docker-compose down && docker-compose up -d
+docker-compose down --remove-orphans && docker-compose up -d
 ```
 
 ### List containers
