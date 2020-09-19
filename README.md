@@ -1,50 +1,61 @@
 # Documentation
 
+## Development
+
+### Code editors
+
+* [Notepad++](doc/Notepad++.md)
+* [Vim](doc/Vim.md)
+
+### Programming languages
+
+* [JavaScript](doc/JavaScript.md)
+* [Python](doc/Python.md)
+
+### Remote operations
+
+* [PuTTY](doc/PuTTY.md)
+* [WinSCP](doc/WinSCP.md)
+
+### Development tools
+
+* [Docker](doc/Docker.md)
+* [Git](doc/Git.md)
+
 ## GIS
 
-### Tools
+### GIS Client
+
+* [QGIS](doc/QGIS.md)
+
+### GIS Server
+
+* [MapServer](doc/MapServer.md)
+
+### Data transformation
 
 * [FME](doc/FME.md)
 * [GDAL](doc/GDAL.md)
 * [osm2pgsql](doc/osm2pgsql.md)
 
-### Server
+### Database
 
 * [PostGIS](doc/PostGIS.md)
-* [MapServer](doc/MapServer.md)
 
-### Client
+## Operating systems
 
-* [QGIS](doc/QGIS.md)
-
-## IT
-
-### Console
+### Linux
 
 * [Bash](doc/Bash.md)
+
+### Windows
+
 * [Cmd](doc/Cmd.md)
-
-### Development
-
-* [Docker](doc/Docker.md)
-* [Git](doc/Git.md)
-* [JavaScript](doc/JavaScript.md)
-* [Notepad++](doc/Notepad++.md)
-* [Python](doc/Python.md)
-* [Vim](doc/Vim.md)
-
-### SSH
-
-* [PuTTY](doc/PuTTY.md)
-* [WinSCP](doc/WinSCP.md)
-
-### Operating system
-
 * [Windows](doc/Windows.md)
 
-### Miscellaneous
+## Miscellaneous
 
 * [7-Zip](doc/7-Zip.md)
-* [Nagios](doc/Nagios.md)
 * [NConvert](doc/NConvert.md)
+* [Nagios](doc/Nagios.md)
 * [VLC](doc/VLC.md)
