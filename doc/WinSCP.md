@@ -1,5 +1,4 @@
-WinSCP
-======
+# WinSCP
 
 * [Execute script](#execute-script)
 * [Scripts](#scripts)
@@ -7,16 +6,14 @@ WinSCP
     * [Synchronize folders](#synchronize-folders)
     * [Download specific file](#download-specific-file)
 
-Execute script
---------------
+## Execute script
 
 ```batchfile
 @ECHO OFF
 winscp.com /script=<script>.txt
 ```
 
-Scripts
--------
+## Scripts
 
 ### Connection
 

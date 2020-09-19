@@ -1,8 +1,6 @@
-Code snippets
-=============
+# Documentation
 
-GIS
----
+## GIS
 
 ### Tools
 
@@ -19,8 +17,7 @@ GIS
 
 * [QGIS](doc/QGIS.md)
 
-IT
---
+## IT
 
 ### Console
 

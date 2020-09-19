@@ -1,10 +1,8 @@
-osm2pgsql
-=========
+# osm2pgsql
 
 * [Import data](#import-data)
 
-Import data
------------
+## Import data
 
 ```batchfile
 set pgpassword=<password>

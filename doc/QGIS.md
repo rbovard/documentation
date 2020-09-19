@@ -1,5 +1,4 @@
-QGIS
-====
+# QGIS
 
 * [Actions](#actions)
 * [Atlas](#atlas)
@@ -12,8 +11,7 @@ QGIS
 * [Installation](#installation)
 * [MN95 migration](#mn95-migration)
 
-Actions
--------
+## Actions
 
 | Name         | Type | Action |
 | ------------ | ---- | ------ |
@@ -21,8 +19,7 @@ Actions
 | RF simplifié | Open | ```http://www.rfinfo.vd.ch/rfinfo.php?no_commune=[%substr("IDENTDN", 4, 3)%]&no_immeuble=[%"numero"%]``` |
 | RF complet   | Open | ```https://secure.vd.ch/territoire/intercapi/faces?bfs=[%substr("IDENTDN", 4, 3)%]&kr=0&n1=[%"numero"%]&type=grundstueck_grundbuch_auszug&sec=<key>&intercapi=Extrait+RF+online``` |
 
-Atlas
------
+## Atlas
 
 ### Display only current altlas attribute related features
 
@@ -38,8 +35,7 @@ With a rule based symbology
 aggregate('<layer>', 'count', 'id', intersects(@atlas_geometry, $geometry))
 ```
 
-Settings
---------
+## Settings
 
 ```python
 from PyQt4.QtCore import QSettings
@@ -74,8 +70,7 @@ A new settings file will be created (`QGIS/QGIS2.ini`) and used instead of the s
 
 > With the command line option `--configpath`, QGIS will use the given path for all user configuration (`QSettings` and `.qgis2` folder).
 
-Message bar
------------
+## Message bar
 
 ```python
 from qgis.core import Qgis
@@ -88,16 +83,14 @@ iface.messageBar().pushMessage("Error", message, level=Qgis.Critical)
 iface.messageBar().pushMessage("Success", message, level=Qgis.Success, duration=3)
 ```
 
-Toolbar
--------
+## Toolbar
 
 ```python
 from PyQt5.QtWidgets import QToolBar
 for x in iface.mainWindow().findChildren(QToolBar): print(x.objectName())
 ```
 
-Installation
-------------
+## Installation
 
 ### Alternative repository
 
@@ -136,8 +129,7 @@ Dev tools
 sudo apt install pyqt4-dev-tools qt4-designer
 ```
 
-MN95 migration
---------------
+## MN95 migration
 
 For *QGIS 2.18*
 

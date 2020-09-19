@@ -1,5 +1,4 @@
-PuTTY
-=====
+# PuTTY
 
 * [SSH tunnel](#ssh-tunnel)
     * [Open SSH tunnel with port forwarding](#open-ssh-tunnel-with-port-forwarding)
@@ -10,8 +9,7 @@ PuTTY
 * [Settings](#settings)
     * [Export settings](#export-settings)
 
-SSH tunnel
-----------
+## SSH tunnel
 
 ### Open SSH tunnel with port forwarding
 
@@ -26,8 +24,7 @@ ping 1.1.1.1 -n 1 -w 5000 >NUL
 taskkill /f /im putty.exe
 ```
 
-Commands
---------
+## Commands
 
 ### Run commands
 
@@ -41,8 +38,7 @@ plink -ssh <user>@<server> -i <key>.ppk -m <commands>.sh
 plink -ssh <user>@<server> -i <key>.ppk -m <commands>.sh > <output>.log
 ```
 
-Settings
---------
+## Settings
 
 ### Export settings
 

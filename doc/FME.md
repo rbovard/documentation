@@ -1,5 +1,4 @@
-FME
-===
+# FME
 
 * [Transformers](#Transformers)
     * [Remove geometry dimension](#remove-geometry-dimension)
@@ -18,8 +17,7 @@ FME
     * [Projections](#projections)
     * [Transformers](#transformers)
 
-Transformers
-------------
+## Transformers
 
 ### Remove geometry dimension
 
@@ -34,8 +32,7 @@ Transformers
 
 * `CRCCalculator`
 
-Batch process
--------------
+## Batch process
 
 ### Use multiple source datasets
 
@@ -43,8 +40,7 @@ Batch process
 for %%f in (*.ext) do fme <workspace>.fmw --parameter "%%f"
 ```
 
-String replacer
----------------
+## String replacer
 
 ### Add thousand separator
 
@@ -52,8 +48,7 @@ String replacer
 * Text to replace: `(?<=\d)(?=(\d\d\d)+(?!\d))`
 * Replacemeent text: `'`
 
-Python scripts
---------------
+## Python scripts
 
 ### Check if file exists
 
@@ -94,8 +89,7 @@ def removeAccents(feature):
                 feature.setAttribute(attrib, new_value)
 ```
 
-Expressions
------------
+## Expressions
 
 ### Check if attribute is integer
 
@@ -103,8 +97,7 @@ Expressions
 (@Value(attribute) == int(@Value(attribute))) ? 1 : 0
 ```
 
-Coordinates systems
--------------------
+## Coordinates systems
 
 ### Projections
 

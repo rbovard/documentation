@@ -1,8 +1,6 @@
-GDAL
-====
+# GDAL
 
-Raster
-------
+## Raster
 
 * [Optimize GeoTIFF files](#optimize-geotiff-files)
 * [Build raster tileindex](#build-raster-tileindex)
@@ -11,16 +9,14 @@ Raster
 * [Convert raster data](#convert-raster-data)
     * [GeoTIFF to Binary Terrain](#geotiff-to-binary-terrain)
 
-Vector
-------
+## Vector
 
 * [Convert vector data](#convert-vector-data)
     * [Usage](#usage)
     * [Formats](#formats)
     * [Options](#options)
 
-Optimize GeoTIFF files
-----------------------
+## Optimize GeoTIFF files
 
 Create tiled file and build overview images
 
@@ -31,8 +27,7 @@ gdaladdo -r average <file>.tif 2 4 8 16
 
 See [optimize_raster.py](../code/python/optimize_raster.py)
 
-Build raster tileindex
-----------------------
+## Build raster tileindex
 
 ```batchfile
 dir /s/b *.tif > list.txt
@@ -40,22 +35,19 @@ gdaltindex tiles.shp --optfile list.txt
 del list.txt
 ```
 
-Rasterize vector data
----------------------
+## Rasterize vector data
 
 ```batchfile
 gdal_rasterize -l <file> -a <attribute> -tr <resolution>.0 <resolution>.0 -a_nodata 0 -ot Int32 <file>.shp <file>.tif
 ```
 
-Polygonize raster grid
-----------------------
+## Polygonize raster grid
 
 ```batchfile
 gdal_polygonize <file>.tif -f "ESRI Shapefile" <file> <file>
 ```
 
-Convert raster data
--------------------
+## Convert raster data
 
 ### GeoTIFF to Binary Terrain
 
@@ -65,8 +57,7 @@ gdal_translate -of bt <file>.tif <file>.bt
 
 See [convert_to_bt.py](../code/python/convert_to_bt.py)
 
-Convert vector data
--------------------
+## Convert vector data
 
 ### Usage
 

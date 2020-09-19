@@ -1,5 +1,4 @@
-Cmd
-===
+# Cmd
 
 * [Directories and files](#directories-and-files)
     * [Change directory and drive](#change-directory-and-drive)
@@ -27,8 +26,7 @@ Cmd
     * [Restart server](#restart-server)
 * [Environment path variables](#environment-path-variables)
 
-Directories and files
----------------------
+## Directories and files
 
 ### Change directory and drive
 
@@ -88,8 +86,7 @@ DIR /s /b /a-d * > <list>.txt
 FOR /f %i IN (<list>.txt) DO DEL %i
 ```
 
-Applications
-------------
+## Applications
 
 ### Start installation
 
@@ -109,8 +106,7 @@ CALL <batch>.bat
 SETX <variable> "<value>"
 ```
 
-Fonts
------
+## Fonts
 
 ### Install font
 
@@ -118,8 +114,7 @@ Fonts
 REG ADD "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts" /v "Cadastra.ttf (TrueType)" /t REG_SZ /d "Cadastra.ttf" /f
 ```
 
-Batch scripts
--------------
+## Batch scripts
 
 ### Echo
 
@@ -164,8 +159,7 @@ SET my_var=
 SET /P my_var="My var: "
 ```
 
-Terminal server
----------------
+## Terminal server
 
 ### Disconnect user
 
@@ -180,8 +174,7 @@ RESET session <id> /server:<server>
 SHUTDOWN /r
 ```
 
-Environment path variables
---------------------------
+## Environment path variables
 
 * `%AllUsersProfile%`: `C:\ProgramData`
 * `%AppData%`: `C:\Users\<username>\AppData\Roaming`

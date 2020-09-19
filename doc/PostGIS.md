@@ -1,5 +1,4 @@
-PostGIS
-=======
+# PostGIS
 
 * [Create table](#create-table)
     * [Create index](#create-index)
@@ -86,8 +85,7 @@ PostGIS
 * [Log Analyzer](#log-analyzer)
     * [pgBadger](#pgbadger)
 
-Create table
-------------
+## Create table
 
 ```sql
 CREATE TABLE <schema>.<table> (id serial PRIMARY KEY);
@@ -102,8 +100,7 @@ ON <schema>.<table>
 USING btree (<column>);
 ```
 
-Data types
-----------
+## Data types
 
 | Type          | Name                                       |
 | ------------- | ------------------------------------------ |
@@ -120,8 +117,7 @@ ALTER TABLE <schema>.<table> ALTER COLUMN <column> TYPE text;
 ALTER TABLE <schema>.<table> ALTER COLUMN <column> TYPE uuid USING <column>::uuid;
 ```
 
-Geometries
-----------
+## Geometries
 
 ### Activate PostGIS extension
 
@@ -180,8 +176,7 @@ FROM <table>
 WHERE ST_IsClosed(geom);
 ```
 
-Queries
--------
+## Queries
 
 ### Create an unique id
 
@@ -362,8 +357,7 @@ FROM <table2>
 WHERE <table1>.<fk> = <table2>.id;
 ```
 
-Spatial queries
----------------
+## Spatial queries
 
 ### Spatial join (point in polygon)
 
@@ -487,8 +481,7 @@ SELECT a.id,
 FROM <table1> a;
 ```
 
-Cryptography
-------------
+## Cryptography
 
 ### Activate pgcrypto extension
 
@@ -507,8 +500,7 @@ RETURNS text AS
 LANGUAGE sql IMMUTABLE STRICT;
 ```
 
-Triggers
---------
+## Triggers
 
 ### Get parcel number
 
@@ -570,8 +562,7 @@ FOR EACH ROW
 EXECUTE PROCEDURE <schema>.update_<view>();
 ```
 
-Sequences
----------
+## Sequences
 
 ### Set current value
 
@@ -579,8 +570,7 @@ Sequences
 SELECT setval('<schema>.<table>_<column>_seq', (SELECT MAX(<column>) FROM <schema>.<table>));
 ```
 
-Constraints
------------
+## Constraints
 
 ### Drop foreign key only if exists
 
@@ -588,8 +578,7 @@ Constraints
 ALTER TABLE <schema>.<table> DROP CONSTRAINT IF EXISTS <table>_<column>_fkey;
 ```
 
-Information schema
-------------------
+## Information schema
 
 ### Get all tables
 
@@ -680,8 +669,7 @@ FROM pg_trigger
 WHERE tgname = '<trigger>';
 ```
 
-Miscellaneous
--------------
+## Miscellaneous
 
 ### Get PostGIS version
 
@@ -704,8 +692,7 @@ WHERE (pg_stat_activity.datname = '<database>')
 AND pid <> pg_backend_pid();
 ```
 
-psql
-----
+## psql
 
 ### Create database with template
 
@@ -729,8 +716,7 @@ sudo -u postgres createdb <target_database>
 sudo -u postgres psql -d <target_database> -f <source_database>.sql
 ```
 
-Backup and restore
-------------------
+## Backup and restore
 
 ### Backup in custom format
 
@@ -756,8 +742,7 @@ pg_restore --dbname=<database> <database>.backup
 pg_restore --file <database>.sql --schema-only <database>.backup
 ```
 
-Log
----
+## Log
 
 ### pgBadger
 

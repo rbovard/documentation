@@ -1,5 +1,4 @@
-Git
-===
+# Git
 
 * [Configuration](#configuration)
 * [Clone](#clone)
@@ -29,8 +28,7 @@ Git
     * [List all tags](#list-all-tags)
     * [Checkout a tagged version](#checkout-a-tagged-version)
 
-Configuration
--------------
+## Configuration
 
 File `~/.gitconfig`
 
@@ -47,15 +45,13 @@ File `~/.gitconfig`
     helper = cache --timeout=3600
 ```
 
-Clone
------
+## Clone
 
 ```bash
 git clone <url>
 ```
 
-Branch
-------
+## Branch
 
 ### Create new branch
 
@@ -133,8 +129,7 @@ git push origin :<branch>
 git push origin master
 ```
 
-Reset
------
+## Reset
 
 ### Undo the last commit (not pushed)
 
@@ -162,8 +157,7 @@ git log
 git revert --no-edit <hash>
 ```
 
-Update
-------
+## Update
 
 ### Syncing a fork
 
@@ -190,8 +184,7 @@ git submodule foreach git submodule sync
 git submodule foreach git submodule update --init
 ```
 
-Rebase
-------
+## Rebase
 
 ### Squash commits
 
@@ -245,8 +238,7 @@ Remove all `pick` expect the ones to commit
 git push -f origin <branch>
 ```
 
-Cherry pick
------------
+## Cherry pick
 
 ### Cherry pick commit
 
@@ -254,8 +246,7 @@ Cherry pick
 git cherry-pick <SHA>
 ```
 
-Stash
------
+## Stash
 
 ### Move uncommitted changes to a new branch
 
@@ -265,8 +256,7 @@ git stash branch <branch> stash@{0}
 git push -u origin <branch>
 ```
 
-Search
-------
+## Search
 
 ### Search in repository files
 
@@ -274,8 +264,7 @@ Search
 git grep -n '<value>'
 ```
 
-Tag
----
+## Tag
 
 ### List all tags
 

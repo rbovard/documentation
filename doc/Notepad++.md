@@ -1,11 +1,9 @@
-Notepad++
-=========
+# Notepad++
 
 * [Miscellaneous](#miscellaneous)
     * [Run Python script](#run-python-script)
 
-Miscellaneous
--------------
+## Miscellaneous
 
 ### Run Python script
 

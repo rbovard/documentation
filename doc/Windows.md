@@ -1,5 +1,4 @@
-Windows
-=======
+# Windows
 
 * [Search](#search)
     * [Read-only files](#read-only-files)
@@ -8,8 +7,7 @@ Windows
     * [Restart via scheduled task](#restart-via-scheduled-task)
     * [Get system informations](get-system-informations)
 
-Search
-------
+## Search
 
 *Keywords are in french*
 
@@ -29,8 +27,7 @@ OS
 Program: `C:\Windows\System32\shutdown.exe`
 Arguments: `-r`
 
-Get system informations
------------------------
+## Get system informations
 
 Like uptime
 

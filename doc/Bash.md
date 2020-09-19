@@ -1,5 +1,4 @@
-Bash
-====
+# Bash
 
 * [Files](#files)
     * [Symlink content of directory](symlink-content-of-directory)
@@ -43,8 +42,7 @@ Bash
     * [Pass HTTP Referer in URL](#pass-http-referer-in-url)
     * [Get current public IP](#get-current-public-ip)
 
-Files
------
+## Files
 
 ### Symlink content of directory
 
@@ -60,8 +58,7 @@ echo '<text>' > <file>
 
 Use `>>` to append text to existing file
 
-Search
-------
+## Search
 
 ### Return filenames with searched text in subfolders
 
@@ -105,8 +102,7 @@ grep <word> <file> | sort | uniq
 tac <file> | grep -m 10 '<word>'
 ```
 
-Packages
---------
+## Packages
 
 ### Install a package
 
@@ -151,8 +147,7 @@ sudo apt autoremove
 curl --silent <url>.key | sudo apt-key add -
 ```
 
-Logs
-----
+## Logs
 
 ### Display Apache logs in realtime
 
@@ -161,8 +156,7 @@ tail -f /var/log/apache2/error.log
 tail -f /var/log/apache2/access.log
 ```
 
-Disk
-----
+## Disk
 
 ### Display disk free
 
@@ -190,8 +184,7 @@ Ordered by size
 du -h --max-depth=1 <path> | sort -hr
 ```
 
-Restart services
-----------------
+## Restart services
 
 ### Apache
 
@@ -212,8 +205,7 @@ sudo /etc/init.d/postgresql restart
 sudo /etc/init.d/tomcat-tomcat1 restart
 ```
 
-Proxy
------
+## Proxy
 
 ### Most programs
 
@@ -257,8 +249,7 @@ gsettings set org.gnome.system.proxy.https port <port>
 git config --global url."https://".insteadOf git://
 ```
 
-Monitoring
-----------
+## Monitoring
 
 ### Get HTTP status
 
@@ -266,8 +257,7 @@ Monitoring
 curl -Is <url> | head -n 1
 ```
 
-Miscellaneous
--------------
+## Miscellaneous
 
 ### Check OS version
 

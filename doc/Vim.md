@@ -1,10 +1,8 @@
-Vim
-===
+# Vim
 
 * [Configuration](#configuration)
 
-Configuration
--------------
+## Configuration
 
 File `~/.vimrc`
 

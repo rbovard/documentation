@@ -1,11 +1,9 @@
-MapServer
-=========
+# MapServer
 
 * [Miscellaneous](#miscellaneous)
     * [Get MapServer version](#get-mapserver-version)
 
-Miscellaneous
--------------
+## Miscellaneous
 
 ### Get mapserver version
 
