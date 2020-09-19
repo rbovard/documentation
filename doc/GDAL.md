@@ -29,7 +29,7 @@ gdal_translate -of GTiff -co "TILED=YES" -co "TFW=YES" <source>.tif <file>.tif
 gdaladdo -r average <file>.tif 2 4 8 16
 ```
 
-See [optimize_raster.py](../python/optimize_raster.py)
+See [optimize_raster.py](../code/python/optimize_raster.py)
 
 Build raster tileindex
 ----------------------
@@ -63,7 +63,7 @@ Convert raster data
 gdal_translate -of bt <file>.tif <file>.bt
 ```
 
-See [convert_to_bt.py](../python/convert_to_bt.py)
+See [convert_to_bt.py](../code/python/convert_to_bt.py)
 
 Convert vector data
 -------------------

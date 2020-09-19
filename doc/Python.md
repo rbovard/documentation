@@ -9,7 +9,7 @@
   * [Uninstall a package](#uninstall-a-package)
   * [Create a requirements file](#create-a-requirements-file)
 * Scripts
-  * [Copy folder](../python/copy_folder.py)
+  * [Copy folder](../code/python/copy_folder.py)
 
 ## Virtual environments
 

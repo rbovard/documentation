@@ -10,7 +10,7 @@
 * [Tools](#tools)
   * [Copy a file into a container](#copy-a-file-into-a-container)
 * Compose files
-  * [PostGIS and pgAdmin](../docker/postgis-pgadmin/docker-compose.yml)
+  * [PostGIS and pgAdmin](../code/docker/postgis-pgadmin/docker-compose.yml)
 
 ## Containers
 

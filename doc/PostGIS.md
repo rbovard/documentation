@@ -156,7 +156,7 @@ SELECT ST_Multi(geom)::Geometry(<MultiLineString|MultiPolygon>, 2056) AS geom
 FROM <table>;
 ```
 
-See [convert_simple_geometry_to_multi.sql](../sql/convert_simple_geometry_to_multi.sql)
+See [convert_simple_geometry_to_multi.sql](../code/sql/convert_simple_geometry_to_multi.sql)
 
 ### Convert MultiPoint to Point
 
