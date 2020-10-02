@@ -24,6 +24,7 @@
     * [Move uncommitted changes to a new branch](#move-uncommitted-changes-to-a-new-branch)
 * [Search](#search)
     * [Search in repository files](#search-in-repository-files)
+    * [Search files in repositorys](#search-files-in-repository)
 * [Tag](#tag)
     * [List all tags](#list-all-tags)
     * [Checkout a tagged version](#checkout-a-tagged-version)
@@ -262,6 +263,12 @@ git push -u origin <branch>
 
 ```bash
 git grep -n '<value>'
+```
+
+### Search files in repository
+
+```bash
+git ls-files | grep <filename>
 ```
 
 ## Tag
