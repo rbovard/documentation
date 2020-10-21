@@ -1,9 +1,12 @@
 # Docker
 
 * [Containers](#containers)
-  * [Build and start containers](#build-and-start-containers)
-  * [Restart containers](#restart-containers)
-  * [List containers](#list-containers)
+  * [List all containers](#list-all-containers)
+  * [Run commands in a container](#run-commands-in-a-container)
+* [Composition](#composition)
+  * [Start composition](#start-composition)
+  * [Restart composition](#restart-composition)
+  * [List containers in composition](#list-containers-in-composition)
 * [Services](#services)
   * [Display logs of a service](#display-logs-of-a-service)
   * [Run commands in a service](#run-commands-in-a-service)
@@ -14,19 +17,33 @@
 
 ## Containers
 
-### Build and start containers
+### List all containers
+
+```
+docker ps
+```
+
+### Run commands in a container
+
+```
+docker exec -it <container-id> bash
+```
+
+## Composition
+
+### Start composition
 
 ```
 docker-compose up -d
 ```
 
-### Restart containers
+### Restart composition
 
 ```
 docker-compose down --remove-orphans && docker-compose up -d
 ```
 
-### List containers
+### List containers in composition
 
 ```
 docker-compose ps
