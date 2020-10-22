@@ -12,6 +12,7 @@
   * [Run commands in a service](#run-commands-in-a-service)
 * [Tools](#tools)
   * [Copy a file into a container](#copy-a-file-into-a-container)
+  * [Copy a file from a container](#copy-a-file-from-a-container)
 * [Network](#network)
   * [List networks](#list-networks)
   * [Inspect network](#inspect-network)
@@ -72,6 +73,12 @@ docker-compose exec <service> bash
 
 ```
 docker cp <source-file> <container-id>:<destination-file>
+```
+
+### Copy a file from a container
+
+```
+docker cp <container-id>:<source-file> <destination-file>
 ```
 
 ## Network
