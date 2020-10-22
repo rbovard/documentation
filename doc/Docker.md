@@ -14,6 +14,9 @@
   * [Copy a file into a container](#copy-a-file-into-a-container)
 * Compose files
   * [PostGIS and pgAdmin](../code/docker/postgis-pgadmin/docker-compose.yml)
+* [Network](#network)
+  * [List networks](#list-networks)
+  * [Inspect network](#inspect-network)
 
 ## Containers
 
@@ -69,4 +72,18 @@ docker-compose exec <service> bash
 
 ```
 docker cp <source-file> <container-id>:<destination-file>
+```
+
+## Network
+
+### List networks
+
+```
+docker network ls
+```
+
+### Inspect network
+
+```
+docker network inspect <network-name>
 ```
