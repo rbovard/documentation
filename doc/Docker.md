@@ -12,11 +12,11 @@
   * [Run commands in a service](#run-commands-in-a-service)
 * [Tools](#tools)
   * [Copy a file into a container](#copy-a-file-into-a-container)
-* Compose files
-  * [PostGIS and pgAdmin](../code/docker/postgis-pgadmin/docker-compose.yml)
 * [Network](#network)
   * [List networks](#list-networks)
   * [Inspect network](#inspect-network)
+* Compose files
+  * [PostGIS and pgAdmin](../code/docker/postgis-pgadmin/docker-compose.yml)
 
 ## Containers
 
