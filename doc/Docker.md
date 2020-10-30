@@ -58,7 +58,7 @@ docker-compose ps
 ### Display logs of a service
 
 ```
-docker-compose logs -f --tail=10 <service>
+docker-compose logs -tf --tail=10 <service>
 ```
 
 ### Run commands in a service
