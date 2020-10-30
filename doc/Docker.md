@@ -2,6 +2,7 @@
 
 * [Containers](#containers)
   * [List all containers](#list-all-containers)
+  * [Get container id by its name](#get-container-id-by-its-name)
   * [Run commands in a container](#run-commands-in-a-container)
 * [Composition](#composition)
   * [Start composition](#start-composition)
@@ -25,6 +26,12 @@
 
 ```
 docker ps
+```
+
+### Get container id by its name
+
+```
+docker ps -qf "name=<container-name>"
 ```
 
 ### Run commands in a container
