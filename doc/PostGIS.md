@@ -49,6 +49,7 @@
     * [Create MultiPolygon from outer ring of multiple polygons](#create-multipolygon-from-outer-ring-of-multiple-polygons)
     * [Move a point with a distance and an azimuth](#move-a-point-with-a-distance-and-an-azimuth)
     * [Find nearest point from another table](#find-nearest-point-from-another-table)
+    * [Create point on the center of a linestring](#create-point-on-the-center-of-a-linestring)
 * [Cryptography](#cryptography)
     * [Activate pgcrypto extension](#activate-pgcrypto-extension)
     * [Function sha1](#function-sha1)
@@ -174,6 +175,13 @@ FROM <table>;
 SELECT ST_MakePolygon((ST_Dump(geom)).geom) AS geom
 FROM <table>
 WHERE ST_IsClosed(geom);
+```
+
+### Create point on the center of a linestring
+
+```
+SELECT ST_ClosestPoint(geom, ST_Centroid(geom))
+FROM <table>;
 ```
 
 ## Queries
