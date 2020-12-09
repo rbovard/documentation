@@ -11,6 +11,9 @@
     * [Count files in subfolders](#count-files-in-subfolders)
     * [Filter unique grep results](#filter-unique-grep-results)
     * [Search latest occurences](#search-latest-occurences)
+* [Security](#security)
+    * [Change recursively permissions and group inside a folder](change-recursively-permissions-and-group-inside-a-folder)
+    * [Change recursively permissions and group inside a folder excluding some files](change-recursively-permissions-and-group-inside-a-folder-excluding-some-files)
 * [Packages](#packages)
     * [Install a package](#install-a-package)
     * [Update and upgrade](#update-and-upgrade)
@@ -100,6 +103,24 @@ grep <word> <file> | sort | uniq
 
 ```bash
 tac <file> | grep -m 10 '<word>'
+```
+
+## Security
+
+### Change recursively permissions and group inside a folder
+
+```bash
+chmod -R <octal> <path>
+chgrp -R <group> <path>
+```
+
+### Change recursively permissions and group inside a folder excluding some files
+
+`'.?*'` for hidden files
+
+```bash
+find <path> \( -name '.?*' -o -name '*.<extension>' \) -prune -o -exec chmod <octal> {} +
+find <path> \( -name '.?*' -o -name '*.<extension>' \) -prune -o -exec chgrp <group> {} +
 ```
 
 ## Packages
