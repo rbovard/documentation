@@ -56,6 +56,7 @@
 ## Miscellaneous
 
 * [7-Zip](doc/7-Zip.md)
+* [Excel](doc/Excel.md)
 * [Nagios](doc/Nagios.md)
 * [NConvert](doc/NConvert.md)
 * [VLC](doc/VLC.md)
