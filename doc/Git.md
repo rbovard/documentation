@@ -254,6 +254,7 @@ git cherry-pick <SHA>
 ```bash
 git stash
 git stash branch <branch> stash@{0}
+git commit -am '<message>'
 git push -u origin <branch>
 ```
 
