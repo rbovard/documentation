@@ -33,7 +33,7 @@
     * [Test with a list of values](#test-with-a-list-of-values)
     * [Where not like multiple values](#where-not-like-multiple-values)
     * [Get JSON object field as text](#get-json-object-field-as-text)
-    * [Update a column from another table](#ppdate-a-column-from-another-table)
+    * [Update a column from another table](#update-a-column-from-another-table)
 * [Spatial queries](#spatial-queries)
     * [Spatial join (point in polygon)](#spatial-join-point-in-polygon)
     * [Create a line between two points](#create-a-line-between-two-points)
@@ -62,6 +62,7 @@
     * [Set current value](#set-current-value)
 * [Constraints](#constraints)
     * [Drop foreign key only if exists](#drop-foreign-key-only-if-exists)
+    * [Set foreign key as deferred](#set-foreign-key-as-deferred)
 * [Information schema](#information-schema)
     * [Get all tables](#get-all-tables)
     * [Get all views](#get-all-views)
@@ -585,6 +586,20 @@ SELECT setval('<schema>.<table>_<column>_seq', (SELECT MAX(<column>) FROM <schem
 ```sql
 ALTER TABLE <schema>.<table> DROP CONSTRAINT IF EXISTS <table>_<column>_fkey;
 ```
+
+### Set foreign key as deferred
+
+```sql
+ALTER TABLE <schema>.<child_table>
+ADD CONSTRAINT <child_table>_fk_<parent_table> FOREIGN KEY (fk_<parent_table>)
+REFERENCES <schema>.<parent_table>(id)
+ON UPDATE CASCADE ON DELETE <RESTRICT|CASCADE>
+DEFERRABLE INITIALLY DEFERRED;
+```
+
+`ON DELETE` action:
+* `RESTRICT` for usual relation
+* `CASCADE` for pivot table
 
 ## Information schema
 
