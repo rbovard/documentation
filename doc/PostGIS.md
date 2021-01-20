@@ -34,6 +34,7 @@
     * [Where not like multiple values](#where-not-like-multiple-values)
     * [Get JSON object field as text](#get-json-object-field-as-text)
     * [Update a column from another table](#update-a-column-from-another-table)
+    * [Convert new lines](#convert-new-lines)
 * [Spatial queries](#spatial-queries)
     * [Spatial join (point in polygon)](#spatial-join-point-in-polygon)
     * [Create a line between two points](#create-a-line-between-two-points)
@@ -364,6 +365,12 @@ UPDATE <table1>
 SET <column> = <table2>.<column>
 FROM <table2>
 WHERE <table1>.<fk> = <table2>.id;
+```
+
+### Convert new lines
+
+```sql
+SELECT regexp_replace(<column>, '[\n\r]+', '<br />', 'g') AS <column>,
 ```
 
 ## Spatial queries
