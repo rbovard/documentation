@@ -102,8 +102,16 @@ CALL <batch>.bat
 
 ### Set environment variable
 
+User:
+
 ```batchfile
 SETX <variable> "<value>"
+```
+
+System (with admin privileges):
+
+```batchfile
+SETX <variable> "<value>" /M
 ```
 
 ## Fonts
