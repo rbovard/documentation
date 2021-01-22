@@ -1,15 +1,25 @@
 # QGIS
 
+* [Expressions](#expressions)
+  * [Get parent attribute value](#get-parent-attribute-value)
 * [Actions](#actions)
 * [Atlas](#atlas)
-    * [Display only current altlas attribute related features](#display-only-current-altlas-attribute-related-features)
-    * [Display number of features in current atlas](#display-number-of-features-in-current-atlas)
+  * [Display only current altlas attribute related features](#display-only-current-altlas-attribute-related-features)
+  * [Display number of features in current atlas](#display-number-of-features-in-current-atlas)
 * [Settings](#settings)
-    * [Default settings](#default-settings)
+  * [Default settings](#default-settings)
 * [Message bar](#message-bar)
 * [Toolbar](#toolbar)
 * [Installation](#installation)
 * [MN95 migration](#mn95-migration)
+
+## Expressions
+
+### Get parent attribute value
+
+```
+attribute(get_feature_by_id('<layer-id>', fk_<layer>), '<attribute>')
+```
 
 ## Actions
 
