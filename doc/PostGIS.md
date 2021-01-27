@@ -533,7 +533,7 @@ END;
 
 ```sql
 BEGIN
-    SELECT INTO new.no_parcelle String_Agg(numero, ';' ORDER BY numero)
+    SELECT INTO new.no_parcelle string_agg(numero, ';' ORDER BY numero)
     FROM mo.mo_par
     WHERE ST_Intersects(ST_Buffer(new.geom, -0.1), geom)
     GROUP BY new.fid;
