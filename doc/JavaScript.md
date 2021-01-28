@@ -1,6 +1,7 @@
 # JavaScript
 
 * [Auto refresh image](#auto-refresh-image)
+* [Detect mobile browser](#detect-mobile-browser)
 
 ## Auto refresh image
 
@@ -18,4 +19,10 @@ window.onload = function() {
 
 ```
 <img src="<image.jpg>" id="img" />
+```
+
+## Detect mobile browser
+
+```
+const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
 ```
