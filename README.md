@@ -9,6 +9,7 @@
 
 ### Programming languages
 
+* [HTML](doc/HTML.md)
 * [JavaScript](doc/JavaScript.md)
 * [Python](doc/Python.md)
 
