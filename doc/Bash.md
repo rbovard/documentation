@@ -11,6 +11,7 @@
     * [Count files in subfolders](#count-files-in-subfolders)
     * [Filter unique grep results](#filter-unique-grep-results)
     * [Search latest occurences](#search-latest-occurences)
+    * [Search in compressed file](#search-in-compressed-file)
 * [Security](#security)
     * [Change recursively permissions and group inside a folder](change-recursively-permissions-and-group-inside-a-folder)
     * [Change recursively permissions and group inside a folder excluding some files](change-recursively-permissions-and-group-inside-a-folder-excluding-some-files)
@@ -103,6 +104,12 @@ grep <word> <file> | sort | uniq
 
 ```bash
 tac <file> | grep -m 10 '<word>'
+```
+
+### Search in compressed file
+
+```bash
+zgrep '<word>' <file>
 ```
 
 ## Security
