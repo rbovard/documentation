@@ -11,6 +11,7 @@
 
 * [HTML](doc/HTML.md)
 * [JavaScript](doc/JavaScript.md)
+* [PHP](doc/PHP.md)
 * [Python](doc/Python.md)
 
 ### Remote operations
