@@ -5,7 +5,7 @@
 
 ## Auto refresh image
 
-```
+```js
 window.onload = function() {
     const image = document.getElementById("img");
 
@@ -17,12 +17,12 @@ window.onload = function() {
 }
 ```
 
-```
+```html
 <img src="<image.jpg>" id="img" />
 ```
 
 ## Detect mobile browser
 
-```
+```js
 const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
 ```
