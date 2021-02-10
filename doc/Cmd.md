@@ -11,7 +11,6 @@
 * [Applications](#applications)
     * [Start installation](#start-installation)
     * [Run batch](#run-batch)
-    * [Set environment variable](#set-environment-variable)
 * [Fonts](#fonts)
     * [Install font](#install-font)
 * [Batch scripts](#batch-scripts)
@@ -24,7 +23,9 @@
 * [Terminal server](#terminal-server)
     * [Disconnect user](#disconnect-user)
     * [Restart server](#restart-server)
-* [Environment path variables](#environment-path-variables)
+* [Environment variables](#environment-variables)
+    * [Set environment variable](#set-environment-variable)
+    * [Environment variables](#environment-variables)
 
 ## Directories and files
 
@@ -100,20 +101,6 @@ START /WAIT QGIS-OSGeo4W-2.8.1-1-Setup-x86.exe
 CALL <batch>.bat
 ```
 
-### Set environment variable
-
-User:
-
-```batchfile
-SETX <variable> "<value>"
-```
-
-System (with admin privileges):
-
-```batchfile
-SETX <variable> "<value>" /M
-```
-
 ## Fonts
 
 ### Install font
@@ -182,7 +169,23 @@ RESET session <id> /server:<server>
 SHUTDOWN /r
 ```
 
-## Environment path variables
+## Environment variables
+
+### Set environment variable
+
+User:
+
+```batchfile
+SETX <variable> "<value>"
+```
+
+System (with admin privileges):
+
+```batchfile
+SETX <variable> "<value>" /M
+```
+
+### Environment variables
 
 * `%AllUsersProfile%`: `C:\ProgramData`
 * `%AppData%`: `C:\Users\<username>\AppData\Roaming`
