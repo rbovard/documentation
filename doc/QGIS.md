@@ -3,6 +3,8 @@
 * [Expressions](#expressions)
   * [Get parent attribute value](#get-parent-attribute-value)
 * [Actions](#actions)
+  * [Open](#open)
+  * [Python](#python)
 * [Atlas](#atlas)
   * [Display only current altlas attribute related features](#display-only-current-altlas-attribute-related-features)
   * [Display number of features in current atlas](#display-number-of-features-in-current-atlas)
@@ -23,11 +25,15 @@ attribute(get_feature_by_id('<layer-id>', fk_<layer>), '<attribute>')
 
 ## Actions
 
-| Name         | Type | Action |
-| ------------ | ---- | ------ |
-| PDF          | Open | ```"[% "file" %]"``` |
-| RF simplifié | Open | ```http://www.rfinfo.vd.ch/rfinfo.php?no_commune=[%substr("IDENTDN", 4, 3)%]&no_immeuble=[%"numero"%]``` |
-| RF complet   | Open | ```https://secure.vd.ch/territoire/intercapi/faces?bfs=[%substr("IDENTDN", 4, 3)%]&kr=0&n1=[%"numero"%]&type=grundstueck_grundbuch_auszug&sec=<key>&intercapi=Extrait+RF+online``` |
+### Open
+
+* PDF: `"[% "file" %]"`
+* RF simplifié: `http://www.rfinfo.vd.ch/rfinfo.php?no_commune=[%substr("IDENTDN", 4, 3)%]&no_immeuble=[%"numero"%]`
+* RF complet: `https://secure.vd.ch/territoire/intercapi/faces?bfs=[%substr("IDENTDN", 4, 3)%]&kr=0&n1=[%"numero"%]&type=grundstueck_grundbuch_auszug&sec=<key>&intercapi=Extrait+RF+online`
+
+### Python
+
+* Start editing mode: `QgsProject.instance().mapLayer('<layer_id>').startEditing()` (to get layer id: `iface.activeLayer().id()`)
 
 ## Atlas
 
