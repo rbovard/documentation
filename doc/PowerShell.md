@@ -1,9 +1,16 @@
 # PowerShell
 
-* [Files](#files)
+* [Directories and files](#directories-and-files)
+    * [List files in directory](#list-files-in-directory)
     * [Rename a file](#rename-file)
 
-## Files
+## Directories and files
+
+### List files in directory
+
+```powershell
+Get-ChildItem -Path "<path>" -Name
+```
 
 ### Rename file
 
