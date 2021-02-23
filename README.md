@@ -53,6 +53,7 @@
 ### Windows
 
 * [Cmd](doc/Cmd.md)
+* [PowerShell](doc/PowerShell.md)
 * [Windows](doc/Windows.md)
 
 ## Miscellaneous
