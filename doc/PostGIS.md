@@ -61,6 +61,7 @@
     * [Update a view](#update-a-view)
 * [Sequences](#sequences)
     * [Set current value](#set-current-value)
+    * [Get next value](#get-next-value)
 * [Constraints](#constraints)
     * [Drop foreign key only if exists](#drop-foreign-key-only-if-exists)
     * [Set foreign key as deferred](#set-foreign-key-as-deferred)
@@ -584,6 +585,12 @@ EXECUTE PROCEDURE <schema>.update_<view>();
 
 ```sql
 SELECT setval('<schema>.<table>_<column>_seq', (SELECT MAX(<column>) FROM <schema>.<table>));
+```
+
+### Get next value
+
+```sql
+SELECT currval('<schema>.<table>_<column>_seq') + 1 AS nextval;
 ```
 
 ## Constraints
