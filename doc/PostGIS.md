@@ -590,7 +590,7 @@ SELECT setval('<schema>.<table>_<column>_seq', (SELECT MAX(<column>) FROM <schem
 ### Get next value
 
 ```sql
-SELECT currval('<schema>.<table>_<column>_seq') + 1 AS nextval;
+SELECT currval('<schema>.<table>_<column>_seq') + 1 AS next_<column>_val;
 ```
 
 ## Constraints
