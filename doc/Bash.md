@@ -9,6 +9,7 @@
     * [Find empty subfolders](#find-empty-subfolders)
     * [Find file by extension](#find-file-by-extension)
     * [Count files in subfolders](#count-files-in-subfolders)
+    * [List files recursively](#list-files-recursively)
     * [Filter unique grep results](#filter-unique-grep-results)
     * [Search latest occurences](#search-latest-occurences)
     * [Search in compressed file](#search-in-compressed-file)
@@ -92,6 +93,12 @@ find <path> -type f -name "*.<extension>"
 
 ```bash
 ls -lR | egrep -c '^-'
+```
+
+### List files recursively
+
+```bash
+find . -type f
 ```
 
 ### Filter unique grep results
