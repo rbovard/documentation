@@ -1,8 +1,9 @@
 # Bash
 
 * [Files](#files)
-    * [Symlink content of directory](symlink-content-of-directory)
-    * [Create new file with content](create-new-file-with-content)
+    * [Symlink content of directory](#symlink-content-of-directory)
+    * [Create new file with content](#create-new-file-with-content)
+    * [Download a file](#ownload-a-file)
 * [Search](#search)
     * [Return filenames with searched text in subfolders](#return-filenames-with-searched-text-in-subfolders)
     * [Search specific words in given files](#search-specific-words-in-given-files)
@@ -14,8 +15,8 @@
     * [Search latest occurences](#search-latest-occurences)
     * [Search in compressed file](#search-in-compressed-file)
 * [Security](#security)
-    * [Change recursively permissions and group inside a folder](change-recursively-permissions-and-group-inside-a-folder)
-    * [Change recursively permissions and group inside a folder excluding some files](change-recursively-permissions-and-group-inside-a-folder-excluding-some-files)
+    * [Change recursively permissions and group inside a folder](#change-recursively-permissions-and-group-inside-a-folder)
+    * [Change recursively permissions and group inside a folder excluding some files](#change-recursively-permissions-and-group-inside-a-folder-excluding-some-files)
 * [Packages](#packages)
     * [Install a package](#install-a-package)
     * [Update and upgrade](#update-and-upgrade)
@@ -62,6 +63,12 @@ echo '<text>' > <file>
 ```
 
 Use `>>` to append text to existing file
+
+### Download a file
+
+```bash
+wget -P <destination-path> <file-url>
+```
 
 ## Search
 
