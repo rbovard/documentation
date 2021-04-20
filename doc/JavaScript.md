@@ -2,6 +2,7 @@
 
 * [Auto refresh image](#auto-refresh-image)
 * [Detect mobile browser](#detect-mobile-browser)
+* [Redirect to HTTPS](#redirect-to-https)
 
 ## Auto refresh image
 
@@ -25,4 +26,12 @@ window.onload = function() {
 
 ```js
 const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
+```
+
+## Redirect to HTTPS
+
+```js
+if (!/https/.test(window.location.protocol)) {
+    window.location.href = window.location.href.replace("http:", "https:");
+}
 ```
