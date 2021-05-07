@@ -609,6 +609,7 @@ ADD CONSTRAINT <child_table>_fk_<parent_table> FOREIGN KEY (fk_<parent_table>)
 REFERENCES <schema>.<parent_table>(id)
 ON UPDATE CASCADE ON DELETE <RESTRICT|CASCADE>
 DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX <child_table>_fk_<parent_table>_idx ON <schema>.<child_table> (fk_<parent_table>);
 ```
 
 `ON DELETE` action:
