@@ -1,6 +1,7 @@
 # PostGIS
 
 * [Create table](#create-table)
+    * [Create table from a query](#create-table-from-a-query)
     * [Create index](#create-index)
 * [Data types](#data-types)
     * [Convert integer to UUID](#convert-integer-to-uuid)
@@ -94,6 +95,13 @@
 ```sql
 CREATE TABLE <schema>.<table> (id serial PRIMARY KEY);
 COMMENT ON TABLE <schema>.<table> IS '<comment>';
+```
+
+## Create table from a query
+
+```sql
+CREATE TABLE <schema>.<table> AS
+SELECT * FROM <schema>.<table-or-view>;
 ```
 
 ### Create index
