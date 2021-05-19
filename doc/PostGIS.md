@@ -52,6 +52,7 @@
     * [Move a point with a distance and an azimuth](#move-a-point-with-a-distance-and-an-azimuth)
     * [Find nearest point from another table](#find-nearest-point-from-another-table)
     * [Create point on the center of a linestring](#create-point-on-the-center-of-a-linestring)
+    * [Get BBOX of all table content](#get-bbox-of-all-table-content)
 * [Cryptography](#cryptography)
     * [Activate pgcrypto extension](#activate-pgcrypto-extension)
     * [Function sha1](#function-sha1)
@@ -504,6 +505,17 @@ SELECT a.id,
     LIMIT 1
 )
 FROM <table1> a;
+```
+
+### Get BBOX of all table content
+
+```sql
+SELECT
+    MIN(ST_XMin(geom)) as l,
+    MIN(ST_YMin(geom)) as b,
+    MAX(ST_XMax(geom)) as r,
+    MAX(ST_YMax(geom)) as t
+FROM <table>;
 ```
 
 ## Cryptography
