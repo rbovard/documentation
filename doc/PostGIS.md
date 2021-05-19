@@ -511,10 +511,10 @@ FROM <table1> a;
 
 ```sql
 SELECT
-    MIN(ST_XMin(geom)) as l,
-    MIN(ST_YMin(geom)) as b,
-    MAX(ST_XMax(geom)) as r,
-    MAX(ST_YMax(geom)) as t
+    MIN(ST_XMin(geom)) AS l,
+    MIN(ST_YMin(geom)) AS b,
+    MAX(ST_XMax(geom)) AS r,
+    MAX(ST_YMax(geom)) AS t
 FROM <table>;
 ```
 
