@@ -22,6 +22,7 @@
     * [Test if a value is an integer](#test-if-a-value-is-an-integer)
     * [Convert booleans to strings](#convert-booleans-to-strings)
     * [Concatenate strings with possible null values](#concatenate-strings-with-possible-null-values)
+    * [Concatenate strings in an aggregate expression](#concatenate-strings-in-an-aggregate-expression)
     * [Split values into rows](#split-values-into-rows)
     * [Add an unit to a value](#add-an-unit-to-a-value)
     * [Convert numeric to string](#convert-numeric-to-string)
@@ -261,6 +262,14 @@ FROM <table>;
 ```sql
 SELECT street || ' ' || num || COALESCE(suffix, '') AS address
 FROM addresses;
+```
+
+### Concatenate strings in an aggregate expression
+
+```sql
+SELECT company_id, STRING_AGG(employee, ', ' ORDER BY employee)
+FROM <table>
+GROUP BY company_id;
 ```
 
 ### Split values into rows
