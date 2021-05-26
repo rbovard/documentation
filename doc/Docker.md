@@ -40,6 +40,12 @@ docker ps -qf "name=<container-name>"
 docker exec -it <container-id> bash
 ```
 
+Or directly with its name
+
+```
+docker exec -it `docker ps -qf "name=<container-name>"` bash
+```
+
 ## Composition
 
 ### Start composition
