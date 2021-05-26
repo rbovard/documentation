@@ -22,6 +22,9 @@
     * [Cherry pick commit](#cherry-pick-commit)
 * [Stash](#stash)
     * [Move uncommitted changes to a new branch](#move-uncommitted-changes-to-a-new-branch)
+    * [Save temporarily changes](#save-temporarily-changes)
+    * [List stashes](#list-stashes)
+    * [Load specific stash](#load-specific-stash)
 * [Search](#search)
     * [Search in repository files](#search-in-repository-files)
     * [Search files in repositorys](#search-files-in-repository)
@@ -256,6 +259,24 @@ git stash
 git stash branch <branch> stash@{0}
 git commit -am '<message>'
 git push -u origin <branch>
+```
+
+### Save temporarily changes
+
+```
+git stash
+```
+
+### List stashes
+
+```
+git stash list
+```
+
+### Load specific stash
+
+```
+git stash pop stash@{<stash-index>}
 ```
 
 ## Search
