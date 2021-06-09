@@ -61,33 +61,33 @@ git clone <url>
 
 ```bash
 git checkout master
-git fetch origin
-git pull origin master
-git push origin origin:refs/heads/<branch>
-git checkout -b <branch> origin/<branch>
+git pull
+git checkout -b <branch>
 ```
 
 #### From an existing distant branch
 
 ```bash
 git checkout master
-git fetch origin
-git checkout -b <branch> origin/<branch>
+git pull
+git checkout <branch>
 ```
 
 #### Based on another local branch
 
 ```bash
 git checkout master
-git fetch origin
+git pull
 git checkout -b <branch> <existing-branch>
 ```
 
 ### Rebase branch onto master (if necessary)
 
 ```bash
-git fetch upstream
-git rebase upstream/master
+git checkout master
+git pull
+git checkout <branch>
+git rebase master
 git status
 vim <conflict_file>
 git add <conflict_file>
