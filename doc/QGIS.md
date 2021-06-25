@@ -13,6 +13,9 @@
 * [Message bar](#message-bar)
 * [Toolbar](#toolbar)
 * [Installation](#installation)
+  * [Alternative repository](#alternative-repository)
+  * [QGIS installation](#qgis-installation)
+  * [Add Python module](#add-python-module)
 * [MN95 migration](#mn95-migration)
 
 ## Expressions
@@ -130,7 +133,7 @@ gpg --fingerprint 073D307A618E5811
 gpg --export --armor 073D307A618E5811 | sudo apt-key add -
 ```
 
-### Installation
+### QGIS installation
 
 QGIS
 
@@ -143,6 +146,15 @@ Dev tools
 
 ```bash
 sudo apt install pyqt4-dev-tools qt4-designer
+```
+
+### Add Python module
+
+In Python console
+
+```
+import pip
+pip.main(['install', '<module>'])
 ```
 
 ## MN95 migration
