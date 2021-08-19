@@ -3,6 +3,7 @@
 * [Directories and files](#directories-and-files)
     * [List files in directory](#list-files-in-directory)
     * [Rename a file](#rename-file)
+    * [Open current location in Explorer](#open-current-location-in-explorer)
 
 ## Directories and files
 
@@ -16,4 +17,10 @@ Get-ChildItem -Path "<path>" -Name
 
 ```powershell
 Rename-Item -Path "<path>\<to>\<file>" -NewName "<new-filename>"
+```
+
+### Open current location in Explorer
+
+```powershell
+Start .
 ```
