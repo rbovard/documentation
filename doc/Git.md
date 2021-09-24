@@ -7,8 +7,8 @@
     * [Rebase branch onto master (if necessary)](#rebase-branch-onto-master-if-necessary)
     * [Merge branch](#merge-branch)
 * [Reset](#reset)
-    * [Undo the last commit (not pushed)](#undo-the-last-commit-not-pushed)
     * [Remove all local changes (not committed)](#remove-all-local-changes-not-committed)
+    * [Undo the last commit (not pushed)](#undo-the-last-commit-not-pushed)
     * [Edit last commit message (not pushed)](#edit-last-commit-message-not-pushed)
     * [Revert a commit](#revert-a-commit)
 * [Update](#update)
@@ -135,16 +135,16 @@ git push origin master
 
 ## Reset
 
-### Undo the last commit (not pushed)
-
-```bash
-git reset HEAD^
-```
-
 ### Remove all local changes (not committed)
 
 ```bash
 git reset --hard
+```
+
+### Undo the last commit (not pushed)
+
+```bash
+git reset HEAD^
 ```
 
 ### Edit last commit message (not pushed)
