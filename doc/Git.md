@@ -153,6 +153,14 @@ git reset HEAD^
 git commit --amend -m '<new-message>'
 ```
 
+### Come back at previous state (commits not pushed)
+
+```bash
+git log
+# Search commit and copy its hash
+git reset --hard <hash>
+```
+
 ### Revert a commit
 
 ```bash
