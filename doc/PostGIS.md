@@ -13,6 +13,7 @@
     * [Convert simple geometry to multi geometry](#convert-simple-geometry-to-multi-geometry)
     * [Convert MultiPoint to Point](#convert-multipoint-to-point)
     * [Change projection](#change-projection)
+    * [Set table geometry and projection](#set-table-geometry-and-projection)
     * [Create polygon with closed linestrings](#create-polygon-with-closed-linestrings)
 * [Queries](#queries)
     * [Create an unique id](#create-an-unique-id)
@@ -180,6 +181,12 @@ FROM <table>;
 ```sql
 SELECT ST_Transform(geom, 2056)::Geometry(<Point|MultiLineString|MultiPolygon>, 2056) AS geom
 FROM <table>;
+```
+
+### Set table geometry and projection
+
+```sql
+ALTER TABLE <table> ALTER COLUMN geom TYPE geometry(<Point|MultiLineString|MultiPolygon>, 2056);
 ```
 
 ### Create polygon with closed linestrings
