@@ -99,7 +99,7 @@ find <path> -type f -name "*.<extension>"
 ### Count files in subfolders
 
 ```bash
-ls -lR | egrep -c '^-'
+find <path> -type f | wc -l
 ```
 
 ### List files recursively
