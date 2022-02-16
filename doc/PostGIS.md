@@ -1,8 +1,10 @@
 # PostGIS
 
-* [Create table](#create-table)
+* [Tables](#tables)
+    * [Create table](#create-table)
     * [Create table from a query](#create-table-from-a-query)
     * [Create index](#create-index)
+    * [Change table schema](#change-table-schema)
 * [Data types](#data-types)
     * [Convert integer to UUID](#convert-integer-to-uuid)
 * [Geometries](#geometries)
@@ -93,7 +95,9 @@
 * [Log Analyzer](#log-analyzer)
     * [pgBadger](#pgbadger)
 
-## Create table
+## Tables
+
+### Create table
 
 ```sql
 CREATE TABLE <schema>.<table> (id serial PRIMARY KEY);
@@ -113,6 +117,12 @@ SELECT * FROM <schema>.<table-or-view>;
 CREATE INDEX <table>_<column>_idx
 ON <schema>.<table>
 USING btree (<column>);
+```
+
+### Change table schema
+
+```sql
+ALTER TABLE <schema>.<table> SET SCHEMA <new-schema>
 ```
 
 ## Data types
