@@ -23,7 +23,7 @@ python -m venv <path\to\venv>
 
 ```
 cd <venv>
-Scripts\activate.bat
+.\Scripts\Activate.ps1
 ```
 
 ## Packages installer
