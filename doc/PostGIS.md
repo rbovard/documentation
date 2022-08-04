@@ -74,6 +74,7 @@
 * [Information schema](#information-schema)
     * [Get all tables](#get-all-tables)
     * [Get all views](#get-all-views)
+    * [Get all columns](#get-all-columns)
     * [Get all triggers](#get-all-triggers)
     * [Get all sequences](#get-all-sequences)
     * [Get tables with wrong SRID](#get-tables-with-wrong-srid)
@@ -707,6 +708,50 @@ SELECT v.table_schema, v.table_name, v.view_definition
 FROM information_schema.views v
 WHERE v.table_schema NOT IN ('information_schema', 'pg_catalog', 'public', 'topology')
 ORDER BY v.table_schema, v.table_name;
+```
+
+### Get all columns
+
+#### Tables
+
+```sql
+SELECT
+    table_schema,
+    table_name,
+    ordinal_position AS position,
+    column_name,
+    data_type,
+    CASE
+        WHEN character_maximum_length IS NOT NULL
+        THEN character_maximum_length
+        ELSE numeric_precision
+    END AS max_length,
+    is_nullable,
+    column_default AS default_value
+FROM information_schema.columns
+WHERE table_schema NOT IN ('information_schema', 'pg_catalog', 'public', 'topology')
+ORDER BY table_schema, table_name, ordinal_position;
+```
+
+#### Views
+
+```sql
+SELECT
+    t.table_schema AS schema_name,
+    t.table_name AS view_name,
+    c.column_name,
+    c.data_type,
+    CASE
+        WHEN c.character_maximum_length IS NOT NULL
+        THEN c.character_maximum_length
+        ELSE c.numeric_precision
+    END AS max_length,
+    is_nullable
+FROM information_schema.tables t
+LEFT JOIN information_schema.columns c ON t.table_schema = c.table_schema AND t.table_name = c.table_name
+WHERE table_type = 'VIEW'
+AND t.table_schema NOT IN ('information_schema', 'pg_catalog', 'public', 'topology')
+ORDER BY schema_name, view_name;
 ```
 
 ### Get all triggers
