@@ -3,7 +3,8 @@
 * [Files](#files)
     * [Symlink content of directory](#symlink-content-of-directory)
     * [Create new file with content](#create-new-file-with-content)
-    * [Download a file](#ownload-a-file)
+    * [Download a file](#download-a-file)
+    * [Make a file executable](#make-a-file-executable)
 * [Search](#search)
     * [Return filenames with searched text in subfolders](#return-filenames-with-searched-text-in-subfolders)
     * [Search specific words in given files](#search-specific-words-in-given-files)
@@ -68,6 +69,12 @@ Use `>>` to append text to existing file
 
 ```bash
 wget -P <destination-path> <file-url>
+```
+
+### Make a file executable
+
+```bash
+chmod +x <file>
 ```
 
 ## Search
