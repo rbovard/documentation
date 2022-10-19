@@ -48,6 +48,9 @@
     * [Check OS version](#check-os-version)
     * [Pass HTTP Referer in URL](#pass-http-referer-in-url)
     * [Get current public IP](#get-current-public-ip)
+* [Bash scripts](#bash-scripts)
+    * [Exit on error](#exit-on-error)
+    * [Display script duration](#display-script-duration)
 
 ## Files
 
@@ -324,4 +327,18 @@ curl --referer <referer> "<url>"
 
 ```bash
 curl ipinfo.io/ip
+```
+
+## Bash scripts
+
+### Exit on error
+
+```bash
+set -e
+```
+
+### Display script duration
+
+```bash
+echo "Script finished in $SECONDS seconds"
 ```
