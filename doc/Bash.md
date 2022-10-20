@@ -341,4 +341,5 @@ set -e
 
 ```bash
 echo "Script finished in $SECONDS seconds"
+echo "Script finished in $(($SECONDS / 3600))hrs $((($SECONDS / 60) % 60))min $(($SECONDS % 60))sec"
 ```
