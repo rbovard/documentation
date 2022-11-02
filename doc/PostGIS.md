@@ -40,6 +40,7 @@
     * [Get JSON object field as text](#get-json-object-field-as-text)
     * [Update a column from another table](#update-a-column-from-another-table)
     * [Convert new lines](#convert-new-lines)
+    * [Select only first join match](#select-only-first-join-match)
 * [Spatial queries](#spatial-queries)
     * [Spatial join (point in polygon)](#spatial-join-point-in-polygon)
     * [Create a line between two points](#create-a-line-between-two-points)
@@ -408,6 +409,17 @@ WHERE <table1>.<fk> = <table2>.id;
 
 ```sql
 SELECT regexp_replace(<column>, '[\n\r]+', '<br />', 'g') AS <column>,
+```
+
+### Select only first join match
+
+```sql
+SELECT DISTINCT ON (<unique-column>)
+    t1.*,
+    t2.*
+FROM <table1> t1
+LEFT JOIN <table2> t2 ON t2.fk = t1.pk
+ORDER BY <unique-column> -- IMPORTANT
 ```
 
 ## Spatial queries
