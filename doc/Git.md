@@ -6,6 +6,7 @@
     * [Create new branch](#create-new-branch)
     * [Rebase branch onto master (if necessary)](#rebase-branch-onto-master-if-necessary)
     * [Merge branch](#merge-branch)
+    * [Checkout a branch from another fork](#checkout-a-branch-from-another-fork)
 * [Reset](#reset)
     * [Remove all local changes (not committed)](#remove-all-local-changes-not-committed)
     * [Undo the last commit (not pushed)](#undo-the-last-commit-not-pushed)
@@ -131,6 +132,14 @@ git push upstream master
 git branch -d <branch>
 git push origin :<branch>
 git push origin master
+```
+
+### Checkout a branch from another fork
+
+```
+git remote add <username> https://github.com/<username>/<repository>
+git fetch <username>
+git checkout -b <branch> <username>/<branch>
 ```
 
 ## Reset
