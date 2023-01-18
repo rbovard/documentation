@@ -6,6 +6,7 @@
     * [Create new branch](#create-new-branch)
     * [Rebase branch onto master (if necessary)](#rebase-branch-onto-master-if-necessary)
     * [Merge branch](#merge-branch)
+    * [Rename branch](#rename-branch)
     * [Checkout a branch from another fork](#checkout-a-branch-from-another-fork)
 * [Reset](#reset)
     * [Remove all local changes (not committed)](#remove-all-local-changes-not-committed)
@@ -132,6 +133,13 @@ git push upstream master
 git branch -d <branch>
 git push origin :<branch>
 git push origin master
+```
+
+### Rename branch
+
+```
+git checkout master
+git branch -m <old-name> <new-name>
 ```
 
 ### Checkout a branch from another fork
