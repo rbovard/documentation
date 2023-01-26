@@ -34,6 +34,7 @@
     * [Get previous business day](#get-previous-business-day)
     * [Get next business day](#get-next-business-day)
     * [Order results by list](#order-results-by-list)
+    * [Order results by varchar as numeric](#-rder-results-by-varchar-as-numeric)
     * [Split string with a separator and get specific part](#split-string-with-a-separator-and-get-specific-part)
     * [Test with a list of values](#test-with-a-list-of-values)
     * [Where not like multiple values](#where-not-like-multiple-values)
@@ -365,6 +366,14 @@ ORDER BY
         WHEN r.highway = 'tertiary' THEN 4
         ELSE 5
     END DESC;
+```
+
+### Order results by varchar as numeric
+
+```sql
+SELECT *
+FROM <table>
+ORDER BY nullif(regexp_replace(<column>, '\D', '', 'g'), '')::int
 ```
 
 ### Split string with a separator and get specific part
