@@ -34,7 +34,7 @@
     * [Get previous business day](#get-previous-business-day)
     * [Get next business day](#get-next-business-day)
     * [Order results by list](#order-results-by-list)
-    * [Order results by varchar as numeric](#-rder-results-by-varchar-as-numeric)
+    * [Order results by varchar as numeric](#order-results-by-varchar-as-numeric)
     * [Split string with a separator and get specific part](#split-string-with-a-separator-and-get-specific-part)
     * [Test with a list of values](#test-with-a-list-of-values)
     * [Where not like multiple values](#where-not-like-multiple-values)
