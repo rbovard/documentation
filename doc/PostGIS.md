@@ -42,6 +42,7 @@
     * [Update a column from another table](#update-a-column-from-another-table)
     * [Convert new lines](#convert-new-lines)
     * [Select only first join match](#select-only-first-join-match)
+    * [Round to closest 5 cents](#round-to-closest-5-cents)
 * [Spatial queries](#spatial-queries)
     * [Spatial join (point in polygon)](#spatial-join-point-in-polygon)
     * [Create a line between two points](#create-a-line-between-two-points)
@@ -429,6 +430,13 @@ SELECT DISTINCT ON (<unique-column>)
 FROM <table1> t1
 LEFT JOIN <table2> t2 ON t2.fk = t1.pk
 ORDER BY <unique-column> -- IMPORTANT
+```
+
+### Round to closest 5 cents
+
+```sql
+SELECT round(<amount> / 5, 2) * 5 AS <column>
+FROM <table>;
 ```
 
 ## Spatial queries
