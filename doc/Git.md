@@ -147,7 +147,7 @@ git branch -m <old-name> <new-name>
 ```
 git remote add <username> https://github.com/<username>/<repository>
 git fetch <username>
-git checkout -b <branch> <username>/<branch>
+git checkout -b <username>/<branch> <username>/<branch>
 ```
 
 ## Reset
