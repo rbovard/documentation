@@ -43,6 +43,7 @@
     * [Convert new lines](#convert-new-lines)
     * [Select only first join match](#select-only-first-join-match)
     * [Round to closest 5 cents](#round-to-closest-5-cents)
+    * [Get hourly data of the last month](#get-hourly-data-of-the-last-month)
 * [Spatial queries](#spatial-queries)
     * [Spatial join (point in polygon)](#spatial-join-point-in-polygon)
     * [Create a line between two points](#create-a-line-between-two-points)
@@ -437,6 +438,18 @@ ORDER BY <unique-column> -- IMPORTANT
 ```sql
 SELECT round(<amount> / 5, 2) * 5 AS <column>
 FROM <table>;
+```
+
+### Get hourly data of the last month
+
+```sql
+SELECT *
+FROM <table>
+WHERE <datetime> >= date_trunc('hour', CURRENT_DATE - INTERVAL '3 months')
+AND <datetime> <= date_trunc('hour', CURRENT_DATE)
+AND EXTRACT(MINUTE FROM <datetime>) = 0
+AND EXTRACT(SECOND FROM <datetime>) = 0
+ORDER BY <datetime>;
 ```
 
 ## Spatial queries
