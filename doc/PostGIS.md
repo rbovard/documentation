@@ -445,7 +445,7 @@ FROM <table>;
 ```sql
 SELECT *
 FROM <table>
-WHERE <datetime> >= date_trunc('hour', CURRENT_DATE - INTERVAL '3 months')
+WHERE <datetime> >= date_trunc('hour', CURRENT_DATE - INTERVAL '1 month')
 AND <datetime> <= date_trunc('hour', CURRENT_DATE)
 AND EXTRACT(MINUTE FROM <datetime>) = 0
 AND EXTRACT(SECOND FROM <datetime>) = 0
