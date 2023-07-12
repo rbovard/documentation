@@ -127,7 +127,7 @@ USING btree (<column>);
 ### Change table schema
 
 ```sql
-ALTER TABLE <schema>.<table> SET SCHEMA <new-schema>
+ALTER TABLE <schema>.<table> SET SCHEMA <new-schema>;
 ```
 
 ## Data types
