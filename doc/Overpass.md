@@ -1,5 +1,22 @@
 # Overpass
 
+* [Overpass QL](#overpass-ql)
+    * [Points in a geographical area](#points-in-a-geographical-area)
+    * [With attribute filter](#with-attribute-filter)
+* [Attribute filters](#attribute-filters)
+* [Overpass Turbo shortcuts](#overpass-turbo-shortcuts)
+    * [Current map view](#current-map-view)
+    * [Geographical search](#geographical-search)
+    * [Recently modified](#recently-modified)
+    * [Last modified by user](#last-modified-by-user)
+* [Display ways](#display-ways)
+    * [As point](#as-point)
+    * [As area](#as-area)
+    * [Union of nodes and ways as point](#union-of-nodes-and-ways-as-point)
+* [Multiple queries](#multiple-queries)
+    * [Combination of values](#combination-of-values)
+    * [Combination of attributes](#combination-of-attributes)
+
 ## Overpass QL
 
 ### Points in a geographical area
@@ -40,13 +57,27 @@ Based on Nominatim
 
 ```
 {{geocodeArea:"Yverdon-les-Bains"}}->.searchArea;
-node["amenity"="bar"](area.searchArea);
+node["emergency"="defibrillator"](area.searchArea);
+out;
+```
+
+### Recently modified
+
+```
+node["emergency"="defibrillator"](newer:"{{date:1 month}}")({{bbox}});
+out;
+```
+
+### Last modified by user
+
+```
+node["emergency"="defibrillator"](user:"<username>")({{bbox}});
 out;
 ```
 
 ## Display ways
 
-### As centroid
+### As point
 
 ```
 way["amenity"="restaurant"]({{bbox}});
@@ -61,7 +92,7 @@ way["amenity"="restaurant"]({{bbox}});
 out;
 ```
 
-### Union of nodes and ways
+### Union of nodes and ways as point
 
 ```
 [bbox:{{bbox}}];
