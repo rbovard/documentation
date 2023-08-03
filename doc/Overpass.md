@@ -12,7 +12,7 @@ out;
 ### With attribute filter
 
 ```
-node`["emergency"="defibrillator"]`(46.777, 6.653, 46.79, 6.66);
+node["emergency"="defibrillator"](46.777, 6.653, 46.79, 6.66);
 out;
 ```
 
