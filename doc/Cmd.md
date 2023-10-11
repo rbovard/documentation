@@ -20,6 +20,7 @@
     * [Wait](#wait)
     * [Time](#time)
     * [Prompt variable](#prompt-variable)
+    * [Encoding](#encoding)
 * [Terminal server](#terminal-server)
     * [Disconnect user](#disconnect-user)
     * [Restart server](#restart-server)
@@ -113,6 +114,8 @@ REG ADD "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts" /v "Cadastra.t
 
 ### Echo
 
+Do not display the content of the batch file, only the output
+
 ```batchfile
 @ECHO OFF
 ```
@@ -137,6 +140,8 @@ ECHO:
 
 ### Wait
 
+In milliseconds
+
 ```batchfile
 PING 1.1.1.1 -n 1 -w 5000 >NUL
 ```
@@ -152,6 +157,14 @@ ECHO %time%
 ```batchfile
 SET my_var=
 SET /P my_var="My var: "
+```
+
+### Encoding
+
+Set code page to UTF-8
+
+```batchfile
+chcp 65001
 ```
 
 ## Terminal server
