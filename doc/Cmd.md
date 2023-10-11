@@ -164,7 +164,7 @@ SET /P my_var="My var: "
 Set code page to UTF-8
 
 ```batchfile
-chcp 65001
+CHCP 65001
 ```
 
 ## Terminal server
