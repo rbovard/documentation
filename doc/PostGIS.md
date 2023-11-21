@@ -33,8 +33,9 @@
     * [Convert string to date](#convert-string-to-date)
     * [Get previous business day](#get-previous-business-day)
     * [Get next business day](#get-next-business-day)
-    * [Order results by list](#order-results-by-list)
-    * [Order results by varchar as numeric](#order-results-by-varchar-as-numeric)
+    * [Sort results by list](#sort-results-by-list)
+    * [Sort results by varchar as numeric](#sort-results-by-varchar-as-numeric)
+    * [Sort results by descending order with null at the end](#sort-results-by-descending-order-with-null-at-the-end)
     * [Split string with a separator and get specific part](#split-string-with-a-separator-and-get-specific-part)
     * [Test with a list of values](#test-with-a-list-of-values)
     * [Where not like multiple values](#where-not-like-multiple-values)
@@ -355,7 +356,7 @@ SELECT
     END AS next_business_day;
 ```
 
-### Order results by list
+### Sort results by list
 
 ```sql
 SELECT *
@@ -370,12 +371,20 @@ ORDER BY
     END DESC;
 ```
 
-### Order results by varchar as numeric
+### Sort results by varchar as numeric
 
 ```sql
 SELECT *
 FROM <table>
-ORDER BY nullif(regexp_replace(<column>, '\D', '', 'g'), '')::int
+ORDER BY nullif(regexp_replace(<column>, '\D', '', 'g'), '')::int;
+```
+
+### Sort results by descending order with null at the end
+
+```sql
+SELECT *
+FROM <table>
+ORDER BY <column> DESC NULLS LAST;
 ```
 
 ### Split string with a separator and get specific part
