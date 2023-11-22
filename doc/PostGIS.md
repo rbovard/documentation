@@ -45,6 +45,7 @@
     * [Select only first join match](#select-only-first-join-match)
     * [Round to closest 5 cents](#round-to-closest-5-cents)
     * [Get hourly data of the last month](#get-hourly-data-of-the-last-month)
+    * [Remove null values in an array](#remove-null-values-in-an-array)
 * [Spatial queries](#spatial-queries)
     * [Spatial join (point in polygon)](#spatial-join-point-in-polygon)
     * [Create a line between two points](#create-a-line-between-two-points)
@@ -459,6 +460,13 @@ AND <datetime> <= date_trunc('hour', CURRENT_DATE)
 AND EXTRACT(MINUTE FROM <datetime>) = 0
 AND EXTRACT(SECOND FROM <datetime>) = 0
 ORDER BY <datetime>;
+```
+
+### Remove null values in an array
+
+```sql
+SELECT ARRAY_REMOVE(<array>, NULL) AS <array>
+FROM <table>;
 ```
 
 ## Spatial queries
