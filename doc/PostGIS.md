@@ -20,6 +20,7 @@
 * [Queries](#queries)
     * [Create an unique id](#create-an-unique-id)
     * [Set first character to uppercase](#set-first-character-to-uppercase)
+    * [Change text to uppercase](#change-text-to-uppercase)
     * [Replace all the text before a specific character](#replace-all-the-text-before-a-specific-character)
     * [Erase a string if found](#erase-a-string-if-found)
     * [Test if a value is an integer](#test-if-a-value-is-an-integer)
@@ -234,6 +235,22 @@ FROM <table>;
 
 ```sql
 SELECT ((UPPER(SUBSTR(<column>, 1, 1)) || SUBSTR(<column>, 2)))::varchar AS <column>
+FROM <table>;
+```
+
+### Change text to uppercase
+
+Removing accents
+
+```sql
+SELECT UPPER(UNACCENT(<column>))::varchar AS <column>
+FROM <table>;
+```
+
+Keeping accents
+
+```sql
+SELECT UPPER(<column> COLLATE "fr-CH-x-icu")::varchar AS <column>
 FROM <table>;
 ```
 
