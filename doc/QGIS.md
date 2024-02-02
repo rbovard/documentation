@@ -57,12 +57,12 @@ aggregate('<layer>', 'count', 'id', intersects(@atlas_geometry, $geometry))
 ## Settings
 
 ```python
-from PyQt4.QtCore import QSettings
+from qgis.core import QgsSettings
 
-settings = QSettings()
+settings = QgsSettings()
 
 # Display all settings
-for k in settings.allKeys(): print k, ":", settings.value(k)
+for k in settings.allKeys(): print(k, ":", settings.value(k))
 
 # Read a setting
 settings.value("<setting>")
