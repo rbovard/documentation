@@ -6,6 +6,7 @@
     * [Create index](#create-index)
     * [Change table schema](#change-table-schema)
 * [Data types](#data-types)
+    * [Create UUID field](#create-uuid-field)
     * [Convert integer to UUID](#convert-integer-to-uuid)
 * [Geometries](#geometries)
     * [Activate PostGIS extension](#activate-postgis-extension)
@@ -142,6 +143,14 @@ ALTER TABLE <schema>.<table> SET SCHEMA <new-schema>;
 | **Boolean**   | `bool`                                     |
 | **Date/Time** | `date`, `timestamp`                        |
 | **Geometry**  | `Point`, `MultiLineString`, `MultiPolygon` |
+
+### Create UUID field
+
+```
+ALTER TABLE <schema>.<table> ADD COLUMN uuid uuid UNIQUE DEFAULT gen_random_uuid();
+```
+
+*QGIS* default value: `uuid('WithoutBraces')`
 
 ### Convert integer to UUID
 
