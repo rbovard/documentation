@@ -6,6 +6,7 @@
 * [OS](#os)
     * [Restart via scheduled task](#restart-via-scheduled-task)
     * [Get system informations](get-system-informations)
+    * [Automatically start an application](#automatically-start-an-application)
 
 ## Search
 
@@ -32,3 +33,9 @@ Arguments: `-r`
 Like uptime
 
 `systeminfo`
+
+## Automatically start an application
+
+- <kbd>Win</kbd> + <kbd>R</kbd>
+- `shell:startup`
+- Copy the shortcut in the startup folder
