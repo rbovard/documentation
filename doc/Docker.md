@@ -4,6 +4,7 @@
   * [List all containers](#list-all-containers)
   * [Get container id by its name](#get-container-id-by-its-name)
   * [Run commands in a container](#run-commands-in-a-container)
+  * [Remove unused data](#remove-unused-data)
 * [Composition](#composition)
   * [Start composition](#start-composition)
   * [Restart composition](#restart-composition)
@@ -44,6 +45,12 @@ Or directly with its name
 
 ```
 docker exec -it `docker ps -qf "name=<container-name>"` bash
+```
+
+### Remove unused data
+
+```
+docker system prune -a
 ```
 
 ## Composition
