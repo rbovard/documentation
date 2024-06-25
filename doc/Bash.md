@@ -48,6 +48,7 @@
     * [Check OS version](#check-os-version)
     * [Pass HTTP Referer in URL](#pass-http-referer-in-url)
     * [Get current public IP](#get-current-public-ip)
+    * [Locate executable](#locate-executable)
 * [Bash scripts](#bash-scripts)
     * [Exit on error](#exit-on-error)
     * [Display script duration](#display-script-duration)
@@ -327,6 +328,12 @@ curl --referer <referer> "<url>"
 
 ```bash
 curl ipinfo.io/ip
+```
+
+### Locate executable
+
+```bash
+which <executable>
 ```
 
 ## Bash scripts
