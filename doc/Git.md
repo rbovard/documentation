@@ -33,6 +33,8 @@
 * [Tag](#tag)
     * [List all tags](#list-all-tags)
     * [Checkout a tagged version](#checkout-a-tagged-version)
+* [Misc](#misc)
+    * [Change remote source](#change-remote-source)
 
 ## Configuration
 
@@ -330,4 +332,15 @@ git tag -l
 
 ```bash
 git checkout tags/<tag>
+```
+
+## Misc
+
+### Change remote source
+
+```bash
+git remote -v
+git remote set-url origin https://<domain>/<org>/<repo>.git
+git remote -v
+git remote update
 ```
