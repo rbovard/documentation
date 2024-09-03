@@ -101,8 +101,10 @@
     * [Backup specific schemas](#backup-specific-schemas)
     * [Restore backup](#restore-backup)
     * [Extract plain SQL schema from compressed backup](#extract-plain-sql-schema-from-compressed-backup)
-* [Log Analyzer](#log-analyzer)
+* [Log](#log)
     * [pgBadger](#pgbadger)
+* [PL/pgSQL](#plpgsql)
+    * [Display non empty tables with number of rows](#display-non-empty-tables-with-number-of-rows)
 
 ## Tables
 
@@ -965,4 +967,30 @@ cd /d <path-to-postgres-data>\pg_log
 dir postgresql-<YYYY-MM>-* /b > list-<YYYY-MM>.txt
 perl "<path-to-pgbadger>\pgbadger" --exclude-time "^* (20|21|22|23):*" --exclude-query="^(COPY|COMMIT|FETCH|VACUUM)" --disable-checkpoint --disable-lock --disable-temporary --disable-autovacuum --outfile postgresql-<YYYY-MM>.html --logfile-list list-<YYYY-MM>.txt
 del list-<YYYY-MM>.txt
+```
+
+## PL/pgSQL
+
+### Display non empty tables with number of rows
+
+```sql
+DO $$
+DECLARE
+    tbl RECORD;
+    row_count BIGINT;
+    schema_name TEXT := '<schema>';
+BEGIN
+    FOR tbl IN
+        SELECT table_name
+        FROM information_schema.tables
+        WHERE table_schema = schema_name
+        AND table_type = 'BASE TABLE'
+        ORDER BY table_name
+    LOOP
+        EXECUTE format('SELECT COUNT(*) FROM %I.%I', schema_name, tbl.table_name) INTO row_count;
+        IF row_count > 0 THEN
+            RAISE NOTICE 'Table %: % rows', tbl.table_name, row_count;
+        END IF;
+    END LOOP;
+END $$;
 ```
