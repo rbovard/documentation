@@ -12,6 +12,7 @@
 * [Services](#services)
   * [Display logs of a service](#display-logs-of-a-service)
   * [Run commands in a service](#run-commands-in-a-service)
+  * [Copy a file into a service](#copy-a-file-into-a-service)
 * [Tools](#tools)
   * [Copy a file into a container](#copy-a-file-into-a-container)
   * [Copy a file from a container](#copy-a-file-from-a-container)
@@ -85,6 +86,12 @@ docker compose logs -tf --tail=10 <service>
 
 ```
 docker compose exec <service> bash
+```
+
+### Copy a file into a service
+
+```
+docker compose cp <source-file> <service>:<destination-file>
 ```
 
 ## Tools
