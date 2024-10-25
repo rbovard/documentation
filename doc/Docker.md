@@ -58,19 +58,19 @@ docker system prune -a
 ### Start composition
 
 ```
-docker-compose up -d
+docker compose up -d
 ```
 
 ### Restart composition
 
 ```
-docker-compose down --remove-orphans && docker-compose up -d
+docker compose down --remove-orphans && docker compose up -d
 ```
 
 ### List containers in composition
 
 ```
-docker-compose ps
+docker compose ps
 ```
 
 ## Services
@@ -78,13 +78,13 @@ docker-compose ps
 ### Display logs of a service
 
 ```
-docker-compose logs -tf --tail=10 <service>
+docker compose logs -tf --tail=10 <service>
 ```
 
 ### Run commands in a service
 
 ```
-docker-compose exec <service> bash
+docker compose exec <service> bash
 ```
 
 ## Tools
