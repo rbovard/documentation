@@ -13,6 +13,7 @@
     * [Remove accents](#remove-accents)
 * [Expressions](#expressions)
     * [Check if attribute is integer](#check-if-attribute-is-integer)
+    * [Check if date is from last year](#check-if-date-is-from-last-year)
 * [Coordinates systems](#coordinates-systems)
     * [Projections](#projections)
     * [Transformers](#transformers)
@@ -94,7 +95,14 @@ def removeAccents(feature):
 ### Check if attribute is integer
 
 ```python
-(@Value(attribute) == int(@Value(attribute))) ? 1 : 0
+(@Value(<attribute>) == int(@Value(<attribute>))) ? 1 : 0
+```
+
+### Check if date is from last year
+
+```python
+<attribute> >= @DateTimeFormat(@DateTimeAdd(@DateTimeNow(), -P1Y), %Y)0101
+AND <attribute> <= @DateTimeFormat(@DateTimeAdd(@DateTimeNow(), -P1Y), %Y)1231
 ```
 
 ## Coordinates systems
