@@ -20,6 +20,7 @@
     * [Squash commits](#squash-commits)
     * [Edit commit](#edit-commit)
     * [Rebase onto other branch](#rebase-onto-other-branch)
+    * [Pull rebased branch](#pull-rebased-branch)
 * [Cherry pick](#cherry-pick)
     * [Cherry pick commit](#cherry-pick-commit)
 * [Stash](#stash)
@@ -267,6 +268,18 @@ Remove all `pick` expect the ones to commit
 
 ```bash
 git push -f origin <branch>
+```
+
+### Pull rebased branch
+
+```bash
+git pull --rebase
+```
+
+If it doesen't work
+
+```bash
+git reset --hard origin/<branch>
 ```
 
 ## Cherry pick
