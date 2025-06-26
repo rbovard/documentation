@@ -38,6 +38,10 @@ attribute(get_feature_by_id('<layer-id>', fk_<layer>), '<attribute>')
 
 * Start editing mode: `QgsProject.instance().mapLayer('<layer_id>').startEditing()` (to get layer id: `iface.activeLayer().id()`)
 
+### Examples
+
+* [create_deceased_from_inhabitant.py](../code/python/create_deceased_from_inhabitant.py)
+
 ## Atlas
 
 ### Display only current altlas attribute related features
