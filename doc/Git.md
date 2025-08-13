@@ -21,6 +21,7 @@
     * [Edit commit](#edit-commit)
     * [Rebase onto other branch](#rebase-onto-other-branch)
     * [Pull rebased branch](#pull-rebased-branch)
+    * [Rebase without commit local changes](#rebase-without-commit-local-changes)
 * [Cherry pick](#cherry-pick)
     * [Cherry pick commit](#cherry-pick-commit)
 * [Stash](#stash)
@@ -280,6 +281,12 @@ If it doesen't work
 
 ```bash
 git reset --hard origin/<branch>
+```
+
+### Rebase without commit local changes
+
+```bash
+git rebase --autostash origin/master
 ```
 
 ## Cherry pick
