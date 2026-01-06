@@ -35,6 +35,7 @@
 * [Tag](#tag)
     * [List all tags](#list-all-tags)
     * [Checkout a tagged version](#checkout-a-tagged-version)
+    * [Get upstream tags in a fork](#get-upstream-tags-in-a-fork)
 * [Misc](#misc)
     * [Change remote source](#change-remote-source)
 
@@ -352,6 +353,13 @@ git tag -l
 
 ```bash
 git checkout tags/<tag>
+```
+
+### Get upstream tags in a fork
+
+```bash
+git fetch upstream --tags
+git push origin --tags
 ```
 
 ## Misc
