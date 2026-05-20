@@ -4,7 +4,7 @@
 * [Clone](#clone)
 * [Branch](#branch)
     * [Create new branch](#create-new-branch)
-    * [Rebase branch onto master (if necessary)](#rebase-branch-onto-master-if-necessary)
+    * [Rebase branch onto main (if necessary)](#rebase-branch-onto-main-if-necessary)
     * [Merge branch](#merge-branch)
     * [Rename branch](#rename-branch)
     * [Checkout a branch from another fork](#checkout-a-branch-from-another-fork)
@@ -67,7 +67,7 @@ git clone <url>
 ### Create new branch
 
 ```bash
-git checkout master
+git checkout main
 git pull
 git checkout -b <branch>
 ```
@@ -75,7 +75,7 @@ git checkout -b <branch>
 #### From an existing distant branch
 
 ```bash
-git checkout master
+git checkout main
 git pull
 git checkout <branch>
 ```
@@ -83,18 +83,18 @@ git checkout <branch>
 #### Based on another local branch
 
 ```bash
-git checkout master
+git checkout main
 git pull
 git checkout -b <branch> <existing-branch>
 ```
 
-### Rebase branch onto master (if necessary)
+### Rebase branch onto main (if necessary)
 
 ```bash
-git checkout master
+git checkout main
 git pull
 git checkout <branch>
-git rebase master
+git rebase main
 git status
 vim <conflict_file>
 git add <conflict_file>
@@ -112,9 +112,9 @@ git remote add upstream <upstream-url>
 ### Merge branch
 
 ```bash
-git checkout master
+git checkout main
 git merge <branch>
-git push origin master
+git push origin main
 git branch -d <branch>
 git push origin :<branch>
 ```
@@ -132,18 +132,18 @@ git push origin :<branch>
 #### From a fork
 
 ```bash
-git checkout master
+git checkout main
 git merge <branch>
-git push upstream master
+git push upstream main
 git branch -d <branch>
 git push origin :<branch>
-git push origin master
+git push origin main
 ```
 
 ### Rename branch
 
 ```
-git checkout master
+git checkout main
 git branch -m <old-name> <new-name>
 ```
 
@@ -196,10 +196,10 @@ git revert --no-edit <hash>
 ### Syncing a fork
 
 ```bash
-git checkout master
+git checkout main
 git fetch upstream
-git merge upstream/master
-git push origin master
+git merge upstream/main
+git push origin main
 ```
 
 If error `fatal: 'upstream' does not appear to be a git repository`
@@ -287,7 +287,7 @@ git reset --hard origin/<branch>
 ### Rebase without commit local changes
 
 ```bash
-git rebase --autostash origin/master
+git rebase --autostash origin/main
 ```
 
 ## Cherry pick
