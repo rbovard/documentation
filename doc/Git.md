@@ -8,6 +8,7 @@
     * [Merge branch](#merge-branch)
     * [Rename branch](#rename-branch)
     * [Checkout a branch from another fork](#checkout-a-branch-from-another-fork)
+    * [Create new branch from the current state](#create-new-branch-from-the-current-state)
 * [Reset](#reset)
     * [Remove all local changes (not committed)](#remove-all-local-changes-not-committed)
     * [Undo the last commit (not pushed)](#undo-the-last-commit-not-pushed)
@@ -153,6 +154,15 @@ git branch -m <old-name> <new-name>
 git remote add <username> https://github.com/<username>/<repository>
 git fetch <username>
 git checkout -b <username>/<branch> <username>/<branch>
+```
+
+### Create new branch from the current state
+
+```
+git switch -c <new-branch>
+git switch main
+git log
+git reset --hard HEAD~<number-of-commits>
 ```
 
 ## Reset
